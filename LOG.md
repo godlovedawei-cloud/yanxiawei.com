@@ -2,30 +2,147 @@
 
 ## 2026-05-02
 
-- Updated the hero copy to a more forward-looking profile, added LinkedIn entry points, and aligned the page title/metadata with the broader research profile.
-- Rebuilt the publications section from the supplied `article list.txt` and Google Scholar results.
-- Reordered the page so first-author papers appear first, followed by collaborative papers.
-- Replaced `et al.` with full author lists for the listed articles and added PubMed links or PubMed search links where needed.
-- Added the secondary email address `yanxiawei519@gmail.com` as plain text, without a mailto link.
-- Added the 2024 Circulation conference abstract to a dedicated conference section.
-- Uploaded the missing article PDFs and standardized the PDF links to open in a new window.
-- Replaced the CV with the newer file `CV_yanxiawei new.pdf`.
-- Added selected article PDFs from `Articles.zip` under `assets/articles/` and linked them from the publications section.
-- Updated profile wording, position title, research experience, publication metadata, and skills to match the newer CV.
+### Homepage Refinement
+
+- Reworked the hero into a clearer academic positioning structure:
+  - headline: `Data-Driven Epidemiology` and `& Public Health Research`
+  - sub-headline focused on large-scale cohorts, genetic evidence, biomarker data, cardiovascular disease, and chronic disease etiology
+  - status: `Actively seeking Postdoctoral Fellowship or related research scientist opportunities.`
+  - added a warm contact sentence for interested PIs and collaborators
+- Tuned the hero text to include professional personal traits without sounding informal:
+  - warm and reliable collaborator
+  - clear cross-disciplinary communicator
+  - fast adoption of analytical and AI-assisted research workflows
+- Reduced headline scale for both desktop and mobile so the first screen is strong but not oversized.
+- Added LinkedIn and ORCID as button-style links only, removing duplicate contact text.
+- Made both email addresses more visible and clickable through `mailto:` links:
+  - `yanxiawei@zju.edu.cn`
+  - `yanxiawei519@gmail.com`
+- Updated the browser tab icon from the old `V` mark to a Yanxia-oriented favicon.
+
+### Flagship Projects
+
+- Added a new `Flagship Projects` section between Research Focus and Experience.
+- Project 1: BMC Medicine / Valvular Heart Disease.
+  - Shows UK Biobank sample size, incident VHD cases, post-VHD deaths, and life-year gain.
+  - Uses a forest plot figure to avoid visual duplication with the EJPC project.
+  - Methods now mention EHR-linked cohort design, five-factor lifestyle score, Townsend-based SES, Gompertz multistate models, transition-specific HRs, interaction testing, weighted life tables, and sensitivity analyses.
+  - Added Key Findings and Why It Matters text for PI-facing scanning.
+- Project 2: European Journal of Preventive Cardiology / Type 2 Diabetes.
+  - Shows UK Biobank sample size, T2DM sample size, incident ASCVD cases, and post-ASCVD deaths.
+  - Uses the life expectancy figure from the paper.
+  - Methods now mention T2DM ascertainment, Life's Essential 8 CVH score, three-state Gompertz multistate models, weighted transition rates, population-based life tables, MICE, Monte Carlo bootstrapping, and sex- and age-specific estimates.
+  - Added Key Findings and Why It Matters text.
+- Checked desktop and 390px mobile layouts with Playwright. No horizontal overflow was detected.
+
+### Publications and EndNote
+
+- Removed database-style `PubMed 41277730` badges from publication entries.
+- Kept PubMed as ordinary link buttons.
+- Restored IF/Q/citation information as visible inline tags:
+  - `IF: 7.5`, `Q1`
+  - `IF: 8.3`, `Q1`
+  - `IF: 6.0`, `Q2`, `Citations: 246`
+  - `Chinese Core Journal`
+- Kept DOI values in standard text format.
+- Added submitted co-first-author paper:
+  - Liu Q*, Wei Y*, Fan J, et al. Associations of Serum Testosterone and Sex Hormone-binding Globulin with the Risk of Degenerative Valvular Heart Diseases in Men and Women. Submitted. Co-first author.
+- Added EndNote export:
+  - source: `/Users/sun/Desktop/Yanxia/文章/enw.txt`
+  - site file: `assets/Yanxia_Wei_publications.enw`
+  - homepage button: `Download EndNote (.enw)` with the `download` attribute.
+
+### Experience, Skills, and CV Alignment
+
+- Aligned project and publication language with `/Users/sun/Desktop/Yanxia/CV_yanxiawei new.pdf`.
+- Updated smoking cessation project:
+  - `Theory-Driven mHealth Intervention for Smoking Cessation`
+  - role: `PhD candidate, 2016-2019`
+  - removed `Investigator` and `National Natural Science Foundation of China` wording from the homepage.
+- Updated smoke-free legislation project:
+  - `Advocacy and Evaluation of Comprehensive Smoke-Free Legislation in Shanghai`
+  - role: `PhD candidate, 2015-2019`
+  - removed `Investigator` and `Bloomberg Initiative Grant` wording from the homepage.
+- Reorganized skills under:
+  - `Methods, data platforms, and research tooling.`
+- Strengthened methods coverage:
+  - survival analysis
+  - multistate models
+  - causal inference
+  - Mendelian randomization
+  - propensity score methods
+  - longitudinal data analysis
+  - biomarker integration
+  - EHR phenotyping
+  - exposure-wide association studies
+  - systematic reviews and meta-analysis
+- Updated software and tooling:
+  - R, advanced
+  - Python, advanced
+  - SAS
+  - NVivo
+  - Git/GitHub
+  - UK Biobank RAP
+  - Claude Code
+  - Codex
+  - Cursor
+  - AI-assisted coding workflows
+- Moved languages into a separate block:
+  - Chinese, native
+  - English, fluent
+
+### Assets and Source Materials
+
+- Added and linked:
+  - `assets/Yanxia_Wei_publications.enw`
+  - `assets/Projects/`
+  - `assets/yanxiawei cv.md`
+- Initially pushed only homepage-used project figures, then added the complete MinerU project outputs so future editors can pull the repository and continue improving the Projects section without rerunning extraction.
+- `.DS_Store` files were not committed because they are ignored by `.gitignore`.
+
+### Validation
+
+- Ran static local link checks for homepage asset references.
+- Ran `git diff --check` before the homepage commit.
+- Noted that `git diff --check --cached` reports trailing whitespace inside MinerU-generated markdown and extracted CV markdown. These were intentionally preserved to keep generated source files close to their original extraction output.
+- Previewed the site locally with:
+
+  ```bash
+  python3 -m http.server 4173
+  ```
+
+- Checked desktop and mobile rendering with Playwright:
+  - desktop viewport: 1440px wide
+  - mobile viewport: 390px wide
+  - no horizontal overflow
+  - EndNote link has `download`
+  - project images render
+
+### GitHub
+
+- Commit `7c2f5ef`: `Refine homepage hero and projects`
+  - pushed to `origin/main`
+- Commit `074af77`: `Add MinerU project sources`
+  - pushed to `origin/main`
+
+## Initial Build and Migration Notes
+
 - Retrieved the static site handover from the Tencent Cloud server path `/home/ubuntu/projects/yanxiawei.com/`.
-- Rebuilt the homepage as an English academic profile with updated sections for research focus, experience, major projects, publications, skills, teaching, and honors.
+- Rebuilt the homepage as an English academic profile with sections for research focus, experience, major projects, publications, skills, teaching, and honors.
 - Added the supplied portrait and CV:
   - `assets/profile.jpg`
   - `assets/profile-original.png`
   - `assets/Yanxia_Wei_CV.pdf`
+- Added selected article PDFs under `assets/articles/` and linked them from the publications section.
+- Rebuilt the publications section from supplied publication materials and Google Scholar results.
+- Ordered first-author papers first, followed by collaborative papers.
+- Added PubMed links or PubMed search links where available.
+- Added the 2024 Circulation conference abstract to a dedicated conference section.
 - Added GitHub Pages files:
   - `CNAME`
   - `.nojekyll`
-- Added project documentation:
-  - `README.md`
-  - `LOG.md`
 - Created the public GitHub repository `godlovedawei-cloud/yanxiawei.com`, then renamed it to `godlovedawei-cloud/yanxiawei-homepage`.
-- Enabled GitHub Pages from the `main` branch root. Latest Pages status: built.
+- Enabled GitHub Pages from the `main` branch root. Pages built successfully.
 - Moved the complete project into `/Users/sun/Desktop/Codex/个人网页/Yanxiawei` so the parent directory can host a second webpage project later.
 
 ## DNS Notes
@@ -38,5 +155,5 @@
   - apex `AAAA` records: `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
   - `www` CNAME: `godlovedawei-cloud.github.io`
 - MX, TXT, and NS records were preserved.
-- Authoritative Porkbun nameservers return the GitHub Pages records. Some recursive resolvers may continue to show old parking records until cache expiry.
-- HTTP is serving from GitHub Pages. HTTPS certificate provisioning is pending on GitHub Pages and should be rechecked after propagation.
+- Authoritative Porkbun nameservers returned the GitHub Pages records after update.
+- HTTP served from GitHub Pages after deployment. HTTPS certificate provisioning depended on GitHub Pages DNS propagation timing.
