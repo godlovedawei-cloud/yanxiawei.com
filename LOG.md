@@ -2,6 +2,19 @@
 
 ## 2026-05-02
 
+### Page Detail Polish
+
+- Removed the boxed container treatment from institution logos in the Experience and Education timeline, leaving transparent heading-side marks that feel less heavy.
+- Rewrote the UK Biobank Major Research Experience entry from a four-item list into a single PI-facing paragraph covering 500,000+ participant data management, R/Python pipelines, EHR-derived outcomes, biomarker and genotypic data, and the main cardiovascular research directions.
+- Expanded Conference Abstracts to include all four CV-listed outputs:
+  - Circulation 2024 abstract on cardiovascular health, ASCVD progression, and life expectancy in type 2 diabetes
+  - SRNT 26th Annual Meeting 2019 accepted abstract on an integrated smoking cessation model
+  - 2017 National Conference on Tobacco Control oral presentation
+  - 2016 Asia Pacific Conference on Tobacco or Health oral presentation
+- Changed the conference section title to `Conference abstracts and oral presentations.`
+- Removed the Honors block from the homepage, including CSC Scholarship and Fudan Academic Scholarship entries.
+- Updated README maintenance notes for conference outputs and logo styling.
+
 ### Homepage Refinement
 
 - Reworked the hero into a clearer academic positioning structure:

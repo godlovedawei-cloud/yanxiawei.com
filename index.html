@@ -373,14 +373,8 @@
             align-items: center;
             justify-content: center;
             flex: 0 0 auto;
-            width: 72px;
-            height: 72px;
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            background:
-                linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(246, 247, 243, 0.72));
-            padding: 9px;
-            box-shadow: 0 10px 26px rgba(32, 36, 42, 0.07);
+            width: 94px;
+            height: 78px;
         }
 
         .timeline-logo img {
@@ -443,13 +437,6 @@
             color: var(--moss);
             font-weight: 700;
             margin: 6px 0 10px;
-        }
-
-        .project-list {
-            display: grid;
-            gap: 10px;
-            margin-top: 16px;
-            padding-left: 18px;
         }
 
         .flagship-list {
@@ -710,21 +697,6 @@
             font-weight: 600;
         }
 
-        .teaching-awards {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 28px;
-            margin-top: 42px;
-            border-top: 1px solid var(--line);
-            padding-top: 34px;
-        }
-
-        .compact-list {
-            display: grid;
-            gap: 12px;
-            padding-left: 18px;
-        }
-
         footer {
             border-top: 1px solid var(--line);
             padding: 34px 20px;
@@ -746,8 +718,7 @@
             .hero-grid,
             .focus-grid,
             .project-card,
-            .skills-layout,
-            .teaching-awards {
+            .skills-layout {
                 grid-template-columns: 1fr;
             }
 
@@ -774,9 +745,8 @@
             }
 
             .timeline-logo {
-                width: 58px;
-                height: 58px;
-                padding: 7px;
+                width: 76px;
+                height: 60px;
             }
 
             .timeline-heading {
@@ -846,6 +816,10 @@
             .email-list {
                 display: grid;
                 gap: 8px;
+            }
+
+            .timeline-heading {
+                flex-direction: column;
             }
         }
     </style>
@@ -1134,12 +1108,7 @@
                         <div>
                             <h3 class="timeline-title">Non-genetic risk exposures, genetic predisposition, and cardiovascular diseases</h3>
                             <p class="timeline-org">Lead Researcher, UK Biobank</p>
-                            <ul class="project-list">
-                                <li>Lifestyle and socioeconomic factors in valvular heart disease progression.</li>
-                                <li>Cardiovascular health and life expectancy in type 2 diabetes.</li>
-                                <li>Mendelian randomization studies of aortic stenosis initiation and progression.</li>
-                                <li>Sex- and genetic-specific modifiable factors for aortic stenosis in older adults.</li>
-                            </ul>
+                            <p>Leads UK Biobank Application No. 86898, managing the full lifecycle of research databases for more than 500,000 participants and building reproducible R/Python pipelines for complex longitudinal phenotypes, EHR-derived outcomes, biomarkers, and large-scale genotypic data. This program connects clinically interpretable cardiovascular questions with population-scale methods, including lifestyle and socioeconomic determinants of valvular heart disease progression, cardiovascular health and ASCVD-free life expectancy in type 2 diabetes, Mendelian randomization studies of aortic stenosis initiation and progression, and sex- and genetic-specific modifiable factors for aortic stenosis in older adults.</p>
                         </div>
                     </article>
                     <article class="timeline-item">
@@ -1287,7 +1256,7 @@
         <section class="page-band">
             <div class="section">
                 <p class="section-kicker">Conference Abstracts</p>
-                <h2 class="section-title">Representative conference output.</h2>
+                <h2 class="section-title">Conference abstracts and oral presentations.</h2>
                 <div class="timeline">
                     <article class="timeline-item">
                         <div class="timeline-date">2024</div>
@@ -1297,6 +1266,27 @@
                             <div class="publication-links">
                                 <a class="text-link" href="assets/articles/circulation-abstract-cvd-health-t2dm-2024.pdf" target="_blank" rel="noopener">PDF</a>
                             </div>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-date">2019</div>
+                        <div>
+                            <h3 class="timeline-title">An empirical examination of an integrated model for individual smoking cessation among Chinese adults.</h3>
+                            <p class="timeline-org">Yanxia Wei, Ron Borland, Pinpin Zheng. Accepted by the SRNT 26th Annual Meeting.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-date">2017</div>
+                        <div>
+                            <h3 class="timeline-title">Impact of tobacco advertising on college students' smoking in Shanghai.</h3>
+                            <p class="timeline-org">Yanxia Wei, Pinpin Zheng. Oral Presentation at the 18th National Conference on Tobacco Control, China.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-date">2016</div>
+                        <div>
+                            <h3 class="timeline-title">Measurement of secondhand smoke in the smoking room and passengers' opinion in public transport sites, Shanghai.</h3>
+                            <p class="timeline-org">Yanxia Wei, Pinpin Zheng. Oral Presentation at the 11th Asia Pacific Conference on Tobacco or Health, China.</p>
                         </div>
                     </article>
                 </div>
@@ -1345,15 +1335,6 @@
                             <span class="tag">Chinese, native</span>
                             <span class="tag">English, fluent</span>
                         </div>
-                    </div>
-                </div>
-                <div class="teaching-awards">
-                    <div>
-                        <p class="section-kicker">Honors</p>
-                        <ul class="compact-list">
-                            <li>China Scholarship Council Scholarship, 2018.</li>
-                            <li>Academic Scholarship of Fudan University, 2017.</li>
-                        </ul>
                     </div>
                 </div>
             </div>

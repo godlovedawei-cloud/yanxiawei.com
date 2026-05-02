@@ -34,9 +34,9 @@ Static academic homepage for Yanxia Wei, Ph.D.
   - BMC Medicine valvular heart disease project.
   - EJPC type 2 diabetes and ASCVD-free life expectancy project.
 - Experience and Major Research Experience: appointments, training, and selected research projects.
-- Publications: selected first-author work, submitted co-first paper, collaborative papers, and conference output.
+- Publications: selected first-author work, submitted co-first paper, and collaborative papers.
+- Conference Abstracts: CV-aligned conference abstracts and oral presentations.
 - Skills: methods, platforms, software, AI-assisted research tooling, and languages.
-- Teaching and Honors.
 
 ## Editing Workflow
 
@@ -79,6 +79,7 @@ GitHub Pages deploys from `main` automatically after push.
 
 - Keep the homepage concise and PI-facing. The first screen should show research identity, strongest methods, current opportunity status, and clear contact paths.
 - Avoid dense resume paragraphs in the hero.
+- Keep institution logos transparent and integrated with the Experience and Education headings; avoid boxed logo containers.
 - Use `Postdoctoral Fellowship or related research scientist opportunities` rather than only `postdoc`, so the page does not overconstrain possible opportunities.
 - Keep personal traits professional and concrete. Current tone: warm, reliable collaborator; clear cross-disciplinary communication; fast adoption of new analytical and AI-assisted workflows.
 - For publications, keep journal metadata readable:
@@ -86,6 +87,7 @@ GitHub Pages deploys from `main` automatically after push.
   - IF, Q ranking, and citation count as visible tags where available from the CV.
   - PubMed and PDF as link buttons, not database-style badges.
 - Do not invent IF/Q values. Use the CV or a verified source.
+- For conference outputs, use `assets/yanxiawei cv.md` as the local source of truth and add PDF links only when matching files exist under `assets/articles/`.
 
 ## Flagship Project Sources
 
