@@ -23,9 +23,12 @@
 ## DNS Notes
 
 - Existing DNS before migration pointed the apex and `www` host at Porkbun parking.
-- Planned target is GitHub Pages:
+- DNS was updated through the Porkbun API after enabling domain API access and receiving explicit confirmation.
+- Deleted the apex parking `ALIAS` record for `uixie.porkbun.com`.
+- Added GitHub Pages records:
   - apex `A` records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
   - apex `AAAA` records: `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
   - `www` CNAME: `godlovedawei-cloud.github.io`
-- DNS changes require a dry-run review and explicit confirmation before replacing existing records.
-- Porkbun API dry-run was attempted, but Porkbun returned `DOMAIN_IS_NOT_OPTED_IN_TO_API_ACCESS`. Enable API access for the domain in Porkbun account settings before applying DNS changes through the API.
+- MX, TXT, and NS records were preserved.
+- Authoritative Porkbun nameservers return the GitHub Pages records. Some recursive resolvers may continue to show old parking records until cache expiry.
+- HTTP is serving from GitHub Pages. HTTPS certificate provisioning is pending on GitHub Pages and should be rechecked after propagation.
