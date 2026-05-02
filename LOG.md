@@ -92,13 +92,12 @@
   - NVivo
   - Git/GitHub
   - UK Biobank RAP
-  - Claude Code
-  - Codex
-  - Cursor
   - AI-assisted coding workflows
 - Moved languages into a separate block:
   - Chinese, native
   - English, fluent
+- Later simplified the skills section by removing the standalone AI Tooling column and keeping only `AI-assisted coding workflows` under Software.
+- Removed the separate Teaching block because the current cardiology clinician training responsibilities are now integrated into the 2021-present appointment.
 
 ### Assets and Source Materials
 

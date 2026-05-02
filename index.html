@@ -365,20 +365,24 @@
         }
 
         .timeline-item-logo {
-            grid-template-columns: 150px 64px minmax(0, 1fr);
-            align-items: start;
+            position: relative;
+            padding-right: 94px;
         }
 
         .timeline-logo {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 64px;
-            height: 64px;
+            position: absolute;
+            top: 22px;
+            right: 22px;
+            width: 52px;
+            height: 52px;
             border: 1px solid var(--line);
             border-radius: 8px;
-            background: #ffffff;
-            padding: 8px;
+            background: rgba(255, 255, 255, 0.72);
+            padding: 7px;
+            opacity: 0.9;
         }
 
         .timeline-logo img {
@@ -386,6 +390,33 @@
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
+        }
+
+        .role-split {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .role-panel {
+            border: 1px solid rgba(85, 113, 95, 0.18);
+            border-radius: 8px;
+            background: rgba(85, 113, 95, 0.045);
+            padding: 16px;
+        }
+
+        .role-panel h4 {
+            color: var(--ink);
+            font-size: 0.86rem;
+            letter-spacing: 0.06em;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .role-panel p {
+            font-size: 0.94rem;
+            line-height: 1.58;
         }
 
         .timeline-date {
@@ -641,7 +672,7 @@
 
         .skills-layout {
             display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 24px;
         }
 
@@ -672,7 +703,7 @@
 
         .teaching-awards {
             display: grid;
-            grid-template-columns: 1.3fr 0.9fr;
+            grid-template-columns: 1fr;
             gap: 28px;
             margin-top: 42px;
             border-top: 1px solid var(--line);
@@ -730,17 +761,18 @@
             }
 
             .timeline-item-logo {
-                grid-template-columns: 54px minmax(0, 1fr);
-                gap: 14px;
-            }
-
-            .timeline-item-logo .timeline-date {
-                grid-column: 1 / -1;
+                padding-right: 86px;
             }
 
             .timeline-logo {
-                width: 54px;
-                height: 54px;
+                top: 18px;
+                right: 18px;
+                width: 48px;
+                height: 48px;
+            }
+
+            .role-split {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1014,7 +1046,17 @@
                         <div>
                             <h3 class="timeline-title">Assistant Research Fellow</h3>
                             <p class="timeline-org">Cardiovascular Key Laboratory of Zhejiang Province, Second Affiliated Hospital, Zhejiang University School of Medicine</p>
-                            <p>Works within the Department of Cardiology at the Second Affiliated Hospital of Zhejiang University School of Medicine, a National Clinical Key Specialty and nationally leading cardiovascular center, with interventional cardiology procedure volume ranked among the global top three. Lead researcher for UK Biobank Application No. 86898, managing research databases for more than 500,000 participants and developing R/Python pipelines for complex phenotypes, EHR data, and genotypic databases. Provides epidemiologic and biostatistical support for clinician-led studies, advises physicians on clinical research design and statistical strategy, and delivers statistics training for cardiology clinicians.</p>
+                            <p>Works within the Department of Cardiology at the Second Affiliated Hospital of Zhejiang University School of Medicine, a National Clinical Key Specialty and nationally leading cardiovascular center, with interventional cardiology procedure volume ranked among the global top three.</p>
+                            <div class="role-split">
+                                <div class="role-panel">
+                                    <h4>Clinical Collaboration</h4>
+                                    <p>Provides epidemiologic and biostatistical support for clinician-led studies, advises physicians on clinical research design and statistical strategy, maintains research databases, and delivers practical training in medical statistics and randomized controlled trial design for cardiology clinicians.</p>
+                                </div>
+                                <div class="role-panel">
+                                    <h4>UK Biobank Research</h4>
+                                    <p>Lead researcher for UK Biobank Application No. 86898, managing data resources for more than 500,000 participants and building reproducible R/Python pipelines for complex phenotypes, EHR-derived outcomes, biomarker data, and large-scale genotypic databases.</p>
+                                </div>
+                            </div>
                         </div>
                     </article>
                     <article class="timeline-item timeline-item-logo">
@@ -1267,14 +1309,6 @@
                             <span class="tag">NVivo</span>
                             <span class="tag">Git/GitHub</span>
                             <span class="tag">UK Biobank RAP</span>
-                        </div>
-                    </div>
-                    <div class="skill-column">
-                        <h3>AI Tooling</h3>
-                        <div class="tag-list">
-                            <span class="tag">Claude Code</span>
-                            <span class="tag">Codex</span>
-                            <span class="tag">Cursor</span>
                             <span class="tag">AI-assisted coding workflows</span>
                         </div>
                         <h3>Languages</h3>
@@ -1285,13 +1319,6 @@
                     </div>
                 </div>
                 <div class="teaching-awards">
-                    <div>
-                        <p class="section-kicker">Teaching</p>
-                        <ul class="compact-list">
-                            <li>Developed and delivered medical statistics and randomized controlled trial design training for cardiology clinical staff at Zhejiang University School of Medicine.</li>
-                            <li>Teaching Assistant for Preventive Medicine for international undergraduate medical students at Fudan University.</li>
-                        </ul>
-                    </div>
                     <div>
                         <p class="section-kicker">Honors</p>
                         <ul class="compact-list">
