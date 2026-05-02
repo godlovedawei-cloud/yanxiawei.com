@@ -15,7 +15,7 @@ Academic homepage for Yanxia Wei, Ph.D.
 - `assets/profile.jpg`: optimized web portrait
 - `assets/profile-original.png`: source portrait copy
 - `assets/Yanxia_Wei_CV.pdf`: downloadable CV
-- `assets/articles/`: selected full-text article PDFs linked from the publications section
+- `assets/articles/`: full article PDF collection used by the publications and conference sections
 - `CNAME`: GitHub Pages custom domain
 - `.nojekyll`: disables Jekyll processing
 
@@ -24,6 +24,7 @@ Academic homepage for Yanxia Wei, Ph.D.
 - The publications section is ordered with first-author papers first, followed by collaborative papers.
 - Author names are written out in full where available, with PubMed links or PubMed search links attached to each entry.
 - The conference abstract from the Scholar record is listed in a separate conference section.
+- PDF links open in a new window for direct browser viewing.
 
 ## Deployment
 

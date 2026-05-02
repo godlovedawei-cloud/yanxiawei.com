@@ -7,6 +7,7 @@
 - Replaced `et al.` with full author lists for the listed articles and added PubMed links or PubMed search links where needed.
 - Added the secondary email address `yanxiawei519@gmail.com` as plain text, without a mailto link.
 - Added the 2024 Circulation conference abstract to a dedicated conference section.
+- Uploaded the missing article PDFs and standardized the PDF links to open in a new window.
 - Replaced the CV with the newer file `CV_yanxiawei new.pdf`.
 - Added selected article PDFs from `Articles.zip` under `assets/articles/` and linked them from the publications section.
 - Updated profile wording, position title, research experience, publication metadata, and skills to match the newer CV.
