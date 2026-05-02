@@ -2,6 +2,7 @@
 
 ## 2026-05-02
 
+- Updated the hero copy to a more forward-looking profile, added LinkedIn entry points, and aligned the page title/metadata with the broader research profile.
 - Rebuilt the publications section from the supplied `article list.txt` and Google Scholar results.
 - Reordered the page so first-author papers appear first, followed by collaborative papers.
 - Replaced `et al.` with full author lists for the listed articles and added PubMed links or PubMed search links where needed.
