@@ -4,6 +4,7 @@
 
 ### Page Detail Polish
 
+- Moved the hero identity block under the portrait, adding `Yanxia Wei, Ph.D.`, `Assistant Research Fellow`, and the Second Affiliated Hospital affiliation below the photo while keeping email links in the main hero text.
 - Removed the boxed container treatment from institution logos in the Experience and Education timeline, leaving transparent heading-side marks that feel less heavy.
 - Rewrote the UK Biobank Major Research Experience entry from a four-item list into a single PI-facing paragraph covering 500,000+ participant data management, R/Python pipelines, EHR-derived outcomes, biomarker and genotypic data, and the main cardiovascular research directions.
 - Expanded Conference Abstracts to include all four CV-listed outputs:
