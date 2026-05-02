@@ -23,8 +23,9 @@
 - Added project documentation:
   - `README.md`
   - `LOG.md`
-- Created the public GitHub repository `godlovedawei-cloud/yanxiawei.com`.
+- Created the public GitHub repository `godlovedawei-cloud/yanxiawei.com`, then renamed it to `godlovedawei-cloud/yanxiawei-homepage`.
 - Enabled GitHub Pages from the `main` branch root. Latest Pages status: built.
+- Moved the complete project into `/Users/sun/Desktop/Codex/个人网页/Yanxiawei` so the parent directory can host a second webpage project later.
 
 ## DNS Notes
 

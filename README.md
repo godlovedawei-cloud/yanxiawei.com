@@ -6,7 +6,7 @@ Academic homepage for Yanxia Wei, Ph.D.
 
 - Canonical domain: `https://yanxiawei.com`
 - Hosting: GitHub Pages
-- Repository: `godlovedawei-cloud/yanxiawei.com`
+- Repository: `godlovedawei-cloud/yanxiawei-homepage`
 - Publishing source: `main` branch, repository root
 
 ## Contents
