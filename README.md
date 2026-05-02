@@ -19,6 +19,12 @@ Academic homepage for Yanxia Wei, Ph.D.
 - `CNAME`: GitHub Pages custom domain
 - `.nojekyll`: disables Jekyll processing
 
+## Publications
+
+- The publications section is ordered with first-author papers first, followed by collaborative papers.
+- Author names are written out in full where available, with PubMed links or PubMed search links attached to each entry.
+- The conference abstract from the Scholar record is listed in a separate conference section.
+
 ## Deployment
 
 GitHub Pages serves this repository directly from the root of `main`.
