@@ -28,11 +28,13 @@
   - Uses a forest plot figure to avoid visual duplication with the EJPC project.
   - Methods now mention EHR-linked cohort design, five-factor lifestyle score, Townsend-based SES, Gompertz multistate models, transition-specific HRs, interaction testing, weighted life tables, and sensitivity analyses.
   - Added Key Findings and Why It Matters text for PI-facing scanning.
+  - Later strengthened Why It Matters around the VHD prevention gap, aging-related disease burden, life-expectancy translation, and health equity.
 - Project 2: European Journal of Preventive Cardiology / Type 2 Diabetes.
   - Shows UK Biobank sample size, T2DM sample size, incident ASCVD cases, and post-ASCVD deaths.
   - Uses the life expectancy figure from the paper.
   - Methods now mention T2DM ascertainment, Life's Essential 8 CVH score, three-state Gompertz multistate models, weighted transition rates, population-based life tables, MICE, Monte Carlo bootstrapping, and sex- and age-specific estimates.
   - Added Key Findings and Why It Matters text.
+  - Later strengthened Why It Matters around disease-free lifespan, Life's Essential 8, and shifting diabetes management from risk-factor control toward closing survival-quality gaps.
 - Checked desktop and 390px mobile layouts with Playwright. No horizontal overflow was detected.
 
 ### Publications and EndNote
@@ -60,6 +62,7 @@
   - Fudan University
   - University of Melbourne
   - Shanxi Medical University
+- Refined the institution logos from separate timeline columns into larger heading-side marks, improving visual balance while preserving mobile readability.
 - Expanded the Assistant Research Fellow entry to highlight the Department of Cardiology at SAHZU as a National Clinical Key Specialty, a nationally leading cardiovascular center, and a center with global top-three interventional cardiology procedure volume.
 - Added clinician-facing responsibilities to the Assistant Research Fellow entry, including epidemiologic and biostatistical support, clinical research design consultation, statistical strategy advising, and statistics training for cardiology clinicians.
 - Revised the University of Melbourne visiting Ph.D. entry to state mentorship by Professor Ron Borland and frame the work around behavior change theory, smoking cessation research, and intervention evaluation.

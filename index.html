@@ -365,24 +365,22 @@
         }
 
         .timeline-item-logo {
-            position: relative;
-            padding-right: 94px;
+            grid-template-columns: 170px minmax(0, 1fr);
         }
 
         .timeline-logo {
             display: flex;
             align-items: center;
             justify-content: center;
-            position: absolute;
-            top: 22px;
-            right: 22px;
-            width: 52px;
-            height: 52px;
+            flex: 0 0 auto;
+            width: 72px;
+            height: 72px;
             border: 1px solid var(--line);
             border-radius: 8px;
-            background: rgba(255, 255, 255, 0.72);
-            padding: 7px;
-            opacity: 0.9;
+            background:
+                linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(246, 247, 243, 0.72));
+            padding: 9px;
+            box-shadow: 0 10px 26px rgba(32, 36, 42, 0.07);
         }
 
         .timeline-logo img {
@@ -390,6 +388,17 @@
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
+        }
+
+        .timeline-heading {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 22px;
+        }
+
+        .timeline-heading-text {
+            min-width: 0;
         }
 
         .role-split {
@@ -761,14 +770,18 @@
             }
 
             .timeline-item-logo {
-                padding-right: 86px;
+                grid-template-columns: 1fr;
             }
 
             .timeline-logo {
-                top: 18px;
-                right: 18px;
-                width: 48px;
-                height: 48px;
+                width: 58px;
+                height: 58px;
+                padding: 7px;
+            }
+
+            .timeline-heading {
+                align-items: flex-start;
+                gap: 14px;
             }
 
             .role-split {
@@ -967,7 +980,7 @@
                             </div>
                             <div>
                                 <h4>Why It Matters</h4>
-                                <p>Shows that prevention evidence can be translated into life-expectancy terms clinicians and public health teams can communicate clearly.</p>
+                                <p>Addresses a prevention gap in valvular heart disease, an aging-related burden often left outside standard cardiovascular prevention. By translating lifestyle into VHD progression and life-expectancy gains across socioeconomic groups, the study reframes low-cost prevention as both a clinical strategy and a health-equity tool.</p>
                             </div>
                             <div class="publication-links">
                                 <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/39237933/" target="_blank" rel="noopener">PubMed</a>
@@ -1021,7 +1034,7 @@
                             </div>
                             <div>
                                 <h4>Why It Matters</h4>
-                                <p>Frames cardiovascular prevention for diabetes as quality of lifespan, not only disease risk, giving PI audiences a clear translational hook.</p>
+                                <p>Moves diabetes prevention beyond risk-factor control toward disease-free lifespan. By quantifying ASCVD-free life expectancy under Life's Essential 8 cardiovascular health, the study supports a management paradigm focused on closing the survival-quality gap between people with and without diabetes.</p>
                             </div>
                             <div class="publication-links">
                                 <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/41277730/" target="_blank" rel="noopener">PubMed</a>
@@ -1040,12 +1053,16 @@
                 <div class="timeline">
                     <article class="timeline-item timeline-item-logo">
                         <div class="timeline-date">2021-present</div>
-                        <div class="timeline-logo" aria-hidden="true">
-                            <img src="assets/logo/浙二logo的副本2.png" alt="">
-                        </div>
                         <div>
-                            <h3 class="timeline-title">Assistant Research Fellow</h3>
-                            <p class="timeline-org">Cardiovascular Key Laboratory of Zhejiang Province, Second Affiliated Hospital, Zhejiang University School of Medicine</p>
+                            <div class="timeline-heading">
+                                <div class="timeline-heading-text">
+                                    <h3 class="timeline-title">Assistant Research Fellow</h3>
+                                    <p class="timeline-org">Cardiovascular Key Laboratory of Zhejiang Province, Second Affiliated Hospital, Zhejiang University School of Medicine</p>
+                                </div>
+                                <div class="timeline-logo" aria-hidden="true">
+                                    <img src="assets/logo/浙二logo的副本2.png" alt="">
+                                </div>
+                            </div>
                             <p>Works within the Department of Cardiology at the Second Affiliated Hospital of Zhejiang University School of Medicine, a National Clinical Key Specialty and nationally leading cardiovascular center, with interventional cardiology procedure volume ranked among the global top three.</p>
                             <div class="role-split">
                                 <div class="role-panel">
@@ -1061,34 +1078,46 @@
                     </article>
                     <article class="timeline-item timeline-item-logo">
                         <div class="timeline-date">2015-2020</div>
-                        <div class="timeline-logo" aria-hidden="true">
-                            <img src="assets/logo/fudan.png" alt="">
-                        </div>
                         <div>
-                            <h3 class="timeline-title">Ph.D. in Preventive Medicine and Health Education</h3>
-                            <p class="timeline-org">School of Public Health, Fudan University</p>
+                            <div class="timeline-heading">
+                                <div class="timeline-heading-text">
+                                    <h3 class="timeline-title">Ph.D. in Preventive Medicine and Health Education</h3>
+                                    <p class="timeline-org">School of Public Health, Fudan University</p>
+                                </div>
+                                <div class="timeline-logo" aria-hidden="true">
+                                    <img src="assets/logo/fudan.png" alt="">
+                                </div>
+                            </div>
                             <p>Focused on smoking cessation interventions, mobile health engagement, and evaluation of smoke-free legislation using mixed methods, SEM, LCA, GLMM, and longitudinal modeling.</p>
                         </div>
                     </article>
                     <article class="timeline-item timeline-item-logo">
                         <div class="timeline-date">2018-2019</div>
-                        <div class="timeline-logo" aria-hidden="true">
-                            <img src="assets/logo/melbourne.webp" alt="">
-                        </div>
                         <div>
-                            <h3 class="timeline-title">Visiting Ph.D. Student</h3>
-                            <p class="timeline-org">Melbourne Centre for Behaviour Change, University of Melbourne</p>
+                            <div class="timeline-heading">
+                                <div class="timeline-heading-text">
+                                    <h3 class="timeline-title">Visiting Ph.D. Student</h3>
+                                    <p class="timeline-org">Melbourne Centre for Behaviour Change, University of Melbourne</p>
+                                </div>
+                                <div class="timeline-logo" aria-hidden="true">
+                                    <img src="assets/logo/melbourne.webp" alt="">
+                                </div>
+                            </div>
                             <p>Visiting Ph.D. student under the mentorship of Professor Ron Borland, working within the School of Psychological Sciences on behavior change theory, smoking cessation research, and intervention evaluation.</p>
                         </div>
                     </article>
                     <article class="timeline-item timeline-item-logo">
                         <div class="timeline-date">2010-2015</div>
-                        <div class="timeline-logo" aria-hidden="true">
-                            <img src="assets/logo/shanxi med uni.png" alt="">
-                        </div>
                         <div>
-                            <h3 class="timeline-title">Bachelor of Medicine, Preventive Medicine</h3>
-                            <p class="timeline-org">School of Public Health, Shanxi Medical University</p>
+                            <div class="timeline-heading">
+                                <div class="timeline-heading-text">
+                                    <h3 class="timeline-title">Bachelor of Medicine, Preventive Medicine</h3>
+                                    <p class="timeline-org">School of Public Health, Shanxi Medical University</p>
+                                </div>
+                                <div class="timeline-logo" aria-hidden="true">
+                                    <img src="assets/logo/shanxi med uni.png" alt="">
+                                </div>
+                            </div>
                         </div>
                     </article>
                 </div>
