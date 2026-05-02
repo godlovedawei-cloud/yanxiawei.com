@@ -15,6 +15,7 @@ Academic homepage for Yanxia Wei, Ph.D.
 - `assets/profile.jpg`: optimized web portrait
 - `assets/profile-original.png`: source portrait copy
 - `assets/Yanxia_Wei_CV.pdf`: downloadable CV
+- `assets/articles/`: selected full-text article PDFs linked from the publications section
 - `CNAME`: GitHub Pages custom domain
 - `.nojekyll`: disables Jekyll processing
 

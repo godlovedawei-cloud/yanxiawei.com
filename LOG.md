@@ -2,6 +2,9 @@
 
 ## 2026-05-02
 
+- Replaced the CV with the newer file `CV_yanxiawei new.pdf`.
+- Added selected article PDFs from `Articles.zip` under `assets/articles/` and linked them from the publications section.
+- Updated profile wording, position title, research experience, publication metadata, and skills to match the newer CV.
 - Retrieved the static site handover from the Tencent Cloud server path `/home/ubuntu/projects/yanxiawei.com/`.
 - Rebuilt the homepage as an English academic profile with updated sections for research focus, experience, major projects, publications, skills, teaching, and honors.
 - Added the supplied portrait and CV:
