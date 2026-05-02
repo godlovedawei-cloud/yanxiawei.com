@@ -1,0 +1,2937 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Cardiovascular health and life expectancy free of atherosclerotic cardiovascular disease among patients with type 2 diabetes: a cohort study "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                131,
+                910,
+                271
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Yanxia Wei "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\textcircled{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "1,2,3 , Dawei Sun4 , Stella "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mathsf { N g } ^ { 1 , 2 , 3 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", Yuxin He1,2,3 , Xianbao Liu 1,2,3,5 *, and Jian’an Wang "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\textcircled{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "1,2,3,5 * "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                282,
+                907,
+                326
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1 Department of Cardiology, the Second Affiliated Hospital, School of Medicine, Zhejiang University, 88 Jiefang Road, Hangzhou 310009, China; 2 State Key Laboratory of Transvascular Implantation Devices, Hangzhou 310009, China; 3 Heart Regeneration and Repair Key Laboratory of Zhejiang Province, Hangzhou 310009, China; 4 Department of Anesthesiology, the Second Affiliated Hospital, School of Medicine, Zhejiang University, Hangzhou 310009, China; and 5 Transvascular Implant Instrument Research Institute, the Second Affiliated Hospital Zhejiang University School of Medicine, Binjiang District, Hangzhou 310053, China "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                332,
+                924,
+                380
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Received 29 November 2024; revised 16 February 2025; accepted 14 November 2025; online publish-ahead-of-print 24 November 2025 "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                388,
+                680,
+                401
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Aims "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                421,
+                112,
+                435
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The effect of cardiovascular health (CVH) on the lifetime risk of atherosclerotic cardiovascular disease (ASCVD) in type 2 diabetes (T2DM) patients is unclear. This study examines how CVH is associated with ASCVD-free life expectancy in diabetic patients compared to non-diabetics. "
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                421,
+                934,
+                467
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Methods and results "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                475,
+                161,
+                503
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This cohort study analysed 246 183 UK Biobank adults, including 10 579 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "( 4 . 3 \\% )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "with type 2 diabetes. CVH was measured using the Life’s Essential 8 score, which was categorized into low, moderate, and high levels. The main outcome was life expectancy free of ASCVD. For participants with diabetes, the average follow-up was 11.6 years for ASCVD incidence and 5.0 years for mortality after ASCVD. During these times, there were 2211 new ASCVD cases and 591 deaths postdiagnosis. At the age of 40, women with low CVH were expected to live 39.1 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "9 5 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "confidence interval, CI, 38.6–39.7) years free from ASCVD, which increased to 43.3 years (42.7–43.8) for those with high CVH, while non-diabetic women were predicted to have an ASCVD-free life expectancy of 44.8 years (44.2–45.3). For men at the age of 40, the corresponding numbers were 32.8 years (32.2–33.4), 38.5 years (37.9–39.1), and 39.0 years (38.4–39.6). Of the total life expectancy at age 40, women with low CVH spent "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "8 7 . 5 \\%"
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "9 5 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "CI, 87.1–87.9%) of their remaining years without ASCVD, compared to "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "8 9 . 6 \\% ( 8 9 . 2 - 8 9 . 9 \\% )"
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "8 9 . 6 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "for those with ideal CVH. Women without T2DM spent "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "8 9 . 7 \\%"
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "( 8 9 . 4 \\mathrm { - } 9 0 . 0 \\% )"
+                    },
+                    {
+                        "type": "text",
+                        "content": ") of their life expectancy free from disease. For men at the same age, the corresponding percentages were "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "8 2 . 9 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "(82.4–83.4%) for low CVH, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "8 5 . 6 \\%"
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "( 8 5 . 2 \\substack { - 8 6 . 0 \\% } )"
+                    },
+                    {
+                        "type": "text",
+                        "content": ") for ideal CVH, and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "8 4 . 4 \\%"
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "( 8 4 . 0 - 8 4 . 8 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": ") for those without T2DM. "
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                475,
+                934,
+                656
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Conclusion "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                664,
+                161,
+                678
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Higher levels of CVH in individuals with diabetes extend their life expectancy free from ASCVD, bringing it closer to that of individuals without diabetes. We have provided an important addition to the current evidence advocating for CVH-enhancing strategies in diabetic patients. "
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                664,
+                934,
+                709
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "- - - - - - - - - - - - - - - - - - - - -Lay summary "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                717,
+                181,
+                732
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -This study evaluated the association between CVH and ASCVD-free life expectancy in patients with T2DM compared to non-diabetic individuals. "
+                    }
+                ]
+            },
+            "bbox": [
+                200,
+                717,
+                932,
+                746
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• High level of CVH in patients with T2DM reduced the risk of ASCVD incidence and mortality, making their outcomes comparable to non-diabetic participants. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• High CVH of diabetics increased both the length of ASCVD-free life expectancy and the proportion of ASCVD-free years in overall life expectancy compared to non-diabetics. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                201,
+                747,
+                932,
+                808
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "? "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                37,
+                110,
+                68
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "ESC "
+                    }
+                ]
+            },
+            "bbox": [
+                114,
+                44,
+                176,
+                64
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "European Society of Cardiology "
+                    }
+                ]
+            },
+            "bbox": [
+                112,
+                66,
+                225,
+                92
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "European Journal of Preventive Cardiology (2025) 00, 1–9 https://doi.org/10.1093/eurjpc/zwaf742 "
+                    }
+                ]
+            },
+            "bbox": [
+                228,
+                54,
+                563,
+                81
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FULL RESEARCH PAPER "
+                    }
+                ]
+            },
+            "bbox": [
+                673,
+                49,
+                937,
+                65
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "CVD risk factors "
+                    }
+                ]
+            },
+            "bbox": [
+                813,
+                70,
+                937,
+                87
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "* Corresponding author. Tel: "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "+ 8 6"
+                    },
+                    {
+                        "type": "text",
+                        "content": "571 8778388, Email: wangjianan111@zju.edu.cn; Tel: "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "+ 8 6"
+                    },
+                    {
+                        "type": "text",
+                        "content": "571 86987263, E-mail: liuxb@zju.edu.cn "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                848,
+                690,
+                860
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Previous communication: Wei Y, Liu X, Wang J. Abstract 4121568: The Influence of Cardiovascular Health on Atherosclerotic Cardiovascular Disease Progression and Life Expectancy Among Individuals with Type 2 Diabetes. Circulation. 2024;150:A4121568-A4121568. doi:10.1161/circ.150.suppl_1.4121568 "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                861,
+                939,
+                882
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "\\circledcirc"
+                    },
+                    {
+                        "type": "text",
+                        "content": "The Author(s) 2025. Published by Oxford University Press on behalf of the European Society of Cardiology. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                883,
+                583,
+                894
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "This is an Open Access article distributed under the terms of the Creative Commons Attribution-NonCommercial License (https://creativecommons.org/licenses/by-nc/4.0/), which permits non-commercial re-use, distribution, and reproduction in any medium, provided the original work is properly cited. For commercial re-use, please contact reprints@oup.com for reprints and translation rights for reprints. All other permissions can be obtained through our RightsLink service via the Permissions link on the article page on our site—for further information please contact journals.permissions@oup.com. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                895,
+                941,
+                941
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "Downloaded from https://academic.oup.com/eurjpc/advance-article/doi/10.1093/eurjpc/zwaf742/8341080 by guest on 07 January 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                954,
+                197,
+                974,
+                800
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Graphical Abstract "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                58,
+                78,
+                216,
+                93
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Cardiovascular Health and Life Expectancy Free of Atherosclerotic Cardiovascular Disease Among Patientswith Type 2 Diabetes:a cohort study "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                87,
+                100,
+                890,
+                137
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/c3fe1c60b50abdb9f36f8cca2aa16977a478ff6ddf054c36b3de9fcbf4cbe81d.jpg"
+                },
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "246,183UKBiobankadults;10,579hadT2DM "
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                85,
+                147,
+                142,
+                172
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/90d4e28a4b21d021f8da82cbf1c3d1c117ca807d6801d45e6bf2e4b23dc4ab3b.jpg"
+                },
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                82,
+                172,
+                423,
+                308
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/cf02b2632a7866522b3ce128d7cb7fddc60afbc63437bdc536cd39ceed1034ee.jpg"
+                },
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "The proportion of AscvD-free years in overall life expectancy among diabetic with different CVH levelscomparedtothosewithout diabetesat age40 "
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                90,
+                370,
+                400,
+                486
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/b8a50c567c881955843d6014b4ebbf8836c7c8370f0e487c69967066a3ab9b7e.jpg"
+                },
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Incident AscvD and mortality according to CvH level among participants withdiabetescomparedtonon-diabeticparticipants "
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                433,
+                177,
+                900,
+                325
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/1d47296fde77a9a860e63f4ace36852ca878b8775c0deb2980cf344a122f4afe.jpg"
+                },
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Total life and AscvD-free life expectancy at different CVH levels in participantswith diabetes comparedtothose without diabetesat age 40 "
+                    },
+                    {
+                        "type": "text",
+                        "content": "T2DM, type 2 diabetes mellitus; ASCVD, atherosclerotic cardiovascular disease; CVH, cardiovascular health. "
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                443,
+                361,
+                899,
+                496
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Keywords cardiovascular health • Atherosclerotic cardiovascular disease • Multistate model • Life expectancy • Diabetic patients "
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                529,
+                924,
+                546
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Introduction "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                57,
+                595,
+                213,
+                612
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Diabetes poses a significant global health challenge, impacting "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "{ \\sim } 1"
+                    },
+                    {
+                        "type": "text",
+                        "content": "in 11 adults, with "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "90 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "of cases being type 2 diabetes mellitus (T2DM).1 Research has demonstrated that T2DM significantly elevates the risk of atherosclerotic cardiovascular disease (ASCVD), the primary cause of mortality and morbidity among T2DM patients,2 and is associated with substantial reductions in life expectancy.3 Consequently, there is growing interest in identifying cost-effective preventive strategies for ASCVD among T2DM patients in recent years.4–6 "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                621,
+                480,
+                736
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In 2022, the American Heart Association (AHA) introduced Life’s Essential 8 (LE8), an updated cardiovascular health (CVH) metric that integrates lifestyle factors and biological measurements, including blood lipids, blood pressure, and blood glucose levels.7 Previous studies have demonstrated that T2DM patients with higher CVH scores have lower risks of cardiovascular diseases8,9 and mortality.1 0,11 However, studies that examine the relationship between CVH and overall health quality related to ASCVD—taking into account both incident ASCVD and mortality together—in individuals with diabetes are lacking. Life expectancy free from ASCVD is such a comprehensive metric, and assessing years of life spent without ASCVD will provide easily understood information for policymakers and the public when planning future healthcare needs. "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                737,
+                480,
+                910
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This study utilizes a multistate model to evaluate the association between CVH and life expectancy free from ASCVD among diabetic "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                912,
+                480,
+                941
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "individuals, in comparison to non-diabetic individuals, within a large UK cohort. Our objective is to address critical knowledge gaps by exploring how improvements in CVH can mitigate the adverse overall health impacts related to diabetes. "
+                    }
+                ]
+            },
+            "bbox": [
+                502,
+                592,
+                929,
+                650
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Method "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                505,
+                674,
+                606,
+                693
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Study population "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                504,
+                704,
+                680,
+                722
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The UK Biobank is a large, population-based cohort study with detailed protocols available publicly.12 Approximately 500 000 individuals, aged 40–69 years, were recruited from 22 evaluation centres across England, Scotland, and Wales between 2006 and 2010. Upon enrolment, participants completed questionnaires and interviews, underwent physical examinations, and provided blood samples. Mortality and disease diagnoses were tracked through linkage to the national death registers and hospital inpatient records. All participants provided written informed consent. UK Biobank study received ethical approval from the National Information Governance Board for Health and Social Care, the North West Multi-center Research Ethics Committee in England and Wales, and the Community Health Index Advisory Group in Scotland (http://www.ukbiobank.ac.uk/ethics/). The present research has been conducted using the UK Biobank Resource (www. ukbiobank.ac.uk) under application number 86898. We excluded "
+                    }
+                ]
+            },
+            "bbox": [
+                502,
+                723,
+                929,
+                941
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2 "
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                30,
+                72,
+                42
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Y. Wei et al. "
+                    }
+                ]
+            },
+            "bbox": [
+                855,
+                30,
+                929,
+                42
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "Downloaded from https://academic.oup.com/eurjpc/advance-article/doi/10.1093/eurjpc/zwaf742/8341080 by guest on 07 January 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                954,
+                197,
+                974,
+                800
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "participants who had prevalent ASCVD or cancer, those diagnosed with type 1 diabetes at baseline or follow-up, or those with incomplete baseline data on age, sex, and CVH metrics. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                71,
+                490,
+                114
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Diabetes diagnosis "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                132,
+                257,
+                150
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Participants with type 2 diabetes at baseline were identified by integrating various data sources, according to previous studies.13 The presence of diabetes was determined through self-reports, hospital records, prescriptions for glucose-lowering or diabetes-related medications, or a glycated haemoglobin A1c (HbA1c) level of "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "6 . 5 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "or higher. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                151,
+                490,
+                224
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Cardiovascular health measurements "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                240,
+                442,
+                258
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The CVH score was calculated based on eight baseline factors: diet, physical activity, nicotine exposure, sleep pattern, body mass index, blood lipids, blood glucose, and blood pressure. Dietary assessments were aligned with the AHA guidelines for cardiovascular disease, diabetes, and obesity.14 Specifically, the diet score encompassed 12 food groups: fruits, vegetables, whole grains, refined grains, fish, dairy products, vegetable oil, processed meats, unprocessed red meats, industrial trans fats, sugar-sweetened beverages, and sodium. Data on physical activity, nicotine exposure, sleep habits, and medication use were selfreported. Measurements of height, weight, and blood pressure were taken on-site at the assessment centre, while serum cholesterol and glycated haemoglobin levels were analysed centrally in a laboratory. The calculation and scoring details of each CVH metric adhered to the AHA criteria,7 with minor adjustments for the UK Biobank data, as detailed in a previous publication (see Supplementary material online, Table S1).15 Each CVH metric was scored on a scale from 0 to 100, and the overall CVH score was the average of the scores across all eight metrics. A higher score represents better CVH, and the overall CVH was divided into low (lowest tertile), moderate (second tertile), and high (highest tertile) levels, based on the distribution among diabetic participants. This classification ensured more participants per category in the diabetic group, improving statistical power. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                259,
+                492,
+                580
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Covariates "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                596,
+                181,
+                611
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We selected covariates based on those commonly used in previously published, similar studies.9,16,17 Covariates including age, ethnicity, Townsend Deprivation Index (TDI), family history of diabetes, ASCVD, and cancer, as well as the use of aspirin, antihypertensive, and lipid-lowering drugs were collected via a self-administered touchscreen questionnaire. The TDI is a continuous variable, with higher values indicating lower socioeconomic status. This index incorporates variables such as car ownership, household overcrowding, occupation, and employment status. To handle missing covariate data, we utilized multivariate imputation by chained equations. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                615,
+                490,
+                759
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Outcome "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                776,
+                166,
+                791
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ASCVD outcome was defined as a composite of coronary artery disease, ischaemic stroke, and peripheral artery disease. The identification of ASCVD incidence and mortality was achieved through linkage with hospital admission records and death registries. Outcomes were classified according to the International Classification of Diseases, Tenth Revision (ICD-10) and Ninth Revision (ICD-9), as well as the Office of Population Censuses and Surveys Classification of Interventions and Procedures, Version 4, following previous studies.18,19 A detailed definition of outcomes is provided in Supplementary material online, Table S2. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                796,
+                490,
+                939
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Statistical analysis "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                514,
+                71,
+                700,
+                90
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Person-time for each participant was calculated from the enrolment date until the occurrence of an ASCVD diagnosis, death, withdrawal, or the end of the follow-up period (31 August 2022, for Scotland; 31 October 2022, for England; and 31 May 2022, for Wales), whichever occurred first. Population-based multistate life tables were employed to estimate life expectancy free of ASCVD among individuals with diabetes compared to those without diabetes. In constructing the multistate life table, three health states were defined: (1) absence of ASCVD, (2) onset of ASCVD, and (3) death. Three potential state transitions were analysed: (1) from non-ASCVD to incident ASCVD, (2) from non-ASCVD to death, and (3) from ASCVD diagnosis to death among those who developed ASCVD during the study period. Only the participants’ initial transition into a new state was recorded, with no transitions back to a previous state being considered. "
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                90,
+                939,
+                296
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Firstly, we assessed the relationship between CVH and transitions using Gompertz multistate models among participants with diabetes compared to those without diabetes. The multistate survival models were adjusted for covariates, including age, ethnicity, the Townsend Deprivation Index, a family history of diabetes, ASCVD, and cancer, and the use of aspirin, antihypertensive, and lipid-lowering drugs. Additionally, for the HR of transition 3, the age at ASCVD diagnosis was further adjusted. "
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                296,
+                939,
+                412
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Secondly, we determined the overall sex- and age-specific transition rates for each transition by employing survival analysis with a Gompertz distribution, utilizing age as the time scale. Thirdly, we calculated the baseline prevalence of CVH levels in diabetic patients by sex and in 10-year age groups, as well as the prevalence of participants free from disease. Finally, we combined the overall transition rates, HRs by CVH among diabetic patients compared to non-diabetic individuals, and the prevalence of each CVH level in diabetic patients, along with the prevalence of non-diabetic participants, to calculate weighted transition rates. These rates were then utilized to construct multistate life tables for participants with and without diabetes, extending to age 100. The proportion of life expectancy free from ASCVD was estimated by dividing the life expectancy lived without ASCVD by the total life expectancy at a given age. The "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "9 5 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "confidence intervals (CIs) of the life expectancy estimates were calculated using Monte Carlo simulation (parametric bootstrapping) with 2000 runs. "
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                413,
+                939,
+                646
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To ensure the robustness of our findings, we conducted several sensitivity analyses: (1) using waist circumference instead of BMI to construct CVH score, acknowledging research that indicates higher BMI correlates with increased survival in type 2 diabetes patients (a score of 100 points is assigned for a female waist circumference below "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "{ 8 0 } \\thinspace { \\mathsf { c m } }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and a male waist circumference below 94 cm; 50 points for waist circumferences between 80 and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "8 7 . 9 \\ c m"
+                    },
+                    {
+                        "type": "text",
+                        "content": "for females and between 94 and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1 0 1 . 9 ~ \\mathrm { c m }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "for males; no points for waist measurements exceeding "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "8 8 \\mathsf { c m }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "for females and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1 0 2 \\mathsf { c m }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "for males); (2) treating CVH as a continuous score by dividing the overall CVH score by every 10 points after the low CVH level, and conducting the analysis within diabetic patients; (3) excluding events occurring in the first 2 years; (4) excluding individuals diagnosed with incident diabetes during follow-up; (5) excluding individuals diagnosed with diabetes before the age of 30 to further minimize the potential influence of type 1 diabetes; (6) Adjusting for additional potential confounders, including education, income, and depression; (7) repeating the analyses without imputing missing covariate values. "
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                648,
+                939,
+                910
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Statistical analyses were performed using R, version 4.1.3. All statistical tests were two-sided, with significance defined as "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "P < 0 . 0 5"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". "
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                911,
+                939,
+                941
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Cardiovascular health and life expectancy in diabetics "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                30,
+                373,
+                44
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3 "
+                    }
+                ]
+            },
+            "bbox": [
+                926,
+                30,
+                937,
+                42
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "Downloaded from https://academic.oup.com/eurjpc/advance-article/doi/10.1093/eurjpc/zwaf742/8341080 by guest on 07 January 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                954,
+                197,
+                974,
+                800
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/218f9417d704dff02e8cccb247a4770e33f4a7f5eff7f8cb7f87dca1a598ae22.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "seline characteristics of participants with and with "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "ascular health; ASCVD, atherosclerotic cardiovasc "
+                    },
+                    {
+                        "type": "text",
+                        "content": "(standard deviation) or count percentage) for continuous and cate "
+                    },
+                    {
+                        "type": "text",
+                        "content": "( ed as a glycated haemoglobin (HbA1c) level of 5.7–6.4% in participants without a prior "
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"3\">Characteristicsa</td><td colspan=\"4\">Women</td><td colspan=\"4\">Men</td></tr><tr><td colspan=\"3\">With diabetes</td><td>Without diabetes</td><td colspan=\"3\">With diabetes</td><td>Without diabetes</td></tr><tr><td>Low CVH (n = 1305)</td><td>Moderate CVH (n = 1308)</td><td>High CVH (n = 1439)</td><td>(n = 124645)</td><td>Low CVH (n = 2278)</td><td>Moderate CVH (n = 2268)</td><td>High CVH (n = 1981)</td><td>(n = 110959)</td></tr><tr><td>Age (years)</td><td>57.4 ± 7.33</td><td>58.9 ± 7.35</td><td>57.9 ± 8.14</td><td>55.5 ± 7.99</td><td>57.7 ± 7.34</td><td>59.5 ± 7.08</td><td>59.8 ± 7.13</td><td>55.6 ± 8.18</td></tr><tr><td>White ethnicity</td><td>1154 (88.4)</td><td>1121 (85.7)</td><td>1200 (83.4)</td><td>119038 (95.5)</td><td>2040 (89.6)</td><td>2063 (91.0)</td><td>1694 (85.5)</td><td>106064 (95.6)</td></tr><tr><td>Townsend Deprivation Index</td><td>-0.3 ± 3.35</td><td>-0.7 ± 3.33</td><td>-1.1 ± 3.14</td><td>-1.5 ± 2.91</td><td>-0.4 ± 3.37</td><td>-0.9 ± 3.26</td><td>-1.2 ± 3.13</td><td>-1.5 ± 3.00</td></tr><tr><td>CVH score</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Total CVH</td><td>47.3 ± 6.67</td><td>60.5 ± 2.84</td><td>72.5 ± 5.22</td><td>68.0 ± 10.56</td><td>47.1 ± 6.63</td><td>60.3 ± 2.83</td><td>71.4 ± 4.70</td><td>64.8 ± 10.21</td></tr><tr><td>Diet</td><td>29.0 ± 15.14</td><td>34.8 ± 15.27</td><td>39.7 ± 15.38</td><td>33.6 ± 15.13</td><td>25.0 ± 16.27</td><td>30.7 ± 16.04</td><td>38.1 ± 16.34</td><td>28.3 ± 16.84</td></tr><tr><td>Physical activity</td><td>41.53 ± 41.73</td><td>74.3 ± 35.11</td><td>91.1 ± 21.81</td><td>76.9 ± 35.48</td><td>43.8 ± 42.43</td><td>76.2 ± 35.00</td><td>91.0 ± 21.36</td><td>78.1 ± 35.22</td></tr><tr><td>Nicotine exposure</td><td>64.8 ± 35.84</td><td>80.5 ± 26.81</td><td>88.2 ± 19.47</td><td>77.2 ± 30.52</td><td>56.2 ± 36.69</td><td>71.7 ± 29.53</td><td>84.4 ± 21.25</td><td>73.9 ± 32.96</td></tr><tr><td>Sleep pattern</td><td>77.73 ± 26.73</td><td>86.1 ± 21.78</td><td>92.7 ± 15.01</td><td>89.7 ± 18.71</td><td>80.2 ± 24.56</td><td>87.9 ± 19.37</td><td>93.5 ± 14.03</td><td>89.7 ± 18.14</td></tr><tr><td>Body mass index</td><td>26.0 ± 24.98</td><td>39.3 ± 28.14</td><td>66.5 ± 24.06</td><td>73.3 ± 28.59</td><td>33.9 ± 24.96</td><td>46.0 ± 26.53</td><td>66.2 ± 24.84</td><td>68.4 ± 25.81</td></tr><tr><td>Blood lipid</td><td>40.7 ± 29.48</td><td>54.1 ± 27.52</td><td>66.6 ± 24.06</td><td>48.1 ± 29.68</td><td>47.1 ± 28.39</td><td>60.9 ± 25.34</td><td>72.5 ± 20.10</td><td>44.8 ± 27.86</td></tr><tr><td>Blood glucose</td><td>77.5 ± 30.55</td><td>88.4 ± 20.06</td><td>94.9 ± 12.59</td><td>100.00</td><td>73.5 ± 31.35</td><td>87.7 ± 20.67</td><td>94.0 ± 14.26</td><td>100.00</td></tr><tr><td>Blood pressure</td><td>21.1 ± 20.47</td><td>26.9 ± 23.55</td><td>40.0 ± 25.31</td><td>44.2 ± 26.85</td><td>17.5 ± 19.29</td><td>21.6 ± 20.85</td><td>31.9 ± 24.25</td><td>35.5 ± 25.45</td></tr><tr><td>Family history</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Diabetes</td><td>652 (50.0)</td><td>685 (52.4)</td><td>716 (49.8)</td><td>27105 (21.7)</td><td>988 (43.4)</td><td>1003 (44.2)</td><td>927 (46.8)</td><td>21892 (19.7)</td></tr><tr><td>ASCVD</td><td>859 (65.8)</td><td>883 (67.5)</td><td>932 (64.8)</td><td>72907 (58.5)</td><td>1362 (59.8)</td><td>1346 (59.3)</td><td>1194 (60.3)</td><td>59954 (54.0)</td></tr><tr><td>Cancer</td><td>492 (37.7)</td><td>501 (38.3)</td><td>474 (32.9)</td><td>44026 (35.3)</td><td>834 (36.6)</td><td>857 (37.8)</td><td>676 (34.1)</td><td>39316 (35.4)</td></tr><tr><td>Medication</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Antihypertensive</td><td>784 (60.1)</td><td>801 (61.2)</td><td>657 (45.7)</td><td>18123 (14.5)</td><td>1451 (63.7)</td><td>1495 (65.9)</td><td>1149 (58.0)</td><td>19121 (17.2)</td></tr><tr><td>Glucose-lowering</td><td>626 (48.0)</td><td>682 (52.1)</td><td>692 (48.1)</td><td>0.00</td><td>1188 (52.2)</td><td>1293 (57.0)</td><td>1107 (55.9)</td><td>0.00</td></tr><tr><td>Lipid-lowering</td><td>746 (57.2)</td><td>830 (63.5)</td><td>812 (56.4)</td><td>9670 (7.8)</td><td>1421 (62.4)</td><td>1566 (69.0)</td><td>1409 (71.1)</td><td>14377 (13.0)</td></tr><tr><td>Aspirin</td><td>414 (31.7)</td><td>436 (33.3)</td><td>438 (30.4)</td><td>8109 (6.5)</td><td>855 (37.5)</td><td>989 (43.6)</td><td>845 (42.7)</td><td>11422 (10.3)</td></tr><tr><td>Diabetes duration (years)</td><td>5.2 ± 6.08</td><td>5.4 ± 6.69</td><td>5.5 ± 6.92</td><td>0.00</td><td>6.4 ± 8.12</td><td>6.3 ± 8.01</td><td>6.5 ± 8.82</td><td>0.00</td></tr><tr><td>Presence of prediabetesb</td><td>0.00</td><td>0.00</td><td>0.00</td><td>16067 (12.9)</td><td>0.00</td><td>0.00</td><td>0.00</td><td>13853 (12.5)</td></tr><tr><td>Age of ASCVD diagnosis (years)</td><td>67.9 ± 7.72</td><td>69.6 ± 7.34</td><td>68.6 ± 7.87</td><td>68.0 ± 7.75</td><td>66.7 ± 7.73</td><td>68.5 ± 7.03</td><td>69.1 ± 6.82</td><td>66.8 ± 7.88</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                181,
+                80,
+                793,
+                929
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4 "
+                    }
+                ]
+            },
+            "bbox": [
+                60,
+                30,
+                70,
+                41
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Y. Wei et al. "
+                    }
+                ]
+            },
+            "bbox": [
+                855,
+                31,
+                927,
+                42
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "Downloaded from https://academic.oup.com/eurjpc/advance-article/doi/10.1093/eurjpc/zwaf742/8341080 by guest on 07 January 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                957,
+                197,
+                974,
+                799
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/71fff489d253268649ca39f74fab232e51bcfcf420377cd623a6602948502908.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 2 Incident ASCVD and mortality according to CVH level among participants with diabetes compared with non-diabetic participants "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "ASCVD, atherosclerotic cardiovascular disease; CVH, cardiovascular health; HR, hazard ratio; CI, confidence interval. "
+                    },
+                    {
+                        "type": "text",
+                        "content": "Multistate survival analysis using the Gompertz distribution was utilized to compute hazard ratios (HRs) and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "9 5 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "confidence intervals (CIs), with the absence of diabetes serving as the reference. The analysis was adjusted for age, ethnicity, the Townsend Deprivation Index, a family history of diabetes, ASCVD, and cancer, and the use of aspirin, antihypertensive, and lipid-lowering drugs. Additionally, for the HR of transition 3, the age at ASCVD diagnosis was further adjusted. "
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\">Transition</td><td rowspan=\"2\">CVH level</td><td colspan=\"2\">Women</td><td colspan=\"2\">Men</td></tr><tr><td>No. of cases/person-years</td><td>HR (95% CI)</td><td>No. of cases/person-years</td><td>HR (95% CI)</td></tr><tr><td rowspan=\"5\">Incident ASCVD</td><td colspan=\"5\">CVH level in diabetic patients</td></tr><tr><td>Low</td><td>256/15 553.9</td><td>1.89 (1.66–2.15)</td><td>652/24 932.4</td><td>1.76 (1.62–1.91)</td></tr><tr><td>Moderate</td><td>190/15 859.8</td><td>1.21 (1.04–1.40)</td><td>570/225 571.2</td><td>1.33 (1.21–1.45)</td></tr><tr><td>High</td><td>164/17 742.6</td><td>1.05 (0.89–1.23)</td><td>379/23 127.3</td><td>1.00 (0.90–1.11)</td></tr><tr><td>Without diabetes</td><td>8173/1 595 596.0</td><td>1 [reference]</td><td>14 501/1 366 986.0</td><td>1 [reference]</td></tr><tr><td rowspan=\"5\">Mortality among those without ASCVD</td><td colspan=\"5\">CVH level in diabetic patients</td></tr><tr><td>Low</td><td>90/13 540.9</td><td>1.65 (1.33–2.05)</td><td>224/20 448.7</td><td>1.84 (1.60–2.12)</td></tr><tr><td>Moderate</td><td>92/14 386.8</td><td>1.48 (1.20–1.84)</td><td>204/21 489.3</td><td>1.39 (1.20–1.61)</td></tr><tr><td>High</td><td>87/16 499.2</td><td>1.38 (1.11–1.71)</td><td>149/20 410.2</td><td>1.17 (0.99–1.38)</td></tr><tr><td>Without diabetes</td><td>4506/1 531 401.0</td><td>1 [reference]</td><td>5617/1 257 828.0</td><td>1 [reference]</td></tr><tr><td rowspan=\"5\">Mortality among those with ASCVD</td><td colspan=\"5\">CVH level in diabetic patients</td></tr><tr><td>Low</td><td>62/1226.1</td><td>1.61 (1.23–2.11)</td><td>217/3239.8</td><td>1.78 (1.54–2.06)</td></tr><tr><td>Moderate</td><td>34/969.3</td><td>1.05 (0.74–1.49)</td><td>156/2896.8</td><td>1.25 (1.05–1.47)</td></tr><tr><td>High</td><td>27/848.9</td><td>0.99 (0.66–1.46)</td><td>95/1914.9</td><td>1.16 (0.94–1.44)</td></tr><tr><td>Without diabetes</td><td>1244/40 941.6</td><td>1 [reference]</td><td>2814/74 081.8</td><td>1 [reference]</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                75,
+                110,
+                932,
+                393
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Results "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                485,
+                159,
+                504
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Cohort characteristics "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                515,
+                294,
+                532
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The study included 246 183 participants after excluding 256 172 individuals who had type 1 diabetes, prevalent ASCVD or cancer, or had missing data on key variables (CVH factors, age, and sex) (see Supplementary material online, Figure S1). Among the 246 183 participants, 10 579 "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "( 4 . 3 \\% )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "had T2DM at baseline. For participants with diabetes, the mean follow-up durations were as follows: 11.6 years "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\langle \\mathsf { S D } = 3 . 4 _ { , }"
+                    },
+                    {
+                        "type": "text",
+                        "content": ") for the incidence of ASCVD, 5.0 years "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "( \\mathsf { S D } = 4 . 0 )"
+                    },
+                    {
+                        "type": "text",
+                        "content": ") for mortality post-ASCVD, and 12.7 years "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "( \\mathsf { S } \\mathsf { D } = 2 . 2 )"
+                    },
+                    {
+                        "type": "text",
+                        "content": "for mortality in the absence of ASCVD. During these periods, there were 2211 new ASCVD cases, 591 deaths following an ASCVD diagnosis, and 846 deaths without prior ASCVD diagnosis. In contrast, participants without diabetes had a mean follow-up of 12.6 years "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "( \\mathsf { S D } = 2 . 5 "
+                    },
+                    {
+                        "type": "text",
+                        "content": ") for ASCVD incidence, 5.1 years (SD "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "= 4 . 0"
+                    },
+                    {
+                        "type": "text",
+                        "content": ") for mortality post-ASCVD, and 13.1 years "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\left( \\mathsf { S } \\mathsf { D } = 1 . 6 \\right)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "for mortality in the absence of ASCVD. Over the follow-up period, there were 22 674 new cases of ASCVD, 4058 deaths following ASCVD diagnosis, and 10 123 deaths without a preceding ASCVD diagnosis. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                534,
+                490,
+                766
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The baseline characteristics of the study are presented in Table 1. Of the participants, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5 2 . 3 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "were female, with a mean age 55.6 years "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mathrm { \\ S D = }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "8.07). Diabetic individuals had lower overall CVH scores compared to non-diabetic individuals, with scores of 60.5 vs. 68.0 for women and 59.1 vs. 64.8 for men. Among the 235 604 participants without diabetes, the distribution across CVH levels was as follows: "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1 4 . 7 \\%"
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\overset { \\cdot } { \\underset { \\cdot } { n } = \\cdot }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "34 547) had low CVH, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2 9 . 1 \\%"
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\begin{array} { r } { \\boldsymbol { n } = 6 8 5 4 6 ^ { \\prime } } \\end{array}"
+                    },
+                    {
+                        "type": "text",
+                        "content": ") had moderate CVH, and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5 6 . 5 \\%"
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "m = 1 3 2 5 1 1"
+                    },
+                    {
+                        "type": "text",
+                        "content": ") had high CVH. Conversely, within the diabetic population, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "3 3 . 9 \\%"
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "( n = 3 5 8 3"
+                    },
+                    {
+                        "type": "text",
+                        "content": ") had low CVH, "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "3 3 . 8 \\%"
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "m = 3 5 7 6 )"
+                    },
+                    {
+                        "type": "text",
+                        "content": ") had moderate CVH, and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "3 2 . 3 \\%"
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "( n = 3 4 2 0 )"
+                    },
+                    {
+                        "type": "text",
+                        "content": ") had high CVH. Supplementary material online, Table S3 outlines the characteristics of participants with complete data on age, sex, and CVH components and for those "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                766,
+                490,
+                941
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "with missing data. Compared to those included in the analysis, excluded participants were more likely to be female, less likely to be White, and had a lower Townsend Deprivation Index. "
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                485,
+                939,
+                529
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Incident atherosclerotic cardiovascular disease and mortality "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                512,
+                554,
+                907,
+                592
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Using non-diabetic individuals as the reference group, it was found that higher CVH levels in diabetic patients were associated with a lower ASCVD and mortality risk. Among diabetic women, those with low CVH had a 1.89-fold increased ASCVD hazard compared to non-diabetic women, while those with high CVH had no significant difference in ASCVD hazard. Similarly, diabetic men with low CVH had a 1.76-fold higher ASCVD hazard compared to non-diabetic men; whereas those with high CVH had no significant difference. Additionally, no significant difference in post-ASCVD mortality was observed between diabetics with high CVH and non-diabetics, as shown in Table 2. The findings remained consistent when using waist circumference instead of BMI to calculate CVH, and after further adjustment for education, household income, and depression. Similarly, the results were unaffected by excluding outcomes within the first 2 years of follow-up, cases of incident diabetes, or patients with an early diabetes diagnosis (before age 30). Furthermore, the associations were unchanged when using the nonimputed data (see Supplementary material online, Table S4 and S5). Analysis of participants with prediabetes revealed a pattern consistent with that observed in diabetes: individuals with prediabetes who achieved a high CVH score showed no increased risk of cardiovascular disease events and mortality compared to participants with normal glucose regulation (see Supplementary material online, Table S6). "
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                593,
+                939,
+                911
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The hazard ratios for ASCVD, post-ASCVD mortality, and mortality without ASCVD were lower in patients with moderate or high CVH "
+                    }
+                ]
+            },
+            "bbox": [
+                512,
+                911,
+                941,
+                941
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Cardiovascular health and life expectancy in diabetics "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                30,
+                373,
+                44
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5 "
+                    }
+                ]
+            },
+            "bbox": [
+                926,
+                30,
+                937,
+                42
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "Downloaded from https://academic.oup.com/eurjpc/advance-article/10.1093/eurjpc/zwaf742/8341080 by guest on 07 January 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                954,
+                196,
+                974,
+                800
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "compared to those with low CVH, regardless of T2DM status. In diabetic women, high CVH was associated with a "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "45 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "reduction in ASCVD hazard and a "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "3 7 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "reduction in post-ASCVD mortality compared to those with low CVH. Similarly, non-diabetic women with high CVH had a "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "50 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "lower ASCVD hazard and a "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "3 8 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "reduction in mortality following ASCVD. Diabetic men showed a "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "42 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "reduction in ASCVD hazard and a "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "36 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "reduction in post-ASCVD mortality, while non-diabetic men had a "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "47 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "and "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "36 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "reduction, respectively. There was no significant interaction between CVH level and diabetes status in terms of ASCVD incidence or mortality (see Table 3). "
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                71,
+                480,
+                215
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Life expectancy free from atherosclerotic cardiovascular disease "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                58,
+                232,
+                475,
+                264
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In patients with diabetes, an increase in CVH levels was associated with an extension in both total life expectancy and life expectancy free from ASCVD, compared with non-diabetic individuals. At the age of 40, diabetic women with low CVH exhibited a total life expectancy of 44.7 years "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "9 5 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "CI, 43.9–45.6), with 39.1 years (38.6–39.7) free from ASCVD. Those with high CVH expected a life expectancy of 48.2 years (47.4–49.1), with 43.3 years (42.7–43.8) ASCVD-free. In contrast, nondiabetic women had a total life expectancy of 50.0 years (49.2–50.8), with an estimated 44.8 years (44.2–45.3) predicted to be ASCVD-free. Similar patterns were observed in men at age 40. Diabetic men with low CVH are expected to have a life expectancy of 39.5 years (38.6–40.5), with an ASCVD-free expectancy of 32.8 years (32.2–33.4). This figure significantly increased for those with high CVH to 45.1 years (44.2–46.0), with 38.5 years (37.9–39.1) ASCVD-free. Non-diabetic men had a total life expectancy of 46.3 years (45.4–47.2), with 39.0 years (38.4–39.6) ASCVD-free (Figure 1). "
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                268,
+                480,
+                499
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Consistent with these findings on absolute life expectancy, at age 40, the percentage of remaining life without ASCVD increased from "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "8 7 . 5 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "to "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "8 9 . 6 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "in diabetic women as CVH improved from low to high, reaching the nearly same level as non-diabetic women "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "( 8 9 . 7 \\% )"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". Similarly, for men, this proportion rose from "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "8 2 . 9 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "(low CVH) to "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "8 5 . 6 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "(high CVH), approaching and even exceeding the "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "8 4 . 4 \\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "observed in non-diabetic men (Table 4). These findings remained unchanged when analyses were performed using unimputed data (see Supplementary material online, Figure S1, Supplementary material online, Table S6). Accordingly, the proportion of life expectancy spent with ASCVD decreased as CVH improved among individuals with diabetes, compared to those without diabetes (see Supplementary material online, Table S7). "
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                501,
+                480,
+                673
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Discussion "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                58,
+                698,
+                186,
+                713
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In this large, population-based longitudinal cohort analysis, it demonstrated that diabetic patients experienced progressively lower risks of incident ASCVD and overall mortality as CVH levels improved using non-diabetic individuals as the reference group. Diabetic patients with high CVH exhibited no significant excess risk of incident ASCVD and subsequent mortality compared to non-diabetics. Additionally, increasing CVH levels among diabetics was correlated with a reduction in the disparity in total and ASCVD-free life expectancy compared to nondiabetics. Furthermore, improved CVH levels in diabetic participants were also associated with a higher proportion of life expectancy free from ASCVD, compared to non-diabetic individuals. "
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                723,
+                480,
+                881
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research indicated that diabetic patients with high levels of CVH did not exhibit a significantly higher risk for the onset of ASCVD and subsequent mortality compared to non-diabetic individuals. Similarly, participants with prediabetes showed no increased risk when "
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                883,
+                480,
+                939
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/67225b9931c186f3802d1a89a2a8d62531ad11692aa9bcdad291b98f69cf40e5.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 3\r\nIncident ASCVD and mortality by CVH level among participants with and without diabetes\r\n "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "ASCVD, atherosclerotic cardiovascular disease; CVH, cardiovascular health; HR, hazard ratio; CI, confidence interval.\r\n "
+                    },
+                    {
+                        "type": "text",
+                        "content": "diagnosis was further adjusted.\r\n ASCVD, and cancer, the duration of diabetes (for diabetic patients), the use of diabetes medications (for diabetic patients), and the use of aspirin, antihypertensive, and lipid-lowering drugs. Additionally, for the HR of transition 3, the age at ASCVD \r\n Multistate survival analysis using the Gompertz distribution was utilized to compute HRs (and 95% CIs), with low CVH serving as the reference. The analysis was adjusted for age, ethnicity, the Townsend Deprivation Index, a family history of diabetes, \r\n "
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\">Gender</td><td rowspan=\"2\">Transition</td><td rowspan=\"2\">Presence of diabetes</td><td colspan=\"2\">Low CVH</td><td colspan=\"2\">Moderate CVH</td><td colspan=\"2\">High CVH</td><td rowspan=\"2\">P for interaction</td></tr><tr><td>No. of cases/person-years</td><td>HR (95% CI)</td><td>No. of cases/person-years</td><td>HR (95% CI)</td><td>No. of cases/person-years</td><td>HR (95% CI)</td></tr><tr><td rowspan=\"6\">Women</td><td rowspan=\"2\">Incident ASCVD</td><td>With diabetes</td><td>256/15 553.9</td><td>1 [reference]</td><td>190/15 859.8</td><td>0.65 (0.54–0.78)</td><td>164/17 742.6</td><td>0.55 (0.45–0.68)</td><td rowspan=\"2\">0.066</td></tr><tr><td>Without diabetes</td><td>1727/188 433.3</td><td>1 [reference]</td><td>2782/408 332.4</td><td>0.75 (0.70–0.79)</td><td>3664/998 830.6</td><td>0.50 (0.47–0.53)</td></tr><tr><td rowspan=\"2\">Mortality among those without ASCVD</td><td>With diabetes</td><td>90/13 540.9</td><td>1 [reference]</td><td>92/14 386.8</td><td>0.88 (0.66–1.18)</td><td>87/16 499.2</td><td>0.81 (0.60–0.96)</td><td rowspan=\"2\">0.053</td></tr><tr><td>Without diabetes</td><td>882/175 343.5</td><td>1 [reference]</td><td>1312/386 617.0</td><td>0.67 (0.62–0.73)</td><td>2312/969 440.3</td><td>0.58 (0.53–0.63)</td></tr><tr><td rowspan=\"2\">Mortality among those with ASCVD</td><td>With diabetes</td><td>62/1226.1</td><td>1 [reference]</td><td>34/969.3</td><td>0.64 (0.42–0.98)</td><td>27/848.9</td><td>0.63 (0.39–0.99)</td><td rowspan=\"2\">0.996</td></tr><tr><td>Without diabetes</td><td>360/8886.5</td><td>1 [reference]</td><td>404/14 099.5</td><td>0.66 (0.57–0.76)</td><td>480/17 955.6</td><td>0.62 (0.54–0.71)</td></tr><tr><td rowspan=\"6\">Men</td><td rowspan=\"2\">Incident ASCVD</td><td>With diabetes</td><td>652/24 932.4</td><td>1 [reference]</td><td>570/25 571.2</td><td>0.78 (0.70–0.88)</td><td>379/23 127.3</td><td>0.58 (0.51–0.66)</td><td rowspan=\"2\">0.780</td></tr><tr><td>Without diabetes</td><td>3639/230 435.9</td><td>1 [reference]</td><td>5343/442 782.5</td><td>0.74 (0.71–0.77)</td><td>5519/693 767.4</td><td>0.53 (0.51–0.55)</td></tr><tr><td rowspan=\"2\">Mortality among those without ASCVD</td><td>With diabetes</td><td>224/20 448.7</td><td>1 [reference]</td><td>204/21 489.3</td><td>0.78 (0.64–0.94)</td><td>149/20 410.2</td><td>0.64 (0.52–0.79)</td><td rowspan=\"2\">0.947</td></tr><tr><td>Without diabetes</td><td>1294/203 941.5</td><td>1 [reference]</td><td>2027/402 952.9</td><td>0.77 (0.72–0.82)</td><td>2296/650 933.7</td><td>0.60 (0.56–0.65)</td></tr><tr><td rowspan=\"2\">Mortality among those with ASCVD</td><td>With diabetes</td><td>217/3239.8</td><td>1 [reference]</td><td>156/2896.8</td><td>0.69 (0.56–0.85)</td><td>95/1914.9</td><td>0.64 (0.50–0.82)</td><td rowspan=\"2\">0.378</td></tr><tr><td>Without diabetes</td><td>854/18 941.9</td><td>1 [reference]</td><td>1064/27 542.2</td><td>0.80 (0.73–0.88)</td><td>896/27 597.6</td><td>0.64 (0.58–0.71)</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                544,
+                79,
+                870,
+                929
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6 "
+                    }
+                ]
+            },
+            "bbox": [
+                60,
+                30,
+                70,
+                41
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Y. Wei et al. "
+                    }
+                ]
+            },
+            "bbox": [
+                855,
+                31,
+                927,
+                42
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "Downloaded from https://academic.oup.com/eurjpc/advance-article/doi/10.1093/eurjpc/zwaf742/8341080 by guest on 07 January 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                957,
+                197,
+                973,
+                799
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/836873b4b252a6546b1f1d21a458bd152f4fb3e2efa3084f16d395d9bd5d0fdd.jpg"
+                },
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1 Total life expectancy and life expectancy with and without ASCVD across CVH levels among participants with diabetes compared with the participants without diabetes. ASCVD, atherosclerotic cardiovascular disease; CVH, cardiovascular health. Life expectancy was calculated using weighted transition rates, adjusted for age, ethnicity, the Townsend Deprivation Index, a family history of diabetes, ASCVD, and cancer, and the use of aspirin, antihypertensive, and lipid-lowering drugs, as well as age at ASCVD diagnosis. Each bar represents the life span of individuals, with the darker colour depicting life expectancy free from ASCVD. "
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                87,
+                85,
+                919,
+                406
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/b56dec32d1d8099bb8ce52c0570503c091348fdc4638015e62fbe620d55c7da2.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Table 4 Life expectancy free from ASCVD by CVH level "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "ASCVD, atherosclerotic cardiovascular disease; CVH, cardiovascular health; LE, life expectancy; CI, confidence interval. "
+                    },
+                    {
+                        "type": "text",
+                        "content": "LEs have been calculated with hazard ratios adjusted for age, ethnicity, the Townsend Deprivation Index, a family history of diabetes, ASCVD, and cancer, and the use of aspirin, antihypertensive, and lipid-lowering drugs, as well as age at ASCVD diagnosis. "
+                    },
+                    {
+                        "type": "text",
+                        "content": "a Proportion is computed by dividing the number of years lived with ASCVD by the total life expectancy at a specific age. "
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\">Age</td><td rowspan=\"2\">CVH level</td><td colspan=\"2\">Women</td><td colspan=\"2\">Men</td></tr><tr><td>LE without ASCVD, year (95% CI)</td><td>Proportion\\({}^{\\text{a}}\\), per cent (95% CI)</td><td>LE without ASCVD, year (95% CI)</td><td>Proportion\\({}^{\\text{a}}\\), per cent (95% CI)</td></tr><tr><td rowspan=\"4\">40</td><td>Low CVH</td><td>39.1 (38.6–39.7)</td><td>87.5 (87.1–87.9)</td><td>32.8 (32.2–33.4)</td><td>82.9 (82.4–83.4)</td></tr><tr><td>Moderate CVH</td><td>42.2 (41.7–42.7)</td><td>88.7 (88.4–89.1)</td><td>35.8 (35.2–36.4)</td><td>83.0 (82.6–83.5)</td></tr><tr><td>High CVH</td><td>43.3 (42.7–43.8)</td><td>89.6 (89.2–89.9)</td><td>38.5 (37.9–39.1)</td><td>85.6 (85.2–86.0)</td></tr><tr><td>Without diabetes</td><td>44.8 (44.2–45.3)</td><td>89.7 (89.4–90.0)</td><td>39.0 (38.4–39.6)</td><td>84.4 (84.0–84.8)</td></tr><tr><td rowspan=\"4\">50</td><td>Low CVH</td><td>29.5 (29.0–30.1)</td><td>84.1 (83.6–84.6)</td><td>23.4 (22.8–24.0)</td><td>78.1 (77.5–78.7)</td></tr><tr><td>Moderate CVH</td><td>32.5 (32.0–33.1)</td><td>85.9 (85.5–86.3)</td><td>26.3 (25.7–26.8)</td><td>78.6 (78.0–79.1)</td></tr><tr><td>High CVH</td><td>33.5 (33.0–34.1)</td><td>86.9 (86.6–87.3)</td><td>28.9 (28.3–29.5)</td><td>81.9 (81.5–82.4)</td></tr><tr><td>Without diabetes</td><td>35.0 (34.5–35.6)</td><td>87.2 (86.8–87.6)</td><td>29.4 (28.8–30.0)</td><td>80.6 (80.0–81.1)</td></tr><tr><td rowspan=\"4\">60</td><td>Low CVH</td><td>20.3(19.8–20.9)</td><td>79.0 (78.4–79.6)</td><td>15.1 (14.6–15.7)</td><td>71.5 (70.7–72.3)</td></tr><tr><td>Moderate CVH</td><td>23.1 (22.6–23.7)</td><td>81.6 (81.0–82.1)</td><td>17.6 (17.0–18.2)</td><td>72.3 (71.6–73.0)</td></tr><tr><td>High CVH</td><td>24.1 (23.6–24.7)</td><td>83.0 (82.5–83.5)</td><td>20.0 (19.4–20.5)</td><td>76.9 (76.2–77.5)</td></tr><tr><td>Without diabetes</td><td>25.5 (25.0–26.0)</td><td>83.5 (83.1–84.0)</td><td>20.4 (19.8–21.0)</td><td>75.2 (74.6–75.9)</td></tr><tr><td rowspan=\"4\">70</td><td>Low CVH</td><td>12.2 (11.7–12.8)</td><td>71.1 (70.3–72.0)</td><td>8.5 (8.0–9.0)</td><td>62.1 (61.0–63.5)</td></tr><tr><td>Moderate CVH</td><td>14.6 (14.1–15.2)</td><td>74.8 (74.1–75.5)</td><td>10.3 (9.8–10.8)</td><td>63.4 (62.5–64.4)</td></tr><tr><td>High CVH</td><td>15.5 (15.0–16.0)</td><td>76.9 (76.2–77.6)</td><td>12.3 (11.8–12.8)</td><td>69.6 (68.8–70.4)</td></tr><tr><td>Without diabetes</td><td>16.7 (16.2–17.2)</td><td>77.9 (77.3–78.6)</td><td>12.6 (12.1–13.2)</td><td>67.6 (66.7–68.4)</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                77,
+                567,
+                929,
+                873
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Cardiovascular health and life expectancy in diabetics "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                30,
+                374,
+                44
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7 "
+                    }
+                ]
+            },
+            "bbox": [
+                924,
+                30,
+                937,
+                42
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "Downloaded from https://academic.oup.com/eurjpc/advance-article/doi/10.1093/eurjpc/zwaf742/8341080 by guest on 07 January 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                954,
+                197,
+                974,
+                800
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "compared to those with normal glucose regulation. This conclusion is consistent with previous research findings, where CVH was represented by Life’s Simple 7. The study demonstrated that patients with diabetes or prediabetes with more than five components of Life’s Simple 7 had lower or no significant excess risks for cardiovascular disease compared to participants with normal glucose regulation.9 However, our results indicated that high CVH levels among diabetic women did not reduce the mortality risk for those without ASCVD to levels comparable to non-diabetic individuals. One potential explanation for this finding could be our method of stratifying CVH into tertiles, with ‘High CVH’ defined as a CVH score "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "{ > } 6 5 . 6"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", which is below the AHA’s recommended level threshold of 80 or above. This approach was adopted to ensure greater statistical power in our analysis. Given an adequate sample size, it will be valuable to conduct specialized research to determine whether achieving the AHA-recommended high CVH level, or a more stringent standard, would have a stronger impact on the overall ASCVD progression and mortality. "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                71,
+                480,
+                316
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Furthermore, our stratified analysis demonstrated that the association between higher CVH and reduced risk of ASCVD and its slower progression to mortality was consistent for both participants with and without diabetes. This suggests that CVH level and diabetes status act as independent contributors of ASCVD and mortality. Therefore, the substantial risk reduction associated with higher CVH in participants with diabetes likely represents an additive benefit, rather than a modification of the underlying disease process conferred by diabetes itself. This distinction is clinically crucial. While our findings champion the message of risk mitigation—that improving CVH can bring the risk for individuals with diabetes closer to that of non-diabetic individuals—it should not be interpreted as reducing the need for standard diabetes care and glycaemic management. Moreover, our baseline characteristics data revealed that diabetic patients generally exhibited lower CVH levels than non-diabetic patients. Specifically, a greater proportion of diabetic individuals had low CVH levels, while fewer had high CVH levels. Therefore, there is considerable potential for promoting CVH as a strategy for preventing cardiovascular diseases among diabetic patients. "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                317,
+                480,
+                578
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To the best of our knowledge, this is the first study to evaluate the associations between CVH and lifestyle with life expectancy free from ASCVD in diabetic patients compared to non-diabetic individuals. Previous research has underscored the significance of CVH in extending disease-free life expectancy in the general population. An analysis of UK Biobank data demonstrated that individuals with high levels of CVH had significantly longer life expectancies free from major chronic illnesses, including CVD, diabetes, cancer, and dementia, across various socioeconomic strata.15 Li et "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "a l . ^ { 2 0 }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "discovered that maintaining a healthy lifestyle, which includes never smoking, maintaining a body mass index of 18.5–24.9, engaging in moderate to vigorous physical activity, consuming alcohol in moderation, and achieving a higher diet quality score, was linked to an extended lifespan free from diabetes, cardiovascular diseases, and cancer. In the Chicago Health and Aging Project, adopting a healthy lifestyle characterized by five key factors (non-smoking, a healthy diet, cognitive activities, physical activities, and moderate alcohol consumption) was found to correlate with increased life expectancy, alongside a greater proportion of years lived without Alzheimer’s dementia.21 Research utilizing three sub-cohorts from the Rotterdam Study indicated that an overall healthy lifestyle—encompassing a nutritious diet, physical activity, non-smoking, maintaining a healthy weight, and abstaining from or minimally consuming alcohol—positively influenced overall life expectancy, and the number of years lived free from heart failure.22 Our study extended the role of CVH and lifestyle from the general population to individuals with diabetes, first demonstrating that high CVH levels can compensate for the "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                578,
+                480,
+                941
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "shortened life expectancy and ASCVD-free life expectancy associated with diabetes. Building on previous studies that showed high CVH reduces the incidence of ASCVD and mortality in diabetic populations, our work further demonstrated that elevated CVH mitigates the negative influence of diabetes on shortened lifespan and years of life spent free of ASCVD. This provides policymakers and individuals with more easily understandable evidence for promoting high CVH levels within the diabetic community. However, in addition to cardiovascular disease, complications for diabetic patients also include chronic kidney disease, retinopathy, neuropathy, and so on. We look forward to future research on the relationship between CVH and other diabetic complications, which will provide a more comprehensive understanding of CVH’s role in the health outcomes of diabetes patients. "
+                    }
+                ]
+            },
+            "bbox": [
+                502,
+                71,
+                929,
+                258
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This study has several limitations: (1) Our analysis was based exclusively on diagnosed diseases recorded within the UK Biobank, potentially overlooking individuals with undocumented conditions. Nevertheless, previous studies have validated the reliability of routinely collected hospital admission data for epidemiological research.23,24 (2) The CVH metrics were only assessed at baseline; hence, potential variations in CVH over the follow-up period were not accounted for. However, the outcomes of this study can still guide predictions about future health based on an individual’s current characteristics. (3) The participants excluded due to missing data were disproportionately male, non-white, and from lower TDI backgrounds. Furthermore, the UK Biobank cohort predominantly consisted of white individuals with higher socioeconomic status, which could introduce selection bias. However, this study investigated the exposure-disease relationship, the generalizability of which doesn’t require participants to be representative.2 5 (4) Although we adjusted for known biases, the possibility of residual confounding remained, and the observational nature of our study precluded the establishment of causation. "
+                    }
+                ]
+            },
+            "bbox": [
+                505,
+                259,
+                929,
+                520
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Conclusion "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                505,
+                547,
+                640,
+                564
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Diabetic patients who maintained high CVH levels were able to offset the risk of transitioning from health to incident ASCVD and subsequent mortality compared to non-diabetic individuals, thereby achieving a life expectancy free from ASCVD that is closer to that of non-diabetic individuals. This study supports the promotion of CVH as a strategy to enhance the quality of lifespan in patients with T2DM. "
+                    }
+                ]
+            },
+            "bbox": [
+                502,
+                573,
+                929,
+                660
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Supplementary material "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                505,
+                687,
+                801,
+                708
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Supplementary material is available at European Journal of Preventive Cardiology. "
+                    }
+                ]
+            },
+            "bbox": [
+                502,
+                713,
+                929,
+                742
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Acknowledgements "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                505,
+                761,
+                707,
+                778
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We are grateful to all the participants of UK Biobank. "
+                    }
+                ]
+            },
+            "bbox": [
+                502,
+                781,
+                813,
+                795
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Author contributions "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                505,
+                822,
+                766,
+                839
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "J.W., X.L., and Y.W. were involved in the conception and design of the study. Y.W. analysed and interpreted the results and wrote the first draft of the manuscript. J.W., X.L., D.S., S.N., and Y.H. edited and reviewed the manuscript draft. All authors approved the final version of the manuscript. J.W., X.L., and Y.W. are the guarantors of this work and, as such, had full access to all the data in the study and take responsibility for the integrity of the data and the accuracy of the data analysis. "
+                    }
+                ]
+            },
+            "bbox": [
+                502,
+                847,
+                929,
+                941
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8 "
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                30,
+                70,
+                42
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Y. Wei et al. "
+                    }
+                ]
+            },
+            "bbox": [
+                855,
+                30,
+                927,
+                42
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "Downloaded from https://academic.oup.com/eurjpc/advance-article/10.1093/eurjpc/zwaf742/8341080 by guest on 07 January 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                954,
+                196,
+                974,
+                800
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Yanxia Wei (Data curation [equal]; Formal analysis [lead]; Methodology [lead]; Software [lead]; Validation [supporting]; Writing—original draft [lead]; Writing—review & editing [supporting]), Dawei Sun (MD (Formal analysis [supporting]; Funding acquisition [supporting]; Methodology [supporting]; Validation [equal]; Writing—review & editing [equal])), Stella Ng (Methodology [supporting]; Validation [equal]; Writing—review & editing [equal]), Yuxin He (MD (Methodology [supporting]; Validation [equal]; Writing—review & editing [equal])), Xianbao Liu (MD (Conceptualization [equal]; Data curation [equal]; Funding acquisition [supporting]; Project administration [equal]; Supervision [equal]; Validation [equal])), and Jian‘an Wang (MD (Conceptualization [equal]; Data curation [equal]; Funding acquisition [lead]; Project administration [equal]; Supervision [equal]; Validation [equal])) "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                71,
+                492,
+                230
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Funding "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                248,
+                149,
+                266
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This work was supported by National Key Research and Development Program of China (2019YFA0110400 for J.W.); National Natural Science Foundation of China (No. 82030014 for J.W., No. 81570233, 81770252 for "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\mathsf { \\times . B . L . }"
+                    },
+                    {
+                        "type": "text",
+                        "content": "., No. 82302479 for D.W.S.); Key Research and Development Program of Zhejiang Province (Nos. 2021C03097, 2018C03084 for J.W., No. 2022C03063 for X.B.L.); Zhejiang Research Center of Cardiovascular Diagnosis and Treatment Technology (JBZX-202001 for J.W.); Healthy Zhejiang One Million People Cohort (K-20230085 for J.W.). The funding bodies had no role in the study design, data collection, data analysis, decision to publish, or preparation of the manuscript. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                268,
+                492,
+                402
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Conflict of interest: None declared. "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                409,
+                294,
+                421
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Data availability "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                440,
+                231,
+                457
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research has been conducted using the UK Biobank Resource under application number 86898. UK Biobank data are available through registration on the UK Biobank (www.ukbiobank.ac.uk). "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                460,
+                489,
+                501
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "References "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                518,
+                181,
+                534
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "1. Zheng Y, Ley SH, Hu FB. Global aetiology and epidemiology of type 2 diabetes mellitus and its complications. Nat Rev Endocrinol 2018;14:88–98. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "2. Wong ND, Sattar N. Cardiovascular risk in diabetes mellitus: epidemiology, assessment and prevention. Nat Rev Cardiol 2023;20:685–695. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "3. Sattar N, Rawshani A, Franzén S, Rawshani A, Svensson AM, Rosengren A, et al. Age at diagnosis of type 2 diabetes Mellitus and associations with cardiovascular and mortality risks. Circulation 2019;139:2228–2237. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "4. American Diabetes Association Professional Practice Collaborators. 4. Comprehensive medical evaluation and assessment of comorbidities: standards of care in diabetes-2025. Diabetes Care 2025;48:S59–S85. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "5. Ried-Larsen M, Rasmussen MG, Blond K, Overvad TF, Overvad K, Steindorf K, et al. Association of cycling with all-cause and cardiovascular disease mortality among persons with diabetes: the European prospective investigation into cancer and nutrition (EPIC) study. JAMA Intern Med 2021;181:1196–1205. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "6. Kristensen FP, Sanchez-Lastra MA, Dalene KE, del Pozo Cruz B, Ried-Larsen M, Thomsen RW, et al. Leisure-time physical activity and risk of microvascular complications in individuals with type 2 diabetes: a UK Biobank study. Diabetes Care 2023;46: 1816–1824. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                535,
+                489,
+                749
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "7. Lloyd-Jones DM, Allen NB, Anderson CA, Black T, Brewer LC, Foraker RE, et al. Life’s essential 8: updating and enhancing the American Heart Association’s construct of cardiovascular health: a presidential advisory from the American Heart Association. Circulation 2022;146:e18–e43. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "8. He P, Li H, Ye Z, Liu M, Zhou C, Wu Q, et al. Association of a healthy lifestyle, life’s essential 8 scores with incident macrovascular and microvascular disease among individuals with type 2 diabetes. J Am Heart Assoc 2023;12:e029441. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "9. Wang T, Lu J, Su Q, Chen Y, Bi Y, Mu Y, et al. Ideal cardiovascular health metrics and Major cardiovascular events in patients with prediabetes and diabetes. JAMA Cardiol 2019;4:874–883. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "10. Sun J, Li Y, Zhao M, Yu X, Zhang C, Magnussen CG, et al. Association of the American Heart Association’s new “life’s essential 8” with all-cause and cardiovascular diseasespecific mortality: prospective cohort study. BMC Med 2023;21:116. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "11. Li W, Xing A, Xu W, Guo L, Gao X, Zhou S, et al. Life’s essential 8 in relation to cardiovascular disease and mortality in individuals with diabetes. JACC Asia 2024;4:456–464. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "12. Sudlow C, Gallacher J, Allen N, Beral V, Burton P, Danesh J, et al. UK Biobank: an open access resource for identifying the causes of a wide range of complex diseases of middle and old age. PLoS Med 2015;12:e1001779. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "13. Elliott J, Bodinier B, Bond TA, Chadeau-Hyam M, Evangelou E, Moons KG, et al. Predictive accuracy of a polygenic risk score-enhanced prediction model vs a clinical risk score for coronary artery disease. JAMA 2020;323:636–645. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "14. Mozaffarian D. Dietary and policy priorities for cardiovascular disease, diabetes, and obesity: a comprehensive review. Circulation 2016;133:187–225. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "15. Wang X, Ma H, Li X, Heianza Y, Manson JE, Franco OH, et al. Association of cardiovascular health with life expectancy free of cardiovascular disease, diabetes, cancer, and dementia in UK adults. JAMA Intern Med 2023;183:340–349. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "16. Han H, Cao Y, Feng C, Zheng Y, Dhana K, Zhu S, et al. Association of a healthy lifestyle with all-cause and cause-specific mortality among individuals with type 2 diabetes: a prospective study in UK Biobank. Diabetes Care 2022;45:319–329. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "17. Liu G, Li Y, Hu Y, Zong G, Li S, Rimm EB, et al. Influence of lifestyle on incident cardiovascular disease and mortality in patients with diabetes Mellitus. J Am Coll Cardiol 2018; 71:2867–2876. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "18. Patel AP, Wang M, Kartoun U, Ng K, Khera AV. Quantifying and understanding the higher risk of atherosclerotic cardiovascular disease among South Asian individuals: results from the UK Biobank prospective cohort study. Circulation 2021;144:410–422. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "19. Ai S, Zhang J, Zhao G, Wang N, Li G, So HC, et al. Causal associations of short and long sleep durations with 12 cardiovascular diseases: linear and nonlinear Mendelian randomization analyses in UK Biobank. Eur Heart J 2021;42:3349–3357. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "20. Li Y, Schoufour J, Wang DD, Dhana K, Pan A, Liu X, et al. Healthy lifestyle and life expectancy free of cancer, cardiovascular disease, and type 2 diabetes: prospective cohort study. BMJ 2020;368:l6669. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "21. Dhana K, Franco OH, Ritz EM, Ford CN, Desai P, Krueger KR, et al. Healthy lifestyle and life expectancy with and without Alzheimer’s dementia: population based cohort study. BMJ 2022;377:e068390. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "22. Limpens MA, Asllanaj E, Dommershuijsen LJ, Boersma E, Ikram MA, Kavousi M, et al. Healthy lifestyle in older adults and life expectancy with and without heart failure. Eur J Epidemiol 2022;37:205–214. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "23. Eastwood SV, Mathur R, Atkinson M, Brophy S, Sudlow C, Flaig R, et al. Algorithms for the capture and adjudication of prevalent and incident diabetes in UK biobank. PLoS One 2016;11:e0162388. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "24. Rannikmäe K, Ngoh K, Bush K, Al-Shahi Salman R, Doubal F, Flaig R, et al. Accuracy of identifying incident stroke cases from linked health care data in UK Biobank. Neurology 2020;95:e697–e707. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "25. Fry A, Littlejohns TJ, Sudlow C, Doherty N, Adamska L, Sprosen T, et al. Comparison of sociodemographic and health-related characteristics of UK Biobank participants with those of the general population. Am J Epidemiol 2017;186:1026–1034. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                517,
+                71,
+                939,
+                750
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Cardiovascular health and life expectancy in diabetics "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                30,
+                373,
+                44
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9 "
+                    }
+                ]
+            },
+            "bbox": [
+                926,
+                30,
+                937,
+                42
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "Downloaded from https://academic.oup.com/eurjpc/advance-article/doi/10.1093/eurjpc/zwaf742/8341080 by guest on 07 January 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                954,
+                197,
+                974,
+                800
+            ]
+        }
+    ]
+]
