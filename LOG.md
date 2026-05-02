@@ -14,6 +14,8 @@
 - Added project documentation:
   - `README.md`
   - `LOG.md`
+- Created the public GitHub repository `godlovedawei-cloud/yanxiawei.com`.
+- Enabled GitHub Pages from the `main` branch root. Latest Pages status: built.
 
 ## DNS Notes
 
@@ -23,3 +25,4 @@
   - apex `AAAA` records: `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
   - `www` CNAME: `godlovedawei-cloud.github.io`
 - DNS changes require a dry-run review and explicit confirmation before replacing existing records.
+- Porkbun API dry-run was attempted, but Porkbun returned `DOMAIN_IS_NOT_OPTED_IN_TO_API_ACCESS`. Enable API access for the domain in Porkbun account settings before applying DNS changes through the API.
