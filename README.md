@@ -16,6 +16,7 @@ Static academic homepage for Yanxia Wei, Ph.D.
 - `assets/profile.jpg`: optimized portrait used on the homepage.
 - `assets/profile-original.png`: original portrait copy kept for future edits.
 - `assets/favicon.svg`: browser tab icon.
+- `assets/logo/`: institution logos used in the Experience and Education section.
 - `assets/Yanxia_Wei_CV.pdf`: downloadable CV linked from the hero.
 - `assets/Yanxia_Wei_publications.enw`: EndNote export file linked from the publications section.
 - `assets/articles/`: article PDFs linked from publications and conference entries.

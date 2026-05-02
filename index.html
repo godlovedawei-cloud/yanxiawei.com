@@ -236,10 +236,21 @@
 
         .contact-list {
             display: grid;
-            gap: 12px;
+            gap: 14px;
             margin-top: 24px;
-            color: var(--muted);
+            color: var(--body);
             font-size: 0.95rem;
+        }
+
+        .affiliation {
+            display: inline-flex;
+            width: fit-content;
+            border-left: 4px solid var(--wine);
+            padding: 8px 12px;
+            color: var(--ink);
+            background: rgba(255, 255, 255, 0.64);
+            font-weight: 800;
+            line-height: 1.45;
         }
 
         .email-list {
@@ -351,6 +362,30 @@
             grid-template-columns: 170px minmax(0, 1fr);
             gap: 24px;
             padding: 24px;
+        }
+
+        .timeline-item-logo {
+            grid-template-columns: 150px 64px minmax(0, 1fr);
+            align-items: start;
+        }
+
+        .timeline-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #ffffff;
+            padding: 8px;
+        }
+
+        .timeline-logo img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
 
         .timeline-date {
@@ -693,6 +728,20 @@
                 grid-template-columns: 1fr;
                 gap: 10px;
             }
+
+            .timeline-item-logo {
+                grid-template-columns: 54px minmax(0, 1fr);
+                gap: 14px;
+            }
+
+            .timeline-item-logo .timeline-date {
+                grid-column: 1 / -1;
+            }
+
+            .timeline-logo {
+                width: 54px;
+                height: 54px;
+            }
         }
 
         @media (max-width: 640px) {
@@ -788,7 +837,7 @@
                         <a class="button" href="https://orcid.org/0000-0001-9245-2722" target="_blank" rel="noopener">ORCID</a>
                     </div>
                     <div class="contact-list" aria-label="Contact details">
-                        <span>The Second Affiliated Hospital, Zhejiang University School of Medicine</span>
+                        <span class="affiliation">The Second Affiliated Hospital, Zhejiang University School of Medicine</span>
                         <div class="email-list">
                             <a href="mailto:yanxiawei@zju.edu.cn">yanxiawei@zju.edu.cn</a>
                             <a href="mailto:yanxiawei519@gmail.com">yanxiawei519@gmail.com</a>
@@ -957,32 +1006,44 @@
                 <p class="section-kicker">Experience &amp; Education</p>
                 <h2 class="section-title">Training and appointments.</h2>
                 <div class="timeline">
-                    <article class="timeline-item">
+                    <article class="timeline-item timeline-item-logo">
                         <div class="timeline-date">2021-present</div>
+                        <div class="timeline-logo" aria-hidden="true">
+                            <img src="assets/logo/浙二logo的副本2.png" alt="">
+                        </div>
                         <div>
                             <h3 class="timeline-title">Assistant Research Fellow</h3>
                             <p class="timeline-org">Cardiovascular Key Laboratory of Zhejiang Province, Second Affiliated Hospital, Zhejiang University School of Medicine</p>
-                            <p>Lead researcher for UK Biobank Application No. 86898. Manages research databases for more than 500,000 participants using cloud-based platforms, including the Research Analysis Platform, and develops R/Python pipelines for complex phenotypes, EHR data, and genotypic databases.</p>
+                            <p>Works within the Department of Cardiology at the Second Affiliated Hospital of Zhejiang University School of Medicine, a National Clinical Key Specialty and nationally leading cardiovascular center, with interventional cardiology procedure volume ranked among the global top three. Lead researcher for UK Biobank Application No. 86898, managing research databases for more than 500,000 participants and developing R/Python pipelines for complex phenotypes, EHR data, and genotypic databases. Provides epidemiologic and biostatistical support for clinician-led studies, advises physicians on clinical research design and statistical strategy, and delivers statistics training for cardiology clinicians.</p>
                         </div>
                     </article>
-                    <article class="timeline-item">
+                    <article class="timeline-item timeline-item-logo">
                         <div class="timeline-date">2015-2020</div>
+                        <div class="timeline-logo" aria-hidden="true">
+                            <img src="assets/logo/fudan.png" alt="">
+                        </div>
                         <div>
                             <h3 class="timeline-title">Ph.D. in Preventive Medicine and Health Education</h3>
                             <p class="timeline-org">School of Public Health, Fudan University</p>
                             <p>Focused on smoking cessation interventions, mobile health engagement, and evaluation of smoke-free legislation using mixed methods, SEM, LCA, GLMM, and longitudinal modeling.</p>
                         </div>
                     </article>
-                    <article class="timeline-item">
+                    <article class="timeline-item timeline-item-logo">
                         <div class="timeline-date">2018-2019</div>
+                        <div class="timeline-logo" aria-hidden="true">
+                            <img src="assets/logo/melbourne.webp" alt="">
+                        </div>
                         <div>
                             <h3 class="timeline-title">Visiting Ph.D. Student</h3>
                             <p class="timeline-org">Melbourne Centre for Behaviour Change, University of Melbourne</p>
-                            <p>Worked within the School of Psychological Sciences on behavior change research and intervention evaluation.</p>
+                            <p>Visiting Ph.D. student under the mentorship of Professor Ron Borland, working within the School of Psychological Sciences on behavior change theory, smoking cessation research, and intervention evaluation.</p>
                         </div>
                     </article>
-                    <article class="timeline-item">
+                    <article class="timeline-item timeline-item-logo">
                         <div class="timeline-date">2010-2015</div>
+                        <div class="timeline-logo" aria-hidden="true">
+                            <img src="assets/logo/shanxi med uni.png" alt="">
+                        </div>
                         <div>
                             <h3 class="timeline-title">Bachelor of Medicine, Preventive Medicine</h3>
                             <p class="timeline-org">School of Public Health, Shanxi Medical University</p>

@@ -54,6 +54,15 @@
 
 ### Experience, Skills, and CV Alignment
 
+- Strengthened the hero affiliation display for the Second Affiliated Hospital, Zhejiang University School of Medicine so it reads as a confident institutional anchor rather than muted secondary text.
+- Added institution logos to the Experience and Education timeline:
+  - Second Affiliated Hospital, Zhejiang University School of Medicine
+  - Fudan University
+  - University of Melbourne
+  - Shanxi Medical University
+- Expanded the Assistant Research Fellow entry to highlight the Department of Cardiology at SAHZU as a National Clinical Key Specialty, a nationally leading cardiovascular center, and a center with global top-three interventional cardiology procedure volume.
+- Added clinician-facing responsibilities to the Assistant Research Fellow entry, including epidemiologic and biostatistical support, clinical research design consultation, statistical strategy advising, and statistics training for cardiology clinicians.
+- Revised the University of Melbourne visiting Ph.D. entry to state mentorship by Professor Ron Borland and frame the work around behavior change theory, smoking cessation research, and intervention evaluation.
 - Aligned project and publication language with `/Users/sun/Desktop/Yanxia/CV_yanxiawei new.pdf`.
 - Updated smoking cessation project:
   - `Theory-Driven mHealth Intervention for Smoking Cessation`
