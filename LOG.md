@@ -2,6 +2,11 @@
 
 ## 2026-05-02
 
+- Rebuilt the publications section from the supplied `article list.txt` and Google Scholar results.
+- Reordered the page so first-author papers appear first, followed by collaborative papers.
+- Replaced `et al.` with full author lists for the listed articles and added PubMed links or PubMed search links where needed.
+- Added the secondary email address `yanxiawei519@gmail.com` as plain text, without a mailto link.
+- Added the 2024 Circulation conference abstract to a dedicated conference section.
 - Replaced the CV with the newer file `CV_yanxiawei new.pdf`.
 - Added selected article PDFs from `Articles.zip` under `assets/articles/` and linked them from the publications section.
 - Updated profile wording, position title, research experience, publication metadata, and skills to match the newer CV.
