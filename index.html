@@ -163,15 +163,21 @@
         }
 
         .hero-title {
-            font-size: clamp(3rem, 8vw, 5.8rem);
+            max-width: 620px;
+            font-size: clamp(2.1rem, 3.5vw, 2.85rem);
+            line-height: 1.02;
             letter-spacing: 0;
-            max-width: 780px;
+        }
+
+        .hero-title span {
+            display: block;
         }
 
         .hero-subtitle {
             color: var(--moss);
             font-size: clamp(1.05rem, 2vw, 1.35rem);
             font-weight: 700;
+            line-height: 1.55;
             margin-top: 18px;
         }
 
@@ -179,6 +185,7 @@
             max-width: 720px;
             margin-top: 24px;
             font-size: 1.08rem;
+            line-height: 1.6;
         }
 
         .hero-status {
@@ -228,12 +235,31 @@
         }
 
         .contact-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px 18px;
+            display: grid;
+            gap: 12px;
             margin-top: 24px;
             color: var(--muted);
             font-size: 0.95rem;
+        }
+
+        .email-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 16px;
+        }
+
+        .email-list a {
+            color: var(--ink);
+            font-size: 1rem;
+            font-weight: 800;
+            text-decoration: underline;
+            text-decoration-color: rgba(85, 113, 95, 0.35);
+            text-underline-offset: 4px;
+        }
+
+        .email-list a:hover {
+            color: var(--wine);
+            text-decoration-color: rgba(138, 61, 79, 0.55);
         }
 
         .portrait {
@@ -285,6 +311,7 @@
         }
 
         #research,
+        #projects,
         #publications {
             background: var(--soft);
             border-bottom: 1px solid var(--line);
@@ -350,6 +377,133 @@
             padding-left: 18px;
         }
 
+        .flagship-list {
+            display: grid;
+            gap: 30px;
+        }
+
+        .project-card {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr);
+            gap: 28px;
+            align-items: center;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface);
+            padding: 28px;
+        }
+
+        .project-card:nth-child(even) .project-media {
+            order: -1;
+        }
+
+        .project-label {
+            color: var(--wine);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .project-card h3 {
+            font-size: clamp(1.55rem, 3vw, 2.1rem);
+            margin-bottom: 12px;
+        }
+
+        .project-punchline {
+            color: var(--moss);
+            font-size: 1.02rem;
+            font-weight: 800;
+            line-height: 1.55;
+            margin-bottom: 18px;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            margin: 18px 0 20px;
+        }
+
+        .project-metric {
+            border: 1px solid rgba(184, 137, 66, 0.32);
+            border-radius: 8px;
+            background: rgba(184, 137, 66, 0.09);
+            padding: 12px;
+        }
+
+        .project-metric strong {
+            display: block;
+            color: var(--ink);
+            font-family: "Source Serif 4", Georgia, serif;
+            font-size: 1.35rem;
+            line-height: 1;
+        }
+
+        .project-metric span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.78rem;
+            font-weight: 700;
+            line-height: 1.35;
+            margin-top: 6px;
+        }
+
+        .project-detail-grid {
+            display: grid;
+            grid-column: 1 / -1;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px 24px;
+        }
+
+        .project-detail-grid h4 {
+            color: var(--ink);
+            font-size: 0.82rem;
+            letter-spacing: 0.06em;
+            margin: 0 0 4px;
+            text-transform: uppercase;
+        }
+
+        .project-detail-grid p {
+            color: var(--body);
+            font-size: 0.95rem;
+            line-height: 1.58;
+        }
+
+        .project-detail-grid .publication-links {
+            grid-column: 1 / -1;
+            margin-top: 0;
+        }
+
+        .project-media {
+            min-width: 0;
+        }
+
+        .project-figure {
+            margin: 0;
+        }
+
+        .project-figure img {
+            display: block;
+            width: auto;
+            max-width: 100%;
+            max-height: 460px;
+            height: auto;
+            margin: 0 auto;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #ffffff;
+            object-fit: contain;
+        }
+
+        .project-figure figcaption {
+            color: var(--muted);
+            font-size: 0.82rem;
+            line-height: 1.45;
+            margin-top: 10px;
+        }
+
         .publication-list {
             display: grid;
             gap: 14px;
@@ -362,6 +516,13 @@
 
         .publication-group + .publication-group {
             margin-top: 28px;
+        }
+
+        .section-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: -10px 0 24px;
         }
 
         .publication {
@@ -384,6 +545,40 @@
         .journal {
             color: var(--muted);
             font-size: 0.92rem;
+        }
+
+        .journal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .journal-tag {
+            display: inline-flex;
+            align-items: center;
+            min-height: 26px;
+            border: 1px solid rgba(184, 137, 66, 0.46);
+            border-radius: 999px;
+            padding: 0 10px;
+            color: #6d4c1f;
+            background: rgba(184, 137, 66, 0.13);
+            font-size: 0.78rem;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .journal-tag.q1 {
+            border-color: rgba(138, 61, 79, 0.44);
+            color: var(--wine);
+            background: rgba(138, 61, 79, 0.1);
+        }
+
+        .journal-tag.q2,
+        .journal-tag.citation {
+            border-color: rgba(85, 113, 95, 0.38);
+            color: var(--moss);
+            background: rgba(85, 113, 95, 0.1);
         }
 
         .publication-links {
@@ -409,31 +604,19 @@
             text-decoration: none;
         }
 
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            min-height: 24px;
-            margin-left: 8px;
-            border: 1px solid rgba(184, 137, 66, 0.42);
-            border-radius: 999px;
-            padding: 0 9px;
-            color: #7b5729;
-            background: rgba(184, 137, 66, 0.1);
-            font-size: 0.78rem;
-            font-style: normal;
-            font-weight: 700;
-            white-space: nowrap;
-        }
-
         .skills-layout {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 24px;
         }
 
         .skill-column h3 {
             font-size: 1.25rem;
             margin-bottom: 14px;
+        }
+
+        .skill-column h3 + .tag-list + h3 {
+            margin-top: 22px;
         }
 
         .tag-list {
@@ -487,9 +670,14 @@
 
             .hero-grid,
             .focus-grid,
+            .project-card,
             .skills-layout,
             .teaching-awards {
                 grid-template-columns: 1fr;
+            }
+
+            .project-card:nth-child(even) .project-media {
+                order: 0;
             }
 
             .hero-grid {
@@ -525,14 +713,43 @@
             }
 
             #hero {
-                padding-top: 42px;
+                padding-top: 32px;
+                padding-bottom: 52px;
+            }
+
+            .hero-title {
+                max-width: 100%;
+                font-size: clamp(1.72rem, 8vw, 1.95rem);
+                line-height: 1.04;
+            }
+
+            .hero-subtitle,
+            .hero-copy {
+                font-size: 0.98rem;
+            }
+
+            .hero-actions .button {
+                min-height: 42px;
+                padding: 0 16px;
             }
 
             .stats-row {
                 grid-template-columns: 1fr;
             }
 
-            .contact-list {
+            .project-card {
+                padding: 20px;
+            }
+
+            .project-metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .project-detail-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .email-list {
                 display: grid;
                 gap: 8px;
             }
@@ -545,6 +762,7 @@
             <a class="brand" href="#hero">Yanxia Wei</a>
             <div class="nav-links">
                 <a href="#research">Research</a>
+                <a href="#projects">Projects</a>
                 <a href="#experience">Experience</a>
                 <a href="#publications">Publications</a>
                 <a href="#skills">Skills</a>
@@ -557,23 +775,24 @@
             <div class="hero-grid">
                 <div>
                     <p class="eyebrow">Cardiovascular Epidemiology | Causal Inference | UK Biobank</p>
-                    <h1 class="hero-title">Data-Driven Epidemiologist &amp; Public Health Researcher</h1>
+                    <h1 class="hero-title"><span>Data-Driven Epidemiology</span><span>&amp; Public Health Research</span></h1>
                     <p class="hero-subtitle">Utilizing large-scale cohorts, genetic evidence, and biomarker data to study the etiology of cardiovascular and chronic diseases.</p>
                     <p class="hero-copy">
-                        Proven expertise in synthesizing longitudinal, genetic, and biomarker data to dissect disease mechanisms with survival analysis, multistate models, and causal inference.
+                        Proven expertise in synthesizing longitudinal, genetic, and biomarker data to dissect disease mechanisms with survival analysis, multistate models, and causal inference. A warm, reliable collaborator who communicates clearly across clinical, statistical, and engineering teams, and quickly adopts new analytical and AI-assisted research workflows.
                     </p>
-                    <p class="hero-status"><strong>Actively seeking Postdoctoral Fellowship opportunities in the US.</strong></p>
+                    <p class="hero-status"><strong>Actively seeking Postdoctoral Fellowship or related research scientist opportunities.</strong> Interested PIs and collaborators are warmly welcome to get in touch.</p>
                     <div class="hero-actions">
                         <a class="button primary" href="assets/Yanxia_Wei_CV.pdf">Download CV</a>
                         <a class="button" href="https://scholar.google.com/citations?user=s2nTqNYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
                         <a class="button" href="https://www.linkedin.com/in/yanxia-wei-7ba70a39b/" target="_blank" rel="noopener">LinkedIn</a>
+                        <a class="button" href="https://orcid.org/0000-0001-9245-2722" target="_blank" rel="noopener">ORCID</a>
                     </div>
                     <div class="contact-list" aria-label="Contact details">
                         <span>The Second Affiliated Hospital, Zhejiang University School of Medicine</span>
-                        <span>yanxiawei@zju.edu.cn</span>
-                        <span>yanxiawei519@gmail.com</span>
-                        <a href="https://www.linkedin.com/in/yanxia-wei-7ba70a39b/" target="_blank" rel="noopener">LinkedIn</a>
-                        <a href="https://orcid.org/0000-0001-9245-2722" target="_blank" rel="noopener">ORCID 0000-0001-9245-2722</a>
+                        <div class="email-list">
+                            <a href="mailto:yanxiawei@zju.edu.cn">yanxiawei@zju.edu.cn</a>
+                            <a href="mailto:yanxiawei519@gmail.com">yanxiawei519@gmail.com</a>
+                        </div>
                     </div>
                     <div class="stats-row" aria-label="Research highlights">
                         <div class="stat">
@@ -612,6 +831,122 @@
                     <article class="focus-card">
                         <h3>Causal Methods</h3>
                         <p>Uses survival analysis, multistate models, Mendelian randomization, propensity scores, GLMM, and SEM to evaluate mechanisms and interventions.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-band" id="projects">
+            <div class="section">
+                <p class="section-kicker">Flagship Projects</p>
+                <h2 class="section-title">Population-scale cohort research with clinically interpretable outcomes.</h2>
+                <div class="flagship-list">
+                    <article class="project-card">
+                        <div>
+                            <p class="project-label">BMC Medicine | Valvular Heart Disease</p>
+                            <h3>Lifestyle, socioeconomic status, and valvular heart disease progression.</h3>
+                            <p class="project-punchline">Quantified how modifiable lifestyle factors relate to VHD onset, mortality, and life expectancy across socioeconomic groups.</p>
+                            <div class="project-metrics" aria-label="Project metrics">
+                                <div class="project-metric">
+                                    <strong>164,775</strong>
+                                    <span>UK Biobank adults aged 60+</span>
+                                </div>
+                                <div class="project-metric">
+                                    <strong>5,132</strong>
+                                    <span>incident VHD cases</span>
+                                </div>
+                                <div class="project-metric">
+                                    <strong>1,418</strong>
+                                    <span>deaths after VHD</span>
+                                </div>
+                                <div class="project-metric">
+                                    <strong>4-5</strong>
+                                    <span>additional life years linked to ideal lifestyle</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-media">
+                            <figure class="project-figure">
+                                <img src="assets/Projects/BMC Medicine_article.pdf-c90b859b-a960-40c1-8ae3-efd3bb16797a/images/77ed4c37093cbc88a39f3f9ff9a888106c440e8e134f3bbd75f3c56d669cda5d.jpg" alt="Forest plot of lifestyle, socioeconomic status, and valvular heart disease outcomes">
+                                <figcaption>Transition-specific hazard ratios for lifestyle and socioeconomic status across VHD incidence and mortality outcomes.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="project-detail-grid">
+                            <div>
+                                <h4>Study Question</h4>
+                                <p>Can healthier lifestyle slow the transition from no VHD to incident VHD and death, including among older adults with lower socioeconomic status?</p>
+                            </div>
+                            <div>
+                                <h4>Methods</h4>
+                                <p>UK Biobank EHR-linked cohort; five-factor lifestyle score covering smoking, obesity, physical activity, diet, and sleep; Townsend-based SES stratification; three-state Gompertz multistate models; transition-specific HRs, interaction testing, weighted life tables, and sensitivity analyses by CVH metric, AS/MR subtype, SES definition, early events, and imputed covariates.</p>
+                            </div>
+                            <div>
+                                <h4>Key Findings</h4>
+                                <p>Ideal lifestyle was consistently associated with lower VHD incidence and lower mortality transitions, with clinically readable gains of about 4-5 additional life years across socioeconomic strata.</p>
+                            </div>
+                            <div>
+                                <h4>Why It Matters</h4>
+                                <p>Shows that prevention evidence can be translated into life-expectancy terms clinicians and public health teams can communicate clearly.</p>
+                            </div>
+                            <div class="publication-links">
+                                <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/39237933/" target="_blank" rel="noopener">PubMed</a>
+                                <a class="text-link" href="assets/articles/bmc-medicine-2024-lifestyle-valvular-heart-disease.pdf" target="_blank" rel="noopener">PDF</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div>
+                            <p class="project-label">European Journal of Preventive Cardiology | Type 2 Diabetes</p>
+                            <h3>Cardiovascular health and ASCVD-free life expectancy in type 2 diabetes.</h3>
+                            <p class="project-punchline">Estimated whether higher Life's Essential 8 cardiovascular health can narrow the ASCVD-free life expectancy gap for patients with type 2 diabetes.</p>
+                            <div class="project-metrics" aria-label="Project metrics">
+                                <div class="project-metric">
+                                    <strong>246,183</strong>
+                                    <span>UK Biobank adults</span>
+                                </div>
+                                <div class="project-metric">
+                                    <strong>10,579</strong>
+                                    <span>participants with type 2 diabetes</span>
+                                </div>
+                                <div class="project-metric">
+                                    <strong>2,211</strong>
+                                    <span>incident ASCVD cases in diabetes</span>
+                                </div>
+                                <div class="project-metric">
+                                    <strong>591</strong>
+                                    <span>post-ASCVD deaths in diabetes</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-media">
+                            <figure class="project-figure">
+                                <img src="assets/Projects/EJPC_article.pdf-9b13d7e7-5682-4683-8415-42f9acb3e8aa/images/836873b4b252a6546b1f1d21a458bd152f4fb3e2efa3084f16d395d9bd5d0fdd.jpg" alt="Total and ASCVD-free life expectancy across cardiovascular health levels in participants with diabetes and participants without diabetes">
+                                <figcaption>Total and ASCVD-free life expectancy across CVH levels in participants with diabetes compared with those without diabetes.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="project-detail-grid">
+                            <div>
+                                <h4>Study Question</h4>
+                                <p>Can higher cardiovascular health extend ASCVD-free life expectancy in people with type 2 diabetes toward levels observed in people without diabetes?</p>
+                            </div>
+                            <div>
+                                <h4>Methods</h4>
+                                <p>Type 2 diabetes was ascertained from self-report, hospital records, medication records, and HbA1c; Life's Essential 8 CVH score integrated diet, activity, nicotine exposure, sleep, BMI, lipids, glucose, and blood pressure; three-state Gompertz multistate models estimated ASCVD onset and post-ASCVD death; weighted transition rates, population-based life tables, sex- and age-specific estimates, MICE, and Monte Carlo bootstrapping quantified ASCVD-free life expectancy.</p>
+                            </div>
+                            <div>
+                                <h4>Key Findings</h4>
+                                <p>Higher CVH extended total and ASCVD-free life expectancy among participants with type 2 diabetes, narrowing the gap toward peers without diabetes while preserving a clear prevention message.</p>
+                            </div>
+                            <div>
+                                <h4>Why It Matters</h4>
+                                <p>Frames cardiovascular prevention for diabetes as quality of lifespan, not only disease risk, giving PI audiences a clear translational hook.</p>
+                            </div>
+                            <div class="publication-links">
+                                <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/41277730/" target="_blank" rel="noopener">PubMed</a>
+                                <a class="text-link" href="assets/articles/ejpc-2025-cardiovascular-health-type-2-diabetes.pdf" target="_blank" rel="noopener">PDF</a>
+                            </div>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -678,16 +1013,16 @@
                     <article class="timeline-item">
                         <div class="timeline-date">2016-2019</div>
                         <div>
-                            <h3 class="timeline-title">Smoking cessation intervention through new media</h3>
-                            <p class="timeline-org">Investigator, National Natural Science Foundation of China</p>
+                            <h3 class="timeline-title">Theory-Driven mHealth Intervention for Smoking Cessation</h3>
+                            <p class="timeline-org">PhD candidate, 2016-2019</p>
                             <p>Used behavior change theories and behavior change techniques to develop intervention frameworks, identify mHealth engagement features, and evaluate intervention effectiveness using mixed qualitative and quantitative methods.</p>
                         </div>
                     </article>
                     <article class="timeline-item">
                         <div class="timeline-date">2015-2019</div>
                         <div>
-                            <h3 class="timeline-title">Comprehensive smoke-free legislation in Shanghai</h3>
-                            <p class="timeline-org">Investigator, Bloomberg Initiative Grant</p>
+                            <h3 class="timeline-title">Advocacy and Evaluation of Comprehensive Smoke-Free Legislation in Shanghai</h3>
+                            <p class="timeline-org">PhD candidate, 2015-2019</p>
                             <p>Designed city-wide surveys, monitored indoor air quality and nicotine exposure, and used GLMM to assess changes in observed smoking behavior and indoor secondhand smoke concentrations before and after policy implementation.</p>
                         </div>
                     </article>
@@ -699,22 +1034,33 @@
             <div class="section">
                 <p class="section-kicker">Publications</p>
                 <h2 class="section-title">Selected first-author work, then collaborative papers.</h2>
+                <div class="section-actions">
+                    <a class="button" href="assets/Yanxia_Wei_publications.enw" download>Download EndNote (.enw)</a>
+                </div>
                 <div class="publication-group">
                     <p class="section-kicker">Selected first-author work</p>
                     <div class="publication-list">
                         <article class="publication">
                             <h3>Cardiovascular health and life expectancy free of atherosclerotic cardiovascular disease among patients with type 2 diabetes: a cohort study.</h3>
                             <p class="authors"><strong>Yanxia Wei</strong>, Dawei Sun, Stella Ng, Yuxin He, Xianbao Liu, Jian'an Wang.</p>
-                            <p class="journal">European Journal of Preventive Cardiology. 2025. <span class="badge">PubMed 41277730</span></p>
+                            <p class="journal">European Journal of Preventive Cardiology. 2025. doi: 10.1093/eurjpc/zwaf742.</p>
+                            <div class="journal-tags" aria-label="Journal metrics">
+                                <span class="journal-tag">IF: 7.5</span>
+                                <span class="journal-tag q1">Q1</span>
+                            </div>
                             <div class="publication-links">
                                 <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/41277730/" target="_blank" rel="noopener">PubMed</a>
-                                <a class="text-link" href="assets/articles/EJPC_article.pdf" target="_blank" rel="noopener">PDF</a>
+                                <a class="text-link" href="assets/articles/ejpc-2025-cardiovascular-health-type-2-diabetes.pdf" target="_blank" rel="noopener">PDF</a>
                             </div>
                         </article>
                         <article class="publication">
                             <h3>Association of lifestyle with valvular heart disease progression and life expectancy among elderly people from different socioeconomic backgrounds.</h3>
                             <p class="authors"><strong>Yanxia Wei</strong>, Dawei Sun, Sanjay Jaiswal, Yuxin He, Xianbao Liu, Jian'an Wang.</p>
-                            <p class="journal">BMC Medicine. 2024;22(1):367. <span class="badge">PubMed 39237933</span></p>
+                            <p class="journal">BMC Medicine. 2024;22(1):367. doi: 10.1186/s12916-024-03576-9.</p>
+                            <div class="journal-tags" aria-label="Journal metrics">
+                                <span class="journal-tag">IF: 8.3</span>
+                                <span class="journal-tag q1">Q1</span>
+                            </div>
                             <div class="publication-links">
                                 <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/39237933/" target="_blank" rel="noopener">PubMed</a>
                                 <a class="text-link" href="assets/articles/bmc-medicine-2024-lifestyle-valvular-heart-disease.pdf" target="_blank" rel="noopener">PDF</a>
@@ -723,7 +1069,12 @@
                         <article class="publication">
                             <h3>Design features for improving mobile health intervention user engagement: systematic review and thematic analysis.</h3>
                             <p class="authors"><strong>Yanxia Wei</strong>, Pinpin Zheng, Hui Deng, Xihui Wang, Xiaomei Li, Hua Fu.</p>
-                            <p class="journal">Journal of Medical Internet Research. 2020;22(12):e21687. <span class="badge">PubMed 33295292</span> <span class="badge">255 citations</span></p>
+                            <p class="journal">Journal of Medical Internet Research. 2020;22(12):e21687. doi: 10.2196/21687.</p>
+                            <div class="journal-tags" aria-label="Journal metrics">
+                                <span class="journal-tag">IF: 6.0</span>
+                                <span class="journal-tag q2">Q2</span>
+                                <span class="journal-tag citation">Citations: 246</span>
+                            </div>
                             <div class="publication-links">
                                 <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/33295292/" target="_blank" rel="noopener">PubMed</a>
                                 <a class="text-link" href="assets/articles/jmir-2020-mhealth-engagement-systematic-review.pdf" target="_blank" rel="noopener">PDF</a>
@@ -732,7 +1083,7 @@
                         <article class="publication">
                             <h3>Evaluation of the effectiveness of comprehensive smoke-free legislation in indoor public places in Shanghai, China.</h3>
                             <p class="authors"><strong>Yanxia Wei</strong>, Ron Borland, Pinpin Zheng, Hua Fu, Fan Wang, Jingyi He, Yitian Feng.</p>
-                            <p class="journal">International Journal of Environmental Research and Public Health. 2019;16(20):4019. <span class="badge">PubMed 31640111</span></p>
+                            <p class="journal">International Journal of Environmental Research and Public Health. 2019;16(20):4019. doi: 10.3390/ijerph16204019.</p>
                             <div class="publication-links">
                                 <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/31640111/" target="_blank" rel="noopener">PubMed</a>
                                 <a class="text-link" href="assets/articles/ijerph-2019-smoke-free-legislation-shanghai.pdf" target="_blank" rel="noopener">PDF</a>
@@ -742,10 +1093,18 @@
                             <h3>Research progress of smoking cessation intervention through smartphone applications.</h3>
                             <p class="authors"><strong>Yanxia Wei</strong>, Pinpin Zheng.</p>
                             <p class="journal">Journal of Shanghai Jiaotong University (Medical Science). 2017;37(02):161-165.</p>
+                            <div class="journal-tags" aria-label="Journal metrics">
+                                <span class="journal-tag q2">Chinese Core Journal</span>
+                            </div>
                             <div class="publication-links">
                                 <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Research%20progress%20of%20smoking%20cessation%20intervention%20through%20smartphone%20applications%22" target="_blank" rel="noopener">PubMed search</a>
                                 <a class="text-link" href="assets/articles/sjtu-2017-smartphone-smoking-cessation-review.pdf" target="_blank" rel="noopener">PDF</a>
                             </div>
+                        </article>
+                        <article class="publication">
+                            <h3>Associations of serum testosterone and sex hormone-binding globulin with the risk of degenerative valvular heart diseases in men and women.</h3>
+                            <p class="authors">Qiong Liu*, <strong>Yanxia Wei*</strong>, Jiaqi Fan, et al.</p>
+                            <p class="journal">Submitted. Co-first author.</p>
                         </article>
                     </div>
                 </div>
@@ -755,7 +1114,7 @@
                         <article class="publication">
                             <h3>Efficacy and Safety of Ciprofol Alone versus Ciprofol with Fentanyl for Upper Gastrointestinal Endoscopy: A Randomized, Double-Blind, Controlled Trial.</h3>
                             <p class="authors">Lu Liu, Feng Li, <strong>Yanxia Wei</strong>, Li Luo, Li Shen, Jie Li, Ninglin Sun, Bin Qian, Dawei Sun.</p>
-                            <p class="journal">Drug Design, Development and Therapy. 2025;19:5231-5241. <span class="badge">PubMed 40546659</span></p>
+                            <p class="journal">Drug Design, Development and Therapy. 2025;19:5231-5241. doi: 10.2147/DDDT.S516064.</p>
                             <div class="publication-links">
                                 <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/40546659/" target="_blank" rel="noopener">PubMed</a>
                                 <a class="text-link" href="assets/articles/ciprofol-endoscopy-2025.pdf" target="_blank" rel="noopener">PDF</a>
@@ -764,7 +1123,7 @@
                         <article class="publication">
                             <h3>Evaluation of aortic arch calcification to predict prognosis after transcatheter aortic valve replacement.</h3>
                             <p class="authors">Dao Zhou, Hanyi Dai, Wenjing Sheng, Rongrong Zheng, Jiaqi Fan, Abuduwufuer Yidilisi, Ailifeire Aihemaiti, Qiong Liu, Jun Chen, Yuxin He, Yuchao Guo, Qifeng Zhu, Shuangshuang Yang, <strong>Yanxia Wei</strong>, Jian'an Wang, Xianbao Liu.</p>
-                            <p class="journal">Scientific Reports. 2025;15:6396. <span class="badge">PubMed 39984474</span></p>
+                            <p class="journal">Scientific Reports. 2025;15:6396. doi: 10.1038/s41598-024-83536-8.</p>
                             <div class="publication-links">
                                 <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/39984474/" target="_blank" rel="noopener">PubMed</a>
                                 <a class="text-link" href="assets/articles/aortic-arch-calcification-2025.pdf" target="_blank" rel="noopener">PDF</a>
@@ -773,7 +1132,7 @@
                         <article class="publication">
                             <h3>Cerebral ischemic lesions after transcatheter aortic valve implantation in patients with non-calcific aortic stenosis.</h3>
                             <p class="authors">Xianbao Liu, Dao Zhou, Jiaqi Fan, Hanyi Dai, Gangjie Zhu, Jun Chen, Yuchao Guo, Abuduwufuer Yidilisi, Qifeng Zhu, Yuxin He, <strong>Yanxia Wei</strong>, Qiong Liu, Xinrui Qi, Jian'an Wang.</p>
-                            <p class="journal">Journal of Clinical Medicine. 2022;11(21):6502. <span class="badge">PubMed 36362730</span></p>
+                            <p class="journal">Journal of Clinical Medicine. 2022;11(21):6502. doi: 10.3390/jcm11216502.</p>
                             <div class="publication-links">
                                 <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/36362730/" target="_blank" rel="noopener">PubMed</a>
                                 <a class="text-link" href="assets/articles/cerebral-ischemic-lesions-tavi-2022.pdf" target="_blank" rel="noopener">PDF</a>
@@ -782,7 +1141,7 @@
                         <article class="publication">
                             <h3>The potential psychological mechanism of subjective well-being in migrant workers: a structural equation models analysis.</h3>
                             <p class="authors">Hao Chen, Lei Wang, <strong>Yanxia Wei</strong>, Bo Ye, Junming Dai, Junling Gao, Fan Wang, Hua Fu.</p>
-                            <p class="journal">International Journal of Environmental Research and Public Health. 2019;16(12):2229. <span class="badge">PubMed 31238592</span></p>
+                            <p class="journal">International Journal of Environmental Research and Public Health. 2019;16(12):2229. doi: 10.3390/ijerph16122229.</p>
                             <div class="publication-links">
                                 <a class="text-link" href="https://pubmed.ncbi.nlm.nih.gov/31238592/" target="_blank" rel="noopener">PubMed</a>
                                 <a class="text-link" href="assets/articles/psychological-mechanism-migrant-workers-2019.pdf" target="_blank" rel="noopener">PDF</a>
@@ -815,35 +1174,50 @@
         <section class="page-band" id="skills">
             <div class="section">
                 <p class="section-kicker">Skills</p>
-                <h2 class="section-title">Methods, software, and languages.</h2>
+                <h2 class="section-title">Methods, data platforms, and research tooling.</h2>
                 <div class="skills-layout">
                     <div class="skill-column">
                         <h3>Methods</h3>
                         <div class="tag-list">
                             <span class="tag">Survival Analysis</span>
                             <span class="tag">Multistate Models</span>
+                            <span class="tag">Causal Inference</span>
                             <span class="tag">Mendelian Randomization</span>
-                            <span class="tag">Propensity Score Matching</span>
-                            <span class="tag">EWAS</span>
+                            <span class="tag">Propensity Score Methods</span>
+                            <span class="tag">Longitudinal Data Analysis</span>
                         </div>
                     </div>
                     <div class="skill-column">
-                        <h3>Study Design</h3>
+                        <h3>Population Data</h3>
                         <div class="tag-list">
+                            <span class="tag">Biomarker Integration</span>
+                            <span class="tag">EHR Phenotyping</span>
+                            <span class="tag">Exposure-Wide Association Studies</span>
+                            <span class="tag">Systematic Reviews &amp; Meta-analysis</span>
                             <span class="tag">Randomized Controlled Trials</span>
-                            <span class="tag">Systematic Reviews</span>
-                            <span class="tag">Meta-analysis</span>
-                            <span class="tag">GLMM</span>
-                            <span class="tag">SEM</span>
                         </div>
                     </div>
                     <div class="skill-column">
                         <h3>Software</h3>
                         <div class="tag-list">
                             <span class="tag">R, advanced</span>
-                            <span class="tag">Python, intermediate</span>
-                            <span class="tag">SAS, basic</span>
-                            <span class="tag">Nvivo, advanced</span>
+                            <span class="tag">Python, advanced</span>
+                            <span class="tag">SAS</span>
+                            <span class="tag">NVivo</span>
+                            <span class="tag">Git/GitHub</span>
+                            <span class="tag">UK Biobank RAP</span>
+                        </div>
+                    </div>
+                    <div class="skill-column">
+                        <h3>AI Tooling</h3>
+                        <div class="tag-list">
+                            <span class="tag">Claude Code</span>
+                            <span class="tag">Codex</span>
+                            <span class="tag">Cursor</span>
+                            <span class="tag">AI-assisted coding workflows</span>
+                        </div>
+                        <h3>Languages</h3>
+                        <div class="tag-list">
                             <span class="tag">Chinese, native</span>
                             <span class="tag">English, fluent</span>
                         </div>
