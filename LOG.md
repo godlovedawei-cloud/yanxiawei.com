@@ -4,6 +4,8 @@
 
 ### Page Detail Polish
 
+- Updated the JMIR publication citation tag from `Citations: 246` to `Citations: 255`.
+- Removed the PubMed search link from the Chinese core journal smoking cessation review because the article is not indexed in PubMed.
 - Replaced the University of Melbourne logo with `assets/logo/melbourne-2.jpg`.
 - Added a U.S.-system equivalency note under the 2021-present Assistant Research Fellow title: `Equivalent to Assistant Research Scientist in the U.S. academic system.`
 - Moved the hero identity block under the portrait, adding `Yanxia Wei, Ph.D.`, `Assistant Research Fellow`, and the Second Affiliated Hospital affiliation below the photo while keeping email links in the main hero text.
@@ -60,7 +62,7 @@
 - Restored IF/Q/citation information as visible inline tags:
   - `IF: 7.5`, `Q1`
   - `IF: 8.3`, `Q1`
-  - `IF: 6.0`, `Q2`, `Citations: 246`
+  - `IF: 6.0`, `Q2`, `Citations: 255`
   - `Chinese Core Journal`
 - Kept DOI values in standard text format.
 - Added submitted co-first-author paper:
@@ -163,7 +165,7 @@
 - Added selected article PDFs under `assets/articles/` and linked them from the publications section.
 - Rebuilt the publications section from supplied publication materials and Google Scholar results.
 - Ordered first-author papers first, followed by collaborative papers.
-- Added PubMed links or PubMed search links where available.
+- Added PubMed links where indexed and PDF links for local publication files.
 - Added the 2024 Circulation conference abstract to a dedicated conference section.
 - Added GitHub Pages files:
   - `CNAME`

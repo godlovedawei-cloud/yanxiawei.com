@@ -86,6 +86,7 @@ GitHub Pages deploys from `main` automatically after push.
   - DOI in plain text.
   - IF, Q ranking, and citation count as visible tags where available from the CV.
   - PubMed and PDF as link buttons, not database-style badges.
+- Do not add PubMed search links for articles that are not indexed in PubMed; keep only the local PDF link when available.
 - Do not invent IF/Q values. Use the CV or a verified source.
 - For conference outputs, use `assets/yanxiawei cv.md` as the local source of truth and add PDF links only when matching files exist under `assets/articles/`.
 
