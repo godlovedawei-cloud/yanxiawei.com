@@ -9,6 +9,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet">
+    <script>
+        (() => {
+            let savedTheme = null;
+            try {
+                savedTheme = localStorage.getItem('theme');
+            } catch (error) {
+                savedTheme = null;
+            }
+            const preferredTheme = savedTheme === 'dark' || savedTheme === 'light'
+                ? savedTheme
+                : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.dataset.theme = preferredTheme;
+        })();
+    </script>
     <style>
         :root {
             --ink: #20242a;
@@ -20,11 +34,50 @@
             --moss: #55715f;
             --wine: #8a3d4f;
             --gold: #b88942;
+            --nav-bg: rgba(255, 255, 255, 0.92);
+            --nav-border: rgba(217, 222, 216, 0.88);
+            --hero-overlay-1: rgba(85, 113, 95, 0.08);
+            --hero-overlay-2: rgba(138, 61, 79, 0.06);
+            --stat-bg: rgba(255, 255, 255, 0.72);
+            --panel-bg: rgba(85, 113, 95, 0.045);
+            --panel-border: rgba(85, 113, 95, 0.18);
+            --metric-bg: rgba(184, 137, 66, 0.09);
+            --metric-border: rgba(184, 137, 66, 0.32);
+            --image-bg: #ffffff;
+            --shadow-color: rgba(32, 36, 42, 0.12);
             --nav-height: 72px;
+        }
+
+        :root[data-theme="dark"] {
+            color-scheme: dark;
+            --ink: #eef2ec;
+            --body: #c7d0c9;
+            --muted: #98a39c;
+            --line: #2a332d;
+            --surface: #121614;
+            --soft: #0d100f;
+            --moss: #9ac8b0;
+            --wine: #e08b99;
+            --gold: #d3b16a;
+            --nav-bg: rgba(10, 13, 11, 0.86);
+            --nav-border: rgba(255, 255, 255, 0.08);
+            --hero-overlay-1: rgba(154, 200, 176, 0.08);
+            --hero-overlay-2: rgba(224, 139, 153, 0.06);
+            --stat-bg: rgba(255, 255, 255, 0.04);
+            --panel-bg: rgba(154, 200, 176, 0.06);
+            --panel-border: rgba(154, 200, 176, 0.14);
+            --metric-bg: rgba(211, 177, 106, 0.08);
+            --metric-border: rgba(211, 177, 106, 0.22);
+            --image-bg: #0f1311;
+            --shadow-color: rgba(0, 0, 0, 0.32);
         }
 
         * {
             box-sizing: border-box;
+        }
+
+        :root {
+            color-scheme: light;
         }
 
         html {
@@ -68,8 +121,8 @@
             top: 0;
             z-index: 20;
             height: var(--nav-height);
-            border-bottom: 1px solid rgba(217, 222, 216, 0.88);
-            background: rgba(255, 255, 255, 0.92);
+            border-bottom: 1px solid var(--nav-border);
+            background: var(--nav-bg);
             backdrop-filter: blur(14px);
         }
 
@@ -112,6 +165,33 @@
             text-decoration: none;
         }
 
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .theme-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 38px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 0 14px;
+            background: var(--surface);
+            color: var(--ink);
+            font-family: inherit;
+            font-size: 0.88rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--moss);
+            color: var(--moss);
+        }
+
         .page-band {
             display: flex;
             justify-content: center;
@@ -141,7 +221,7 @@
             padding-top: 64px;
             padding-bottom: 68px;
             background:
-                linear-gradient(120deg, rgba(85, 113, 95, 0.08), rgba(138, 61, 79, 0.06)),
+                linear-gradient(120deg, var(--hero-overlay-1), var(--hero-overlay-2)),
                 var(--soft);
         }
 
@@ -267,7 +347,7 @@
             border-radius: 8px;
             background: var(--surface);
             padding: 10px 10px 18px;
-            box-shadow: 0 18px 45px rgba(32, 36, 42, 0.12);
+            box-shadow: 0 18px 45px var(--shadow-color);
         }
 
         .portrait img {
@@ -317,7 +397,7 @@
         }
 
         .stat {
-            background: rgba(255, 255, 255, 0.72);
+            background: var(--stat-bg);
             padding: 18px;
         }
 
@@ -419,9 +499,9 @@
         }
 
         .role-panel {
-            border: 1px solid rgba(85, 113, 95, 0.18);
+            border: 1px solid var(--panel-border);
             border-radius: 8px;
-            background: rgba(85, 113, 95, 0.045);
+            background: var(--panel-bg);
             padding: 16px;
         }
 
@@ -512,9 +592,9 @@
         }
 
         .project-metric {
-            border: 1px solid rgba(184, 137, 66, 0.32);
+            border: 1px solid var(--metric-border);
             border-radius: 8px;
-            background: rgba(184, 137, 66, 0.09);
+            background: var(--metric-bg);
             padding: 12px;
         }
 
@@ -578,7 +658,7 @@
             margin: 0 auto;
             border: 1px solid var(--line);
             border-radius: 8px;
-            background: #ffffff;
+            background: var(--image-bg);
             object-fit: contain;
         }
 
@@ -795,6 +875,12 @@
                 display: none;
             }
 
+            .theme-toggle {
+                min-height: 34px;
+                padding: 0 12px;
+                font-size: 0.82rem;
+            }
+
             .page-band {
                 padding: 58px 18px;
             }
@@ -844,6 +930,14 @@
             .timeline-heading {
                 flex-direction: column;
             }
+
+            .timeline-logo {
+                display: none;
+            }
+
+            .timeline-item-logo {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -851,12 +945,15 @@
     <nav aria-label="Primary navigation">
         <div class="nav-inner">
             <a class="brand" href="#hero">Yanxia Wei</a>
-            <div class="nav-links">
-                <a href="#research">Research</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#publications">Publications</a>
-                <a href="#skills">Skills</a>
+            <div class="nav-actions">
+                <div class="nav-links">
+                    <a href="#research">Research</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#publications">Publications</a>
+                    <a href="#skills">Skills</a>
+                </div>
+                <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">Dark</button>
             </div>
         </div>
     </nav>
@@ -1371,5 +1468,37 @@
     <footer>
         <p>&copy; 2024-2026 Yanxia Wei. Last updated May 2026.</p>
     </footer>
+    <script>
+        (() => {
+            const button = document.querySelector('.theme-toggle');
+            if (!button) {
+                return;
+            }
+
+            const storageKey = 'theme';
+            const validThemes = new Set(['light', 'dark']);
+
+            const applyTheme = (theme) => {
+                const nextTheme = validThemes.has(theme) ? theme : 'light';
+                document.documentElement.dataset.theme = nextTheme;
+                try {
+                    localStorage.setItem(storageKey, nextTheme);
+                } catch (error) {
+                    // Ignore persistence failures and keep the toggle functional.
+                }
+                const isDark = nextTheme === 'dark';
+                button.textContent = isDark ? 'Light' : 'Dark';
+                button.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+                button.setAttribute('aria-pressed', String(isDark));
+            };
+
+            applyTheme(document.documentElement.dataset.theme || 'light');
+
+            button.addEventListener('click', () => {
+                const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+                applyTheme(nextTheme);
+            });
+        })();
+    </script>
 </body>
 </html>
