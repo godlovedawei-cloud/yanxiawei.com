@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Academic homepage of Yanxia Wei, Ph.D., a cardiovascular epidemiology researcher at Zhejiang University School of Medicine.">
+    <title>Yanxia Wei, Ph.D. | Cardiovascular Epidemiology</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #20242a;
+            --body: #3f454d;
+            --muted: #69717b;
+            --line: #d9ded8;
+            --surface: #ffffff;
+            --soft: #f7f8f5;
+            --moss: #55715f;
+            --wine: #8a3d4f;
+            --gold: #b88942;
+            --nav-height: 72px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--nav-height) + 18px);
+        }
+
+        body {
+            margin: 0;
+            color: var(--body);
+            background: var(--surface);
+            font-family: "Inter", Arial, sans-serif;
+            line-height: 1.68;
+        }
+
+        a {
+            color: var(--moss);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--wine);
+            text-decoration: underline;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--ink);
+            font-family: "Source Serif 4", Georgia, serif;
+            line-height: 1.1;
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            height: var(--nav-height);
+            border-bottom: 1px solid rgba(217, 222, 216, 0.88);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(14px);
+        }
+
+        .nav-inner {
+            width: min(1120px, calc(100% - 40px));
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            color: var(--ink);
+            font-family: "Source Serif 4", Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .brand:hover {
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            font-size: 0.93rem;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            color: var(--body);
+        }
+
+        .nav-links a:hover {
+            color: var(--moss);
+            text-decoration: none;
+        }
+
+        .page-band {
+            display: flex;
+            justify-content: center;
+            padding: 84px 20px;
+        }
+
+        .section {
+            width: min(1040px, 100%);
+        }
+
+        .section-kicker {
+            color: var(--wine);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 26px;
+        }
+
+        #hero {
+            min-height: calc(100vh - var(--nav-height));
+            padding-top: 64px;
+            padding-bottom: 68px;
+            background:
+                linear-gradient(120deg, rgba(85, 113, 95, 0.08), rgba(138, 61, 79, 0.06)),
+                var(--soft);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+            align-items: center;
+            gap: 58px;
+            width: min(1120px, 100%);
+        }
+
+        .eyebrow {
+            color: var(--wine);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 5.8rem);
+            letter-spacing: 0;
+            max-width: 780px;
+        }
+
+        .hero-subtitle {
+            color: var(--moss);
+            font-size: clamp(1.05rem, 2vw, 1.35rem);
+            font-weight: 700;
+            margin-top: 18px;
+        }
+
+        .hero-copy {
+            max-width: 720px;
+            margin-top: 24px;
+            font-size: 1.08rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            border: 1px solid var(--moss);
+            border-radius: 6px;
+            padding: 0 18px;
+            color: var(--moss);
+            font-weight: 700;
+        }
+
+        .button.primary {
+            color: #ffffff;
+            background: var(--moss);
+        }
+
+        .button:hover {
+            border-color: var(--wine);
+            color: var(--wine);
+            text-decoration: none;
+        }
+
+        .button.primary:hover {
+            color: #ffffff;
+            background: var(--wine);
+        }
+
+        .contact-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 18px;
+            margin-top: 24px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .portrait {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface);
+            padding: 10px;
+            box-shadow: 0 18px 45px rgba(32, 36, 42, 0.12);
+        }
+
+        .portrait img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            border-radius: 6px;
+            object-fit: cover;
+            object-position: center 30%;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1px;
+            margin-top: 32px;
+            max-width: 720px;
+            border: 1px solid var(--line);
+            background: var(--line);
+        }
+
+        .stat {
+            background: rgba(255, 255, 255, 0.72);
+            padding: 18px;
+        }
+
+        .stat strong {
+            display: block;
+            color: var(--ink);
+            font-family: "Source Serif 4", Georgia, serif;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .stat span {
+            color: var(--muted);
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 7px;
+        }
+
+        #research,
+        #publications {
+            background: var(--soft);
+            border-bottom: 1px solid var(--line);
+            border-top: 1px solid var(--line);
+        }
+
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .focus-card,
+        .publication,
+        .timeline-item {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface);
+        }
+
+        .focus-card {
+            padding: 24px;
+        }
+
+        .focus-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 18px;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 170px minmax(0, 1fr);
+            gap: 24px;
+            padding: 24px;
+        }
+
+        .timeline-date {
+            color: var(--wine);
+            font-family: "Source Serif 4", Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .timeline-title {
+            font-size: 1.35rem;
+        }
+
+        .timeline-org {
+            color: var(--moss);
+            font-weight: 700;
+            margin: 6px 0 10px;
+        }
+
+        .project-list {
+            display: grid;
+            gap: 10px;
+            margin-top: 16px;
+            padding-left: 18px;
+        }
+
+        .publication-list {
+            display: grid;
+            gap: 14px;
+        }
+
+        .publication {
+            padding: 22px 24px;
+        }
+
+        .publication h3 {
+            font-family: "Inter", Arial, sans-serif;
+            font-size: 1.03rem;
+            line-height: 1.45;
+            margin-bottom: 8px;
+        }
+
+        .authors {
+            color: var(--body);
+            font-size: 0.94rem;
+            margin-bottom: 7px;
+        }
+
+        .journal {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            min-height: 24px;
+            margin-left: 8px;
+            border: 1px solid rgba(184, 137, 66, 0.42);
+            border-radius: 999px;
+            padding: 0 9px;
+            color: #7b5729;
+            background: rgba(184, 137, 66, 0.1);
+            font-size: 0.78rem;
+            font-style: normal;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .skills-layout {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .skill-column h3 {
+            font-size: 1.25rem;
+            margin-bottom: 14px;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 7px 12px;
+            background: var(--surface);
+            color: var(--body);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .teaching-awards {
+            display: grid;
+            grid-template-columns: 1.3fr 0.9fr;
+            gap: 28px;
+            margin-top: 42px;
+            border-top: 1px solid var(--line);
+            padding-top: 34px;
+        }
+
+        .compact-list {
+            display: grid;
+            gap: 12px;
+            padding-left: 18px;
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 34px 20px;
+            color: var(--muted);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 880px) {
+            .nav-inner {
+                width: min(100% - 28px, 1120px);
+            }
+
+            .nav-links {
+                gap: 14px;
+                font-size: 0.86rem;
+            }
+
+            .hero-grid,
+            .focus-grid,
+            .skills-layout,
+            .teaching-awards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-grid {
+                gap: 34px;
+            }
+
+            .portrait {
+                width: min(360px, 100%);
+                margin: 0 auto;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            :root {
+                --nav-height: 64px;
+            }
+
+            .brand {
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .page-band {
+                padding: 58px 18px;
+            }
+
+            #hero {
+                padding-top: 42px;
+            }
+
+            .stats-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-list {
+                display: grid;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav aria-label="Primary navigation">
+        <div class="nav-inner">
+            <a class="brand" href="#hero">Yanxia Wei</a>
+            <div class="nav-links">
+                <a href="#research">Research</a>
+                <a href="#experience">Experience</a>
+                <a href="#publications">Publications</a>
+                <a href="#skills">Skills</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-band" id="hero">
+            <div class="hero-grid">
+                <div>
+                    <p class="eyebrow">Cardiovascular Epidemiology</p>
+                    <h1 class="hero-title">Yanxia Wei, Ph.D.</h1>
+                    <p class="hero-subtitle">Research Associate Fellow, Zhejiang University School of Medicine</p>
+                    <p class="hero-copy">
+                        Data-driven researcher using large-scale cohorts, genetic evidence, biomarkers, and lifestyle data to investigate chronic disease etiology and cardiovascular health. Her work combines survival analysis, multistate models, causal inference, and reproducible analytics for population health research.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button primary" href="assets/Yanxia_Wei_CV.pdf">Download CV</a>
+                        <a class="button" href="mailto:yanxiawei519@163.com">Email</a>
+                        <a class="button" href="https://scholar.google.com/citations?user=s2nTqNYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+                    </div>
+                    <div class="contact-list" aria-label="Contact details">
+                        <span>The Second Affiliated Hospital, Zhejiang University School of Medicine</span>
+                        <a href="mailto:yanxiawei@zju.edu.cn">yanxiawei@zju.edu.cn</a>
+                        <a href="https://orcid.org/0000-0001-9245-2722" target="_blank" rel="noopener">ORCID 0000-0001-9245-2722</a>
+                    </div>
+                    <div class="stats-row" aria-label="Research highlights">
+                        <div class="stat">
+                            <strong>500K+</strong>
+                            <span>UK Biobank participants</span>
+                        </div>
+                        <div class="stat">
+                            <strong>2021-</strong>
+                            <span>Research Associate Fellow</span>
+                        </div>
+                        <div class="stat">
+                            <strong>Ph.D.</strong>
+                            <span>Preventive Medicine</span>
+                        </div>
+                    </div>
+                </div>
+                <figure class="portrait">
+                    <img src="assets/profile.jpg" alt="Portrait of Yanxia Wei">
+                </figure>
+            </div>
+        </section>
+
+        <section class="page-band" id="research">
+            <div class="section">
+                <p class="section-kicker">Research Focus</p>
+                <h2 class="section-title">Population-scale evidence for cardiovascular prevention.</h2>
+                <div class="focus-grid">
+                    <article class="focus-card">
+                        <h3>Cardiovascular Aging</h3>
+                        <p>Studies cardiovascular disease progression, valvular heart disease, aortic stenosis, and disease-free life expectancy in aging populations.</p>
+                    </article>
+                    <article class="focus-card">
+                        <h3>Complex Cohorts</h3>
+                        <p>Builds reproducible R and Python pipelines for phenotypic and genotypic data extraction, cleaning, quality control, and analysis.</p>
+                    </article>
+                    <article class="focus-card">
+                        <h3>Causal Methods</h3>
+                        <p>Uses survival analysis, multistate models, Mendelian randomization, propensity scores, GLMM, and SEM to evaluate mechanisms and interventions.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-band" id="experience">
+            <div class="section">
+                <p class="section-kicker">Experience &amp; Education</p>
+                <h2 class="section-title">Training and appointments.</h2>
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <div class="timeline-date">2021-present</div>
+                        <div>
+                            <h3 class="timeline-title">Research Associate Fellow</h3>
+                            <p class="timeline-org">Cardiovascular Key Laboratory of Zhejiang Province, Second Affiliated Hospital, Zhejiang University School of Medicine</p>
+                            <p>Lead researcher for UK Biobank Application No. 86898. Manages research databases for more than 500,000 participants and develops R/Python pipelines for phenotypic and genotypic data analysis.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-date">2015-2020</div>
+                        <div>
+                            <h3 class="timeline-title">Ph.D. in Preventive Medicine and Health Education</h3>
+                            <p class="timeline-org">School of Public Health, Fudan University</p>
+                            <p>Focused on smoking cessation interventions, mobile health engagement, and evaluation of smoke-free legislation using mixed methods and longitudinal modeling.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-date">2018-2019</div>
+                        <div>
+                            <h3 class="timeline-title">Visiting Ph.D. Student</h3>
+                            <p class="timeline-org">Melbourne Centre for Behaviour Change, University of Melbourne</p>
+                            <p>Worked within the School of Psychological Sciences on behavior change research and intervention evaluation.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-date">2010-2015</div>
+                        <div>
+                            <h3 class="timeline-title">Bachelor of Medicine, Preventive Medicine</h3>
+                            <p class="timeline-org">School of Public Health, Shanxi Medical University</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-band">
+            <div class="section">
+                <p class="section-kicker">Major Research Experience</p>
+                <h2 class="section-title">Current and completed projects.</h2>
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <div class="timeline-date">2022-present</div>
+                        <div>
+                            <h3 class="timeline-title">Non-genetic risk exposures, genetic predisposition, and cardiovascular diseases</h3>
+                            <p class="timeline-org">Lead Researcher, UK Biobank</p>
+                            <ul class="project-list">
+                                <li>Lifestyle and socioeconomic factors in valvular heart disease progression.</li>
+                                <li>Cardiovascular health and life expectancy in type 2 diabetes.</li>
+                                <li>Sex hormones and degenerative valvular heart disease risk.</li>
+                                <li>Mendelian randomization studies of aortic stenosis initiation and progression.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-date">2016-2019</div>
+                        <div>
+                            <h3 class="timeline-title">Smoking cessation intervention through new media</h3>
+                            <p class="timeline-org">Investigator, National Natural Science Foundation of China</p>
+                            <p>Developed intervention frameworks, identified mHealth engagement features, and evaluated intervention effectiveness using qualitative and quantitative methods.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-date">2015-2019</div>
+                        <div>
+                            <h3 class="timeline-title">Comprehensive smoke-free legislation in Shanghai</h3>
+                            <p class="timeline-org">Investigator, Bloomberg Initiative Grant</p>
+                            <p>Designed city-wide surveys, monitored indoor air quality and nicotine exposure, and used GLMM to evaluate changes before and after smoke-free legislation.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-band" id="publications">
+            <div class="section">
+                <p class="section-kicker">Selected Publications</p>
+                <h2 class="section-title">Recent work and representative studies.</h2>
+                <div class="publication-list">
+                    <article class="publication">
+                        <h3>Cardiovascular Health and Life Expectancy Free of Atherosclerotic Cardiovascular Disease Among Patients with Type 2 Diabetes: a cohort study.</h3>
+                        <p class="authors"><strong>Wei Y</strong>, Sun D, Ng S, et al.</p>
+                        <p class="journal">European Journal of Preventive Cardiology. 2025. <span class="badge">IF 7.5, Q1</span></p>
+                    </article>
+                    <article class="publication">
+                        <h3>Association of lifestyle with valvular heart disease progression and life expectancy among elderly people from different socioeconomic backgrounds.</h3>
+                        <p class="authors"><strong>Wei Y</strong>, Sun D, Jaiswal S, et al.</p>
+                        <p class="journal">BMC Medicine. 2024;22(1):367. <span class="badge">IF 8.3, Q1</span></p>
+                    </article>
+                    <article class="publication">
+                        <h3>Design Features for Improving Mobile Health Intervention User Engagement: Systematic Review and Thematic Analysis.</h3>
+                        <p class="authors"><strong>Wei Y</strong>, Zheng P, Deng H, et al.</p>
+                        <p class="journal">Journal of Medical Internet Research. 2020;22(12):e21687. <span class="badge">IF 6.0, Q2</span></p>
+                    </article>
+                    <article class="publication">
+                        <h3>Evaluation of the Effectiveness of Comprehensive Smoke-Free Legislation in Indoor Public Places in Shanghai, China.</h3>
+                        <p class="authors"><strong>Wei Y</strong>, Borland R, Zheng P, et al.</p>
+                        <p class="journal">International Journal of Environmental Research and Public Health. 2019;16(20).</p>
+                    </article>
+                    <article class="publication">
+                        <h3>Research progress of smoking cessation intervention through smartphone applications.</h3>
+                        <p class="authors"><strong>Wei Y</strong>, Zheng P.</p>
+                        <p class="journal">Journal of Shanghai Jiaotong University (Medical Science). 2017;2:161-165. <span class="badge">Chinese Core Journal</span></p>
+                    </article>
+                    <article class="publication">
+                        <h3>Associations of serum testosterone and sex hormone-binding globulin with the risk of degenerative valvular heart diseases in men and women.</h3>
+                        <p class="authors">Liu Q*, <strong>Wei Y*</strong>, Jiaqi F, Jaiswal S, et al.</p>
+                        <p class="journal">Submitted. Co-first author.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-band" id="skills">
+            <div class="section">
+                <p class="section-kicker">Skills</p>
+                <h2 class="section-title">Methods, software, and languages.</h2>
+                <div class="skills-layout">
+                    <div class="skill-column">
+                        <h3>Methods</h3>
+                        <div class="tag-list">
+                            <span class="tag">Survival Analysis</span>
+                            <span class="tag">Multistate Models</span>
+                            <span class="tag">Mendelian Randomization</span>
+                            <span class="tag">Propensity Score Matching</span>
+                            <span class="tag">EWAS</span>
+                        </div>
+                    </div>
+                    <div class="skill-column">
+                        <h3>Study Design</h3>
+                        <div class="tag-list">
+                            <span class="tag">Randomized Controlled Trials</span>
+                            <span class="tag">Systematic Reviews</span>
+                            <span class="tag">Meta-analysis</span>
+                            <span class="tag">GLMM</span>
+                            <span class="tag">SEM</span>
+                        </div>
+                    </div>
+                    <div class="skill-column">
+                        <h3>Software</h3>
+                        <div class="tag-list">
+                            <span class="tag">R, advanced</span>
+                            <span class="tag">Python, intermediate</span>
+                            <span class="tag">Nvivo, advanced</span>
+                            <span class="tag">Chinese, native</span>
+                            <span class="tag">English, fluent</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="teaching-awards">
+                    <div>
+                        <p class="section-kicker">Teaching</p>
+                        <ul class="compact-list">
+                            <li>Developed and delivered medical statistics and randomized controlled trial design training for cardiology clinical staff at Zhejiang University School of Medicine.</li>
+                            <li>Teaching Assistant for Preventive Medicine for international undergraduate medical students at Fudan University.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="section-kicker">Honors</p>
+                        <ul class="compact-list">
+                            <li>China Scholarship Council Scholarship, 2018.</li>
+                            <li>Academic Scholarship of Fudan University, 2017.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024-2026 Yanxia Wei. Last updated May 2026.</p>
+    </footer>
+</body>
+</html>
