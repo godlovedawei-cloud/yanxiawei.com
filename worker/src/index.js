@@ -2,6 +2,11 @@ const MAX_BODY_BYTES = 8192;
 const MAX_TOKEN_LENGTH = 256;
 const DEFAULT_RETENTION_DAYS = 90;
 const DEFAULT_MAX_ADMIN_ROWS = 500;
+const TRANSPARENT_GIF = Uint8Array.from([
+  71, 73, 70, 56, 57, 97, 1, 0, 1, 0, 128, 0, 0, 0, 0, 0,
+  255, 255, 255, 33, 249, 4, 1, 0, 0, 0, 0, 44, 0, 0, 0, 0,
+  1, 0, 1, 0, 0, 2, 2, 68, 1, 0, 59
+]);
 
 export default {
   async fetch(request, env) {
@@ -13,6 +18,10 @@ export default {
 
     if (url.pathname === "/collect") {
       return handleCollect(request, env);
+    }
+
+    if (url.pathname === "/collect.gif") {
+      return handlePixelCollect(request, env);
     }
 
     if (url.pathname === "/admin") {
@@ -62,49 +71,36 @@ async function handleCollect(request, env) {
     });
   }
 
-  const now = new Date();
-  const cf = request.cf || {};
-  const ip = request.headers.get("CF-Connecting-IP") ||
-    request.headers.get("X-Forwarded-For")?.split(",")[0]?.trim() ||
-    "unknown";
-
-  const record = {
-    timestamp: now.toISOString(),
-    eventType: sanitize(payload.eventType || "pageview", 40),
-    ip: sanitize(ip, 80),
-    country: sanitize(cf.country, 80),
-    region: sanitize(cf.region, 120),
-    city: sanitize(cf.city, 120),
-    timezone: sanitize(cf.timezone, 80),
-    asn: typeof cf.asn === "number" ? cf.asn : null,
-    asOrganization: sanitize(cf.asOrganization, 180),
-    colo: sanitize(cf.colo, 20),
-    path: sanitize(payload.path, 240),
-    referrer: sanitize(payload.referrer, 300),
-    language: sanitize(payload.language, 80),
-    screen: sanitize(payload.screen, 40),
-    browserTimezone: sanitize(payload.timezone, 80),
-    colorScheme: sanitize(payload.colorScheme, 20),
-    siteTime: sanitize(payload.siteTime, 80),
-    linkType: sanitize(payload.linkType, 80),
-    linkTarget: sanitize(payload.linkTarget, 300),
-    durationSeconds: clampNumber(payload.durationSeconds, 0, 0, 86400),
-    userAgent: sanitize(request.headers.get("User-Agent"), 300)
-  };
-
-  const client = parseUserAgent(record.userAgent);
-  record.deviceType = client.deviceType;
-  record.browser = client.browser;
-  record.os = client.os;
-
-  const key = `visit:${now.toISOString().slice(0, 10)}:${now.getTime()}:${crypto.randomUUID()}`;
-  await env.VISIT_LOGS.put(key, JSON.stringify(record), {
-    expirationTtl: retentionSeconds(env)
-  });
+  await saveVisitRecord(request, env, payload, "post");
 
   return new Response(null, {
     status: 204,
     headers: corsHeaders(origin, env)
+  });
+}
+
+async function handlePixelCollect(request, env) {
+  if (request.method !== "GET") {
+    return new Response("Method not allowed", { status: 405 });
+  }
+
+  if (!isAllowedPixelSource(request, env)) {
+    return new Response("Forbidden", {
+      status: 403,
+      headers: {
+        "Cache-Control": "no-store"
+      }
+    });
+  }
+
+  const url = new URL(request.url);
+  const payload = Object.fromEntries(url.searchParams.entries());
+  payload.eventType = "pageview";
+  await saveVisitRecord(request, env, payload, "pixel");
+
+  return new Response(TRANSPARENT_GIF, {
+    status: 200,
+    headers: pixelHeaders()
   });
 }
 
@@ -201,6 +197,7 @@ function aggregateByIp(rows) {
       browserTimezone: row.browserTimezone || "",
       paths: new Set(),
       referrers: new Set(),
+      seenPageviewIds: new Set(),
       linkClicks: new Map(),
       totalDurationSeconds: 0,
       durationEventCount: 0,
@@ -208,7 +205,15 @@ function aggregateByIp(rows) {
     };
 
     if (!row.eventType || row.eventType === "pageview") {
-      existing.visitCount += 1;
+      if (row.pageviewId) {
+        const pageviewKey = String(row.pageviewId);
+        if (!existing.seenPageviewIds.has(pageviewKey)) {
+          existing.visitCount += 1;
+          existing.seenPageviewIds.add(pageviewKey);
+        }
+      } else {
+        existing.visitCount += 1;
+      }
     }
     if (String(row.timestamp) < String(existing.firstSeen)) {
       existing.firstSeen = row.timestamp;
@@ -246,15 +251,66 @@ function aggregateByIp(rows) {
   }
 
   return Array.from(visitors.values())
-    .map((visitor) => ({
-      ...visitor,
-      paths: Array.from(visitor.paths).slice(0, 12),
-      referrers: Array.from(visitor.referrers).slice(0, 12),
-      linkClicks: Array.from(visitor.linkClicks.entries())
-        .map(([type, count]) => ({ type, count }))
-        .sort((a, b) => b.count - a.count)
-    }))
+    .map((visitor) => {
+      const { seenPageviewIds, ...visibleVisitor } = visitor;
+      return {
+        ...visibleVisitor,
+        paths: Array.from(visitor.paths).slice(0, 12),
+        referrers: Array.from(visitor.referrers).slice(0, 12),
+        linkClicks: Array.from(visitor.linkClicks.entries())
+          .map(([type, count]) => ({ type, count }))
+          .sort((a, b) => b.count - a.count)
+      };
+    })
     .sort((a, b) => String(b.lastSeen).localeCompare(String(a.lastSeen)));
+}
+
+async function saveVisitRecord(request, env, payload, source) {
+  const now = new Date();
+  const record = buildVisitRecord(request, payload, now, source);
+  const key = `visit:${now.toISOString().slice(0, 10)}:${now.getTime()}:${crypto.randomUUID()}`;
+  await env.VISIT_LOGS.put(key, JSON.stringify(record), {
+    expirationTtl: retentionSeconds(env)
+  });
+}
+
+function buildVisitRecord(request, payload, now, source) {
+  const cf = request.cf || {};
+  const ip = request.headers.get("CF-Connecting-IP") ||
+    request.headers.get("X-Forwarded-For")?.split(",")[0]?.trim() ||
+    "unknown";
+
+  const record = {
+    timestamp: now.toISOString(),
+    eventType: sanitize(payload.eventType || "pageview", 40),
+    eventSource: sanitize(source, 20),
+    pageviewId: sanitize(payload.pageviewId, 120),
+    ip: sanitize(ip, 80),
+    country: sanitize(cf.country, 80),
+    region: sanitize(cf.region, 120),
+    city: sanitize(cf.city, 120),
+    timezone: sanitize(cf.timezone, 80),
+    asn: typeof cf.asn === "number" ? cf.asn : null,
+    asOrganization: sanitize(cf.asOrganization, 180),
+    colo: sanitize(cf.colo, 20),
+    path: sanitize(payload.path, 240),
+    referrer: sanitize(payload.referrer, 300),
+    language: sanitize(payload.language, 80),
+    screen: sanitize(payload.screen, 40),
+    browserTimezone: sanitize(payload.timezone, 80),
+    colorScheme: sanitize(payload.colorScheme, 20),
+    siteTime: sanitize(payload.siteTime, 80),
+    linkType: sanitize(payload.linkType, 80),
+    linkTarget: sanitize(payload.linkTarget, 300),
+    durationSeconds: clampNumber(payload.durationSeconds, 0, 0, 86400),
+    userAgent: sanitize(request.headers.get("User-Agent"), 300)
+  };
+
+  const client = parseUserAgent(record.userAgent);
+  record.deviceType = client.deviceType;
+  record.browser = client.browser;
+  record.os = client.os;
+  return record;
 }
 
 async function authorize(request, env) {
@@ -340,6 +396,24 @@ function isAllowedOrigin(origin, env) {
   return allowedOrigins(env).has(origin);
 }
 
+function isAllowedPixelSource(request, env) {
+  const origin = request.headers.get("Origin") || "";
+  if (origin && !isAllowedOrigin(origin, env)) {
+    return false;
+  }
+
+  const referer = request.headers.get("Referer") || "";
+  if (!referer) {
+    return true;
+  }
+
+  try {
+    return allowedOrigins(env).has(new URL(referer).origin);
+  } catch (error) {
+    return false;
+  }
+}
+
 function allowedOrigins(env) {
   return new Set(
     String(env.ALLOWED_ORIGINS || "")
@@ -382,6 +456,14 @@ function jsonResponse(data, status = 200) {
       "Cache-Control": "no-store"
     }
   });
+}
+
+function pixelHeaders() {
+  return {
+    "Content-Type": "image/gif",
+    "Cache-Control": "no-store",
+    "Content-Length": String(TRANSPARENT_GIF.byteLength)
+  };
 }
 
 function renderAdminHtml(visitors, eventCount) {

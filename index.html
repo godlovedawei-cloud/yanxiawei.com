@@ -1470,11 +1470,16 @@
     <script>
         (() => {
             const ANALYTICS_ENDPOINT = "https://yanxiawei-visit-log.yanxiawei-visit-log.workers.dev/collect";
+            const ANALYTICS_PIXEL_ENDPOINT = "https://yanxiawei-visit-log.yanxiawei-visit-log.workers.dev/collect.gif";
             if (!ANALYTICS_ENDPOINT) {
                 return;
             }
 
             const startedAt = Date.now();
+            const pageviewId = window.crypto && typeof window.crypto.randomUUID === "function"
+                ? window.crypto.randomUUID()
+                : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+            const pixelImages = [];
             let durationSent = false;
 
             const classifyLink = (link) => {
@@ -1510,8 +1515,28 @@
                 screen: window.screen ? `${window.screen.width}x${window.screen.height}` : "",
                 timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || "",
                 colorScheme: window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light",
-                siteTime: new Date().toISOString()
+                siteTime: new Date().toISOString(),
+                pageviewId
             });
+
+            const sendPixelPageview = (payload) => {
+                if (!ANALYTICS_PIXEL_ENDPOINT) {
+                    return;
+                }
+
+                const query = new URLSearchParams();
+                Object.entries(payload).forEach(([key, value]) => {
+                    query.set(key, String(value || "").slice(0, 300));
+                });
+                query.set("cacheBust", `${Date.now()}-${Math.random().toString(36).slice(2)}`);
+
+                const image = new Image(1, 1);
+                image.src = `${ANALYTICS_PIXEL_ENDPOINT}?${query.toString()}`;
+                pixelImages.push(image);
+                if (pixelImages.length > 5) {
+                    pixelImages.shift();
+                }
+            };
 
             const sendPayload = (payload, allowRetry = true) => {
                 const body = JSON.stringify(payload);
@@ -1551,10 +1576,12 @@
                 sendWithRetryLimit();
             };
 
-            sendPayload({
+            const pageviewPayload = {
                 ...basePayload(),
                 eventType: "pageview"
-            });
+            };
+            sendPixelPageview(pageviewPayload);
+            sendPayload(pageviewPayload);
 
             document.addEventListener("click", (event) => {
                 if (!(event.target instanceof Element)) {
