@@ -355,8 +355,8 @@ function renderAdminHtml(visitors, eventCount) {
       <td>${escapeHtml(formatLocation(visitor))}</td>
       <td>${escapeHtml(formatAsn(visitor))}</td>
       <td>${visitor.visitCount}</td>
-      <td>${escapeHtml(visitor.firstSeen || "")}</td>
-      <td>${escapeHtml(visitor.lastSeen || "")}</td>
+      <td>${escapeHtml(formatBeijingTime(visitor.firstSeen))}</td>
+      <td>${escapeHtml(formatBeijingTime(visitor.lastSeen))}</td>
       <td>${escapeHtml(visitor.paths.join(", "))}</td>
       <td>${escapeHtml(visitor.referrers.join(", "))}</td>
     </tr>
@@ -383,7 +383,7 @@ function renderAdminHtml(visitors, eventCount) {
 <body>
   <main>
     <h1>Yanxia Wei Visit Log</h1>
-    <p>Loaded ${eventCount} recent event${eventCount === 1 ? "" : "s"} and grouped them by IP. IP geolocation is approximate.</p>
+    <p>Loaded ${eventCount} recent event${eventCount === 1 ? "" : "s"} and grouped them by IP. Times are shown in Beijing time. IP geolocation is approximate.</p>
     ${visitors.length ? `<table>
       <thead>
         <tr>
@@ -417,6 +417,28 @@ function formatAsn(visitor) {
     parts.push(`AS${visitor.asn}`);
   }
   return parts.join(" / ") || "Unknown";
+}
+
+function formatBeijingTime(value) {
+  if (!value) {
+    return "";
+  }
+
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return String(value);
+  }
+
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  }).format(date).replace(",", "") + " Beijing";
 }
 
 function escapeHtml(value) {

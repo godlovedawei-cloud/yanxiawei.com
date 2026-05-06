@@ -9,6 +9,7 @@
 - Added a silent homepage analytics hook that stays disabled until the deployed Worker `/collect` endpoint is filled into `index.html`.
 - Added deployment and admin-view instructions to `README.md`.
 - Added `.dev.vars` to `.gitignore` so local Worker secrets are not committed.
+- Updated the visit-log admin dashboard to display visit times in Beijing time.
 
 ## 2026-05-02
 
