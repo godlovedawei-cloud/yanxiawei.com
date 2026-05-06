@@ -2,6 +2,7 @@
 .env
 .env.*
 .dev.vars
+worker/.wrangler/
 *.log
 .playwright-mcp/
 tmp-*.png
