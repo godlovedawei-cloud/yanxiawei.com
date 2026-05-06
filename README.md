@@ -78,7 +78,7 @@ GitHub Pages deploys from `main` automatically after push.
 
 ## Private Visit Logging
 
-The homepage can send a silent page-view event to a Cloudflare Worker. It does not show a banner or modal, does not block visitors, and does not identify a person. It records IP address, approximate Cloudflare geolocation, ASN/network organization, visit time, page path, referrer, language, screen size, and user agent. Logs expire after 90 days. The admin dashboard displays visit times in Beijing time.
+The homepage can send silent analytics events to a Cloudflare Worker. It does not show a banner or modal, does not block visitors, and does not identify a person. It records IP address, approximate Cloudflare geolocation, ASN/network organization, visit time, page path, referrer, language, screen size, browser timezone, color scheme, user agent-derived device type/browser/operating system, key outbound link clicks, and approximate page dwell time. Logs expire after 90 days. The admin dashboard displays visit times in Beijing time.
 
 GitHub Pages itself does not provide owner-visible visitor IP logs for this static site, so the Worker is required for this feature.
 
@@ -139,7 +139,7 @@ GitHub Pages itself does not provide owner-visible visitor IP logs for this stat
   https://yanxiawei-visit-log.yanxiawei-visit-log.workers.dev/api/visits?token=<ADMIN_TOKEN>
   ```
 
-The location fields are approximate IP geolocation only. They are useful for spotting likely countries, cities, networks, and institutions, but they cannot prove that a specific individual visited the site.
+The location and device fields are approximate. They are useful for spotting likely countries, cities, networks, institutions, browsers, operating systems, device classes, and basic engagement, but they cannot prove that a specific individual visited the site.
 
 ## Content Guidelines
 

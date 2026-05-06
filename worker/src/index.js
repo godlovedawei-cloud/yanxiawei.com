@@ -1,4 +1,4 @@
-const MAX_BODY_BYTES = 4096;
+const MAX_BODY_BYTES = 8192;
 const MAX_TOKEN_LENGTH = 256;
 const DEFAULT_RETENTION_DAYS = 90;
 const DEFAULT_MAX_ADMIN_ROWS = 500;
@@ -70,6 +70,7 @@ async function handleCollect(request, env) {
 
   const record = {
     timestamp: now.toISOString(),
+    eventType: sanitize(payload.eventType || "pageview", 40),
     ip: sanitize(ip, 80),
     country: sanitize(cf.country, 80),
     region: sanitize(cf.region, 120),
@@ -82,9 +83,19 @@ async function handleCollect(request, env) {
     referrer: sanitize(payload.referrer, 300),
     language: sanitize(payload.language, 80),
     screen: sanitize(payload.screen, 40),
+    browserTimezone: sanitize(payload.timezone, 80),
+    colorScheme: sanitize(payload.colorScheme, 20),
     siteTime: sanitize(payload.siteTime, 80),
+    linkType: sanitize(payload.linkType, 80),
+    linkTarget: sanitize(payload.linkTarget, 300),
+    durationSeconds: clampNumber(payload.durationSeconds, 0, 0, 86400),
     userAgent: sanitize(request.headers.get("User-Agent"), 300)
   };
+
+  const client = parseUserAgent(record.userAgent);
+  record.deviceType = client.deviceType;
+  record.browser = client.browser;
+  record.os = client.os;
 
   const key = `visit:${now.toISOString().slice(0, 10)}:${now.getTime()}:${crypto.randomUUID()}`;
   await env.VISIT_LOGS.put(key, JSON.stringify(record), {
@@ -183,12 +194,22 @@ function aggregateByIp(rows) {
       timezone: row.timezone || "",
       asn: row.asn || null,
       asOrganization: row.asOrganization || "",
+      deviceType: row.deviceType || "",
+      browser: row.browser || "",
+      os: row.os || "",
+      colorScheme: row.colorScheme || "",
+      browserTimezone: row.browserTimezone || "",
       paths: new Set(),
       referrers: new Set(),
+      linkClicks: new Map(),
+      totalDurationSeconds: 0,
+      durationEventCount: 0,
       lastUserAgent: row.userAgent || ""
     };
 
-    existing.visitCount += 1;
+    if (!row.eventType || row.eventType === "pageview") {
+      existing.visitCount += 1;
+    }
     if (String(row.timestamp) < String(existing.firstSeen)) {
       existing.firstSeen = row.timestamp;
     }
@@ -200,6 +221,11 @@ function aggregateByIp(rows) {
       existing.timezone = row.timezone || existing.timezone;
       existing.asn = row.asn || existing.asn;
       existing.asOrganization = row.asOrganization || existing.asOrganization;
+      existing.deviceType = row.deviceType || existing.deviceType;
+      existing.browser = row.browser || existing.browser;
+      existing.os = row.os || existing.os;
+      existing.colorScheme = row.colorScheme || existing.colorScheme;
+      existing.browserTimezone = row.browserTimezone || existing.browserTimezone;
       existing.lastUserAgent = row.userAgent || existing.lastUserAgent;
     }
     if (row.path) {
@@ -207,6 +233,13 @@ function aggregateByIp(rows) {
     }
     if (row.referrer) {
       existing.referrers.add(row.referrer);
+    }
+    if (row.eventType === "link-click" && row.linkType) {
+      existing.linkClicks.set(row.linkType, (existing.linkClicks.get(row.linkType) || 0) + 1);
+    }
+    if (row.eventType === "duration" && row.durationSeconds > 0) {
+      existing.totalDurationSeconds += row.durationSeconds;
+      existing.durationEventCount += 1;
     }
 
     visitors.set(ip, existing);
@@ -216,7 +249,10 @@ function aggregateByIp(rows) {
     .map((visitor) => ({
       ...visitor,
       paths: Array.from(visitor.paths).slice(0, 12),
-      referrers: Array.from(visitor.referrers).slice(0, 12)
+      referrers: Array.from(visitor.referrers).slice(0, 12),
+      linkClicks: Array.from(visitor.linkClicks.entries())
+        .map(([type, count]) => ({ type, count }))
+        .sort((a, b) => b.count - a.count)
     }))
     .sort((a, b) => String(b.lastSeen).localeCompare(String(a.lastSeen)));
 }
@@ -357,6 +393,8 @@ function renderAdminHtml(visitors, eventCount) {
       <td>${visitor.visitCount}</td>
       <td>${escapeHtml(formatBeijingTime(visitor.firstSeen))}</td>
       <td>${escapeHtml(formatBeijingTime(visitor.lastSeen))}</td>
+      <td>${escapeHtml(formatDevice(visitor))}</td>
+      <td>${escapeHtml(formatEngagement(visitor))}</td>
       <td>${escapeHtml(visitor.paths.join(", "))}</td>
       <td>${escapeHtml(visitor.referrers.join(", "))}</td>
     </tr>
@@ -393,6 +431,8 @@ function renderAdminHtml(visitors, eventCount) {
           <th>Visits</th>
           <th>First seen</th>
           <th>Last seen</th>
+          <th>Device</th>
+          <th>Engagement</th>
           <th>Paths</th>
           <th>Referrers</th>
         </tr>
@@ -417,6 +457,77 @@ function formatAsn(visitor) {
     parts.push(`AS${visitor.asn}`);
   }
   return parts.join(" / ") || "Unknown";
+}
+
+function formatDevice(visitor) {
+  return [
+    visitor.deviceType,
+    visitor.browser,
+    visitor.os,
+    visitor.browserTimezone,
+    visitor.colorScheme ? `${visitor.colorScheme} mode` : ""
+  ].filter(Boolean).join(" / ") || "Unknown";
+}
+
+function formatEngagement(visitor) {
+  const parts = [];
+  if (visitor.durationEventCount > 0) {
+    parts.push(`time: ${formatDuration(visitor.totalDurationSeconds)}`);
+  }
+  if (visitor.linkClicks.length > 0) {
+    parts.push(`clicks: ${visitor.linkClicks.map((item) => `${item.type} ${item.count}`).join(", ")}`);
+  }
+  return parts.join(" | ") || "";
+}
+
+function formatDuration(seconds) {
+  const total = Math.max(0, Number.parseInt(String(seconds || 0), 10));
+  const minutes = Math.floor(total / 60);
+  const remainder = total % 60;
+  if (minutes > 0) {
+    return `${minutes}m ${remainder}s`;
+  }
+  return `${remainder}s`;
+}
+
+function parseUserAgent(userAgent) {
+  const ua = String(userAgent || "");
+  const lower = ua.toLowerCase();
+
+  let deviceType = "desktop";
+  if (/ipad|tablet/.test(lower)) {
+    deviceType = "tablet";
+  } else if (/mobi|iphone|android/.test(lower)) {
+    deviceType = "mobile";
+  }
+
+  let browser = "Unknown";
+  if (/edg\//i.test(ua)) {
+    browser = "Edge";
+  } else if (/opr\//i.test(ua) || /opera/i.test(ua)) {
+    browser = "Opera";
+  } else if (/chrome|crios/i.test(ua) && !/edg\//i.test(ua)) {
+    browser = "Chrome";
+  } else if (/firefox|fxios/i.test(ua)) {
+    browser = "Firefox";
+  } else if (/safari/i.test(ua) && !/chrome|crios|android/i.test(ua)) {
+    browser = "Safari";
+  }
+
+  let os = "Unknown";
+  if (/windows nt/i.test(ua)) {
+    os = "Windows";
+  } else if (/iphone|ipad|ipod/i.test(ua)) {
+    os = "iOS";
+  } else if (/android/i.test(ua)) {
+    os = "Android";
+  } else if (/mac os x|macintosh/i.test(ua)) {
+    os = "macOS";
+  } else if (/linux/i.test(ua)) {
+    os = "Linux";
+  }
+
+  return { deviceType, browser, os };
 }
 
 function formatBeijingTime(value) {

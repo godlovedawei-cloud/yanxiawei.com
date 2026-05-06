@@ -10,6 +10,7 @@
 - Added deployment and admin-view instructions to `README.md`.
 - Added `.dev.vars` to `.gitignore` so local Worker secrets are not committed.
 - Updated the visit-log admin dashboard to display visit times in Beijing time.
+- Added compliant device/browser/operating-system inference, key-link click counts, and approximate page dwell time to the private visit log.
 
 ## 2026-05-02
 

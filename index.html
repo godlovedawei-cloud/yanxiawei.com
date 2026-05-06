@@ -1475,48 +1475,130 @@
                 return;
             }
 
-            const payload = {
+            const startedAt = Date.now();
+            let durationSent = false;
+
+            const classifyLink = (link) => {
+                const href = link.getAttribute("href") || "";
+                if (href.startsWith("mailto:")) {
+                    return "email";
+                }
+                if (href.includes("Yanxia_Wei_CV.pdf")) {
+                    return "cv";
+                }
+                if (href.includes("scholar.google.com")) {
+                    return "google-scholar";
+                }
+                if (href.includes("linkedin.com")) {
+                    return "linkedin";
+                }
+                if (href.includes("orcid.org")) {
+                    return "orcid";
+                }
+                if (href.includes("Yanxia_Wei_publications.enw")) {
+                    return "endnote";
+                }
+                if (href.endsWith(".pdf") || href.includes("/articles/")) {
+                    return "publication-pdf";
+                }
+                return "";
+            };
+
+            const basePayload = () => ({
                 path: `${window.location.pathname}${window.location.search}`,
                 referrer: document.referrer,
                 language: navigator.language,
                 screen: window.screen ? `${window.screen.width}x${window.screen.height}` : "",
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || "",
+                colorScheme: window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light",
                 siteTime: new Date().toISOString()
-            };
-            const body = JSON.stringify(payload);
+            });
 
-            if (navigator.sendBeacon) {
-                const sent = navigator.sendBeacon(
-                    ANALYTICS_ENDPOINT,
-                    new Blob([body], { type: "text/plain;charset=UTF-8" })
-                );
-                if (sent) {
+            const sendPayload = (payload, allowRetry = true) => {
+                const body = JSON.stringify(payload);
+
+                if (navigator.sendBeacon) {
+                    const sent = navigator.sendBeacon(
+                        ANALYTICS_ENDPOINT,
+                        new Blob([body], { type: "text/plain;charset=UTF-8" })
+                    );
+                    if (sent) {
+                        return;
+                    }
+                }
+
+                const sendWithRetryLimit = (attempt = 0) => {
+                    const controller = new AbortController();
+                    const timeout = window.setTimeout(() => controller.abort(), 30000);
+
+                    fetch(ANALYTICS_ENDPOINT, {
+                        method: "POST",
+                        mode: "cors",
+                        keepalive: true,
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body,
+                        signal: controller.signal
+                    }).catch(() => {
+                        if (allowRetry && attempt < 1) {
+                            window.setTimeout(() => sendWithRetryLimit(attempt + 1), 750);
+                        }
+                    }).finally(() => {
+                        window.clearTimeout(timeout);
+                    });
+                };
+
+                sendWithRetryLimit();
+            };
+
+            sendPayload({
+                ...basePayload(),
+                eventType: "pageview"
+            });
+
+            document.addEventListener("click", (event) => {
+                if (!(event.target instanceof Element)) {
                     return;
                 }
-            }
 
-            const sendWithRetryLimit = (attempt = 0) => {
-                const controller = new AbortController();
-                const timeout = window.setTimeout(() => controller.abort(), 30000);
+                const link = event.target.closest("a[href]");
+                if (!link) {
+                    return;
+                }
 
-                fetch(ANALYTICS_ENDPOINT, {
-                    method: "POST",
-                    mode: "cors",
-                    keepalive: true,
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body,
-                    signal: controller.signal
-                }).catch(() => {
-                    if (attempt < 1) {
-                        window.setTimeout(() => sendWithRetryLimit(attempt + 1), 750);
-                    }
-                }).finally(() => {
-                    window.clearTimeout(timeout);
-                });
+                const linkType = classifyLink(link);
+                if (!linkType) {
+                    return;
+                }
+
+                sendPayload({
+                    ...basePayload(),
+                    eventType: "link-click",
+                    linkType,
+                    linkTarget: link.href
+                }, false);
+            }, { capture: true });
+
+            const sendDuration = () => {
+                if (durationSent) {
+                    return;
+                }
+                durationSent = true;
+                sendPayload({
+                    ...basePayload(),
+                    eventType: "duration",
+                    durationSeconds: Math.max(0, Math.round((Date.now() - startedAt) / 1000))
+                }, false);
             };
 
-            sendWithRetryLimit();
+            document.addEventListener("visibilitychange", () => {
+                if (document.visibilityState === "hidden") {
+                    sendDuration();
+                }
+            });
+
+            window.addEventListener("pagehide", sendDuration);
         })();
     </script>
     <script>
