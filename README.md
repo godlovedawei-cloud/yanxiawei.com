@@ -78,68 +78,15 @@ GitHub Pages deploys from `main` automatically after push.
 
 ## Private Visit Logging
 
-The homepage can send silent analytics events to a Cloudflare Worker. It does not show a banner or modal, does not block visitors, and does not identify a person. It records IP address, approximate Cloudflare geolocation, ASN/network organization, visit time, page path, referrer, language, screen size, browser timezone, color scheme, user agent-derived device type/browser/operating system, key outbound link clicks, and approximate page dwell time. Logs expire after 90 days. The admin dashboard displays visit times in Beijing time.
+Silent visit logging is handled by the Cloudflare Worker in `worker/`. The homepage sends basic analytics events without banners, popups, cookies, or personal identification. Logs expire after 90 days and the dashboard shows Beijing time.
 
-GitHub Pages itself does not provide owner-visible visitor IP logs for this static site, so the Worker is required for this feature.
+Admin dashboard:
 
-### Deploy the Worker
+```text
+https://yanxiawei-visit-log.yanxiawei-visit-log.workers.dev/admin?token=<ADMIN_TOKEN>
+```
 
-1. Install or invoke Wrangler from the Worker directory:
-
-   ```bash
-   cd worker
-   npx wrangler --version
-   ```
-
-2. Create production and preview KV namespaces:
-
-   ```bash
-   npx wrangler kv namespace create VISIT_LOGS
-   npx wrangler kv namespace create VISIT_LOGS --preview
-   ```
-
-3. Copy the returned namespace IDs into `worker/wrangler.toml`, replacing:
-
-   ```toml
-   id = "REPLACE_WITH_PRODUCTION_KV_NAMESPACE_ID"
-   preview_id = "REPLACE_WITH_PREVIEW_KV_NAMESPACE_ID"
-   ```
-
-4. Set a long random admin token as a Worker secret. Do not commit it:
-
-   ```bash
-   npx wrangler secret put ADMIN_TOKEN
-   ```
-
-5. Deploy:
-
-   ```bash
-   npx wrangler deploy
-   ```
-
-6. The current deployed Worker collection endpoint is configured in `index.html` as:
-
-   ```text
-   https://yanxiawei-visit-log.yanxiawei-visit-log.workers.dev/collect
-   ```
-
-7. Push the updated `index.html` to `main`. GitHub Pages will publish the silent logging script.
-
-### View Visits
-
-- HTML dashboard:
-
-  ```text
-  https://yanxiawei-visit-log.yanxiawei-visit-log.workers.dev/admin?token=<ADMIN_TOKEN>
-  ```
-
-- JSON API:
-
-  ```text
-  https://yanxiawei-visit-log.yanxiawei-visit-log.workers.dev/api/visits?token=<ADMIN_TOKEN>
-  ```
-
-The location and device fields are approximate. They are useful for spotting likely countries, cities, networks, institutions, browsers, operating systems, device classes, and basic engagement, but they cannot prove that a specific individual visited the site.
+Keep `ADMIN_TOKEN` in Cloudflare secrets and local `.dev.vars`; never commit it. IP location, device, and engagement fields are approximate and cannot prove a specific individual visited the site.
 
 ## Content Guidelines
 
