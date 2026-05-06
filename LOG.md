@@ -1,5 +1,15 @@
 # Change Log
 
+## 2026-05-06
+
+### Private Visit Logging
+
+- Added a Cloudflare Worker implementation for private visit logging with token-protected HTML and JSON admin views.
+- Configured the Worker to store events in Workers KV with a 90-day TTL.
+- Added a silent homepage analytics hook that stays disabled until the deployed Worker `/collect` endpoint is filled into `index.html`.
+- Added deployment and admin-view instructions to `README.md`.
+- Added `.dev.vars` to `.gitignore` so local Worker secrets are not committed.
+
 ## 2026-05-02
 
 ### Page Detail Polish

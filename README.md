@@ -24,6 +24,7 @@ Static academic homepage for Yanxia Wei, Ph.D.
 - `assets/yanxiawei cv.md`: markdown extraction of the newer CV, kept as a convenient editing reference.
 - `CNAME`: custom domain for GitHub Pages.
 - `.nojekyll`: disables Jekyll processing so static assets are served directly.
+- `worker/`: Cloudflare Worker source for private visit logging.
 - `LOG.md`: project change log and deployment notes.
 
 ## Homepage Sections
@@ -75,6 +76,71 @@ Static academic homepage for Yanxia Wei, Ph.D.
 
 GitHub Pages deploys from `main` automatically after push.
 
+## Private Visit Logging
+
+The homepage can send a silent page-view event to a Cloudflare Worker. It does not show a banner or modal, does not block visitors, and does not identify a person. It records IP address, approximate Cloudflare geolocation, ASN/network organization, visit time, page path, referrer, language, screen size, and user agent. Logs expire after 90 days.
+
+GitHub Pages itself does not provide owner-visible visitor IP logs for this static site, so the Worker is required for this feature.
+
+### Deploy the Worker
+
+1. Install or invoke Wrangler from the Worker directory:
+
+   ```bash
+   cd worker
+   npx wrangler --version
+   ```
+
+2. Create production and preview KV namespaces:
+
+   ```bash
+   npx wrangler kv namespace create VISIT_LOGS
+   npx wrangler kv namespace create VISIT_LOGS --preview
+   ```
+
+3. Copy the returned namespace IDs into `worker/wrangler.toml`, replacing:
+
+   ```toml
+   id = "REPLACE_WITH_PRODUCTION_KV_NAMESPACE_ID"
+   preview_id = "REPLACE_WITH_PREVIEW_KV_NAMESPACE_ID"
+   ```
+
+4. Set a long random admin token as a Worker secret. Do not commit it:
+
+   ```bash
+   npx wrangler secret put ADMIN_TOKEN
+   ```
+
+5. Deploy:
+
+   ```bash
+   npx wrangler deploy
+   ```
+
+6. The current deployed Worker collection endpoint is configured in `index.html` as:
+
+   ```text
+   https://yanxiawei-visit-log.yanxiawei-visit-log.workers.dev/collect
+   ```
+
+7. Push the updated `index.html` to `main`. GitHub Pages will publish the silent logging script.
+
+### View Visits
+
+- HTML dashboard:
+
+  ```text
+  https://yanxiawei-visit-log.yanxiawei-visit-log.workers.dev/admin?token=<ADMIN_TOKEN>
+  ```
+
+- JSON API:
+
+  ```text
+  https://yanxiawei-visit-log.yanxiawei-visit-log.workers.dev/api/visits?token=<ADMIN_TOKEN>
+  ```
+
+The location fields are approximate IP geolocation only. They are useful for spotting likely countries, cities, networks, and institutions, but they cannot prove that a specific individual visited the site.
+
 ## Content Guidelines
 
 - Keep the homepage concise and PI-facing. The first screen should show research identity, strongest methods, current opportunity status, and clear contact paths.
@@ -122,4 +188,5 @@ Expected DNS:
 
 - Do not commit API keys, DNS provider credentials, local environment files, or browser session files.
 - Porkbun credentials, if needed, must be supplied through local environment variables only.
+- Cloudflare Worker `ADMIN_TOKEN` must be stored with `wrangler secret put ADMIN_TOKEN`, never in source files.
 - `.DS_Store`, `.env`, `.playwright-mcp/`, and common dependency/cache directories are ignored by `.gitignore`.

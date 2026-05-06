@@ -1,0 +1,429 @@
+const MAX_BODY_BYTES = 4096;
+const MAX_TOKEN_LENGTH = 256;
+const DEFAULT_RETENTION_DAYS = 90;
+const DEFAULT_MAX_ADMIN_ROWS = 500;
+
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+
+    if (request.method === "OPTIONS") {
+      return handleOptions(request, env);
+    }
+
+    if (url.pathname === "/collect") {
+      return handleCollect(request, env);
+    }
+
+    if (url.pathname === "/admin") {
+      return handleAdmin(request, env);
+    }
+
+    if (url.pathname === "/api/visits") {
+      return handleVisitsApi(request, env);
+    }
+
+    if (url.pathname === "/health") {
+      return jsonResponse({ ok: true });
+    }
+
+    return new Response("Not found", { status: 404 });
+  }
+};
+
+async function handleCollect(request, env) {
+  if (request.method !== "POST") {
+    return new Response("Method not allowed", { status: 405 });
+  }
+
+  const origin = request.headers.get("Origin") || "";
+  if (!isAllowedOrigin(origin, env)) {
+    return new Response("Forbidden", {
+      status: 403,
+      headers: corsHeaders(origin, env)
+    });
+  }
+
+  const bodyText = await readLimitedBody(request, MAX_BODY_BYTES);
+  if (bodyText === null) {
+    return new Response("Payload too large", {
+      status: 413,
+      headers: corsHeaders(origin, env)
+    });
+  }
+
+  let payload = {};
+  try {
+    payload = JSON.parse(bodyText || "{}");
+  } catch (error) {
+    return new Response("Invalid JSON", {
+      status: 400,
+      headers: corsHeaders(origin, env)
+    });
+  }
+
+  const now = new Date();
+  const cf = request.cf || {};
+  const ip = request.headers.get("CF-Connecting-IP") ||
+    request.headers.get("X-Forwarded-For")?.split(",")[0]?.trim() ||
+    "unknown";
+
+  const record = {
+    timestamp: now.toISOString(),
+    ip: sanitize(ip, 80),
+    country: sanitize(cf.country, 80),
+    region: sanitize(cf.region, 120),
+    city: sanitize(cf.city, 120),
+    timezone: sanitize(cf.timezone, 80),
+    asn: typeof cf.asn === "number" ? cf.asn : null,
+    asOrganization: sanitize(cf.asOrganization, 180),
+    colo: sanitize(cf.colo, 20),
+    path: sanitize(payload.path, 240),
+    referrer: sanitize(payload.referrer, 300),
+    language: sanitize(payload.language, 80),
+    screen: sanitize(payload.screen, 40),
+    siteTime: sanitize(payload.siteTime, 80),
+    userAgent: sanitize(request.headers.get("User-Agent"), 300)
+  };
+
+  const key = `visit:${now.toISOString().slice(0, 10)}:${now.getTime()}:${crypto.randomUUID()}`;
+  await env.VISIT_LOGS.put(key, JSON.stringify(record), {
+    expirationTtl: retentionSeconds(env)
+  });
+
+  return new Response(null, {
+    status: 204,
+    headers: corsHeaders(origin, env)
+  });
+}
+
+async function handleAdmin(request, env) {
+  const auth = await authorize(request, env);
+  if (!auth.ok) {
+    return new Response("Unauthorized", { status: 401 });
+  }
+
+  const rows = await loadVisitRows(env);
+  const aggregates = aggregateByIp(rows);
+
+  return new Response(renderAdminHtml(aggregates, rows.length), {
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "no-store"
+    }
+  });
+}
+
+async function handleVisitsApi(request, env) {
+  const auth = await authorize(request, env);
+  if (!auth.ok) {
+    return jsonResponse({ error: "Unauthorized" }, 401);
+  }
+
+  const rows = await loadVisitRows(env);
+  return jsonResponse({
+    totalEventsLoaded: rows.length,
+    retentionDays: retentionDays(env),
+    visitors: aggregateByIp(rows)
+  });
+}
+
+function handleOptions(request, env) {
+  const origin = request.headers.get("Origin") || "";
+  if (!isAllowedOrigin(origin, env)) {
+    return new Response(null, { status: 403 });
+  }
+
+  return new Response(null, {
+    status: 204,
+    headers: corsHeaders(origin, env)
+  });
+}
+
+async function loadVisitRows(env) {
+  const maxRows = clampNumber(env.MAX_ADMIN_ROWS, DEFAULT_MAX_ADMIN_ROWS, 50, 2000);
+  const keys = [];
+  let cursor = undefined;
+
+  do {
+    const result = await env.VISIT_LOGS.list({
+      prefix: "visit:",
+      limit: Math.min(1000, maxRows - keys.length),
+      cursor
+    });
+    keys.push(...result.keys);
+    cursor = result.list_complete ? undefined : result.cursor;
+  } while (cursor && keys.length < maxRows);
+
+  const values = await Promise.all(
+    keys.slice(0, maxRows).map(async (key) => {
+      const value = await env.VISIT_LOGS.get(key.name, "json");
+      return value;
+    })
+  );
+
+  return values
+    .filter(Boolean)
+    .sort((a, b) => String(b.timestamp).localeCompare(String(a.timestamp)));
+}
+
+function aggregateByIp(rows) {
+  const visitors = new Map();
+
+  for (const row of rows) {
+    const ip = row.ip || "unknown";
+    const existing = visitors.get(ip) || {
+      ip,
+      visitCount: 0,
+      firstSeen: row.timestamp,
+      lastSeen: row.timestamp,
+      country: row.country || "",
+      region: row.region || "",
+      city: row.city || "",
+      timezone: row.timezone || "",
+      asn: row.asn || null,
+      asOrganization: row.asOrganization || "",
+      paths: new Set(),
+      referrers: new Set(),
+      lastUserAgent: row.userAgent || ""
+    };
+
+    existing.visitCount += 1;
+    if (String(row.timestamp) < String(existing.firstSeen)) {
+      existing.firstSeen = row.timestamp;
+    }
+    if (String(row.timestamp) > String(existing.lastSeen)) {
+      existing.lastSeen = row.timestamp;
+      existing.country = row.country || existing.country;
+      existing.region = row.region || existing.region;
+      existing.city = row.city || existing.city;
+      existing.timezone = row.timezone || existing.timezone;
+      existing.asn = row.asn || existing.asn;
+      existing.asOrganization = row.asOrganization || existing.asOrganization;
+      existing.lastUserAgent = row.userAgent || existing.lastUserAgent;
+    }
+    if (row.path) {
+      existing.paths.add(row.path);
+    }
+    if (row.referrer) {
+      existing.referrers.add(row.referrer);
+    }
+
+    visitors.set(ip, existing);
+  }
+
+  return Array.from(visitors.values())
+    .map((visitor) => ({
+      ...visitor,
+      paths: Array.from(visitor.paths).slice(0, 12),
+      referrers: Array.from(visitor.referrers).slice(0, 12)
+    }))
+    .sort((a, b) => String(b.lastSeen).localeCompare(String(a.lastSeen)));
+}
+
+async function authorize(request, env) {
+  const configuredToken = String(env.ADMIN_TOKEN || "");
+  if (!configuredToken || configuredToken.length > MAX_TOKEN_LENGTH) {
+    return { ok: false };
+  }
+
+  const url = new URL(request.url);
+  const bearer = request.headers.get("Authorization") || "";
+  const suppliedToken = bearer.startsWith("Bearer ")
+    ? bearer.slice("Bearer ".length)
+    : url.searchParams.get("token") || "";
+
+  if (!suppliedToken || suppliedToken.length > MAX_TOKEN_LENGTH) {
+    return { ok: false };
+  }
+
+  return { ok: constantTimeEqual(suppliedToken, configuredToken) };
+}
+
+function constantTimeEqual(a, b) {
+  if (a.length !== b.length) {
+    return false;
+  }
+
+  let diff = 0;
+  for (let index = 0; index < a.length; index += 1) {
+    diff |= a.charCodeAt(index) ^ b.charCodeAt(index);
+  }
+  return diff === 0;
+}
+
+async function readLimitedBody(request, maxBytes) {
+  const reader = request.body?.getReader();
+  if (!reader) {
+    return "";
+  }
+
+  const chunks = [];
+  let total = 0;
+
+  while (true) {
+    const { value, done } = await reader.read();
+    if (done) {
+      break;
+    }
+    total += value.byteLength;
+    if (total > maxBytes) {
+      return null;
+    }
+    chunks.push(value);
+  }
+
+  const body = new Uint8Array(total);
+  let offset = 0;
+  for (const chunk of chunks) {
+    body.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+  return new TextDecoder().decode(body);
+}
+
+function corsHeaders(origin, env) {
+  const headers = {
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Max-Age": "86400",
+    "Vary": "Origin"
+  };
+
+  if (isAllowedOrigin(origin, env)) {
+    headers["Access-Control-Allow-Origin"] = origin;
+  }
+
+  return headers;
+}
+
+function isAllowedOrigin(origin, env) {
+  if (!origin) {
+    return false;
+  }
+  return allowedOrigins(env).has(origin);
+}
+
+function allowedOrigins(env) {
+  return new Set(
+    String(env.ALLOWED_ORIGINS || "")
+      .split(",")
+      .map((origin) => origin.trim())
+      .filter(Boolean)
+  );
+}
+
+function retentionDays(env) {
+  return clampNumber(env.LOG_RETENTION_DAYS, DEFAULT_RETENTION_DAYS, 1, 365);
+}
+
+function retentionSeconds(env) {
+  return retentionDays(env) * 24 * 60 * 60;
+}
+
+function clampNumber(value, fallback, min, max) {
+  const number = Number.parseInt(String(value || ""), 10);
+  if (!Number.isFinite(number)) {
+    return fallback;
+  }
+  return Math.min(max, Math.max(min, number));
+}
+
+function sanitize(value, maxLength) {
+  if (value === null || value === undefined) {
+    return "";
+  }
+  return String(value)
+    .replace(/[\u0000-\u001F\u007F]/g, "")
+    .slice(0, maxLength);
+}
+
+function jsonResponse(data, status = 200) {
+  return new Response(JSON.stringify(data, null, 2), {
+    status,
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "Cache-Control": "no-store"
+    }
+  });
+}
+
+function renderAdminHtml(visitors, eventCount) {
+  const rows = visitors.map((visitor) => `
+    <tr>
+      <td><code>${escapeHtml(visitor.ip)}</code></td>
+      <td>${escapeHtml(formatLocation(visitor))}</td>
+      <td>${escapeHtml(formatAsn(visitor))}</td>
+      <td>${visitor.visitCount}</td>
+      <td>${escapeHtml(visitor.firstSeen || "")}</td>
+      <td>${escapeHtml(visitor.lastSeen || "")}</td>
+      <td>${escapeHtml(visitor.paths.join(", "))}</td>
+      <td>${escapeHtml(visitor.referrers.join(", "))}</td>
+    </tr>
+  `).join("");
+
+  return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yanxia Wei Visit Log</title>
+  <style>
+    body { margin: 0; color: #20242a; background: #f7f8f5; font: 14px/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { width: min(1180px, calc(100% - 32px)); margin: 32px auto; }
+    h1 { margin: 0 0 8px; font-size: 24px; }
+    p { margin: 0 0 18px; color: #5d6570; }
+    table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #d9ded8; }
+    th, td { padding: 10px 12px; border-bottom: 1px solid #e6e9e4; text-align: left; vertical-align: top; }
+    th { color: #20242a; background: #eef2ec; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .empty { padding: 24px; background: #fff; border: 1px solid #d9ded8; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Yanxia Wei Visit Log</h1>
+    <p>Loaded ${eventCount} recent event${eventCount === 1 ? "" : "s"} and grouped them by IP. IP geolocation is approximate.</p>
+    ${visitors.length ? `<table>
+      <thead>
+        <tr>
+          <th>IP</th>
+          <th>Location</th>
+          <th>Network</th>
+          <th>Visits</th>
+          <th>First seen</th>
+          <th>Last seen</th>
+          <th>Paths</th>
+          <th>Referrers</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>` : `<div class="empty">No visits recorded yet.</div>`}
+  </main>
+</body>
+</html>`;
+}
+
+function formatLocation(visitor) {
+  return [visitor.city, visitor.region, visitor.country].filter(Boolean).join(", ") || "Unknown";
+}
+
+function formatAsn(visitor) {
+  const parts = [];
+  if (visitor.asOrganization) {
+    parts.push(visitor.asOrganization);
+  }
+  if (visitor.asn) {
+    parts.push(`AS${visitor.asn}`);
+  }
+  return parts.join(" / ") || "Unknown";
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}

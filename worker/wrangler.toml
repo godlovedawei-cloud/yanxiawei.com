@@ -1,0 +1,18 @@
+name = "yanxiawei-visit-log"
+main = "src/index.js"
+compatibility_date = "2026-05-06"
+workers_dev = true
+preview_urls = false
+
+[[kv_namespaces]]
+binding = "VISIT_LOGS"
+id = "aa1e83038f86415bbaab35ce60f35bcd"
+preview_id = "3b9a0f9fbf9e499caf404da13175896e"
+
+[vars]
+ALLOWED_ORIGINS = "https://yanxiawei.com,https://www.yanxiawei.com,http://127.0.0.1:4173,http://localhost:4173"
+LOG_RETENTION_DAYS = "90"
+MAX_ADMIN_ROWS = "500"
+
+[secrets]
+required = [ "ADMIN_TOKEN" ]

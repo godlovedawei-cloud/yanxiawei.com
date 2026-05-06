@@ -1470,6 +1470,57 @@
     </footer>
     <script>
         (() => {
+            const ANALYTICS_ENDPOINT = "https://yanxiawei-visit-log.yanxiawei-visit-log.workers.dev/collect";
+            if (!ANALYTICS_ENDPOINT) {
+                return;
+            }
+
+            const payload = {
+                path: `${window.location.pathname}${window.location.search}`,
+                referrer: document.referrer,
+                language: navigator.language,
+                screen: window.screen ? `${window.screen.width}x${window.screen.height}` : "",
+                siteTime: new Date().toISOString()
+            };
+            const body = JSON.stringify(payload);
+
+            if (navigator.sendBeacon) {
+                const sent = navigator.sendBeacon(
+                    ANALYTICS_ENDPOINT,
+                    new Blob([body], { type: "text/plain;charset=UTF-8" })
+                );
+                if (sent) {
+                    return;
+                }
+            }
+
+            const sendWithRetryLimit = (attempt = 0) => {
+                const controller = new AbortController();
+                const timeout = window.setTimeout(() => controller.abort(), 30000);
+
+                fetch(ANALYTICS_ENDPOINT, {
+                    method: "POST",
+                    mode: "cors",
+                    keepalive: true,
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body,
+                    signal: controller.signal
+                }).catch(() => {
+                    if (attempt < 1) {
+                        window.setTimeout(() => sendWithRetryLimit(attempt + 1), 750);
+                    }
+                }).finally(() => {
+                    window.clearTimeout(timeout);
+                });
+            };
+
+            sendWithRetryLimit();
+        })();
+    </script>
+    <script>
+        (() => {
             const button = document.querySelector('.theme-toggle');
             if (!button) {
                 return;
