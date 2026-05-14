@@ -86,9 +86,12 @@ async function handleCollect(request, env) {
     browserTimezone: sanitize(payload.timezone, 80),
     colorScheme: sanitize(payload.colorScheme, 20),
     siteTime: sanitize(payload.siteTime, 80),
+    visitorId: sanitize(payload.visitorId, 40),
     linkType: sanitize(payload.linkType, 80),
     linkTarget: sanitize(payload.linkTarget, 300),
     durationSeconds: clampNumber(payload.durationSeconds, 0, 0, 86400),
+    activeSeconds: clampNumber(payload.activeSeconds, 0, 0, 3600),
+    maxScrollPercent: clampNumber(payload.maxScrollPercent, 0, 0, 100),
     userAgent: sanitize(request.headers.get("User-Agent"), 300)
   };
 
@@ -115,7 +118,7 @@ async function handleAdmin(request, env) {
   }
 
   const rows = await loadVisitRows(env);
-  const aggregates = aggregateByIp(rows);
+  const aggregates = aggregateVisitors(rows);
 
   return new Response(renderAdminHtml(aggregates, rows.length), {
     headers: {
@@ -135,7 +138,7 @@ async function handleVisitsApi(request, env) {
   return jsonResponse({
     totalEventsLoaded: rows.length,
     retentionDays: retentionDays(env),
-    visitors: aggregateByIp(rows)
+    visitors: aggregateVisitors(rows)
   });
 }
 
@@ -178,13 +181,16 @@ async function loadVisitRows(env) {
     .sort((a, b) => String(b.timestamp).localeCompare(String(a.timestamp)));
 }
 
-function aggregateByIp(rows) {
+function aggregateVisitors(rows) {
   const visitors = new Map();
 
   for (const row of rows) {
     const ip = row.ip || "unknown";
-    const existing = visitors.get(ip) || {
+    const visitorId = row.visitorId || "legacy";
+    const key = `${ip}|${visitorId}`;
+    const existing = visitors.get(key) || {
       ip,
+      visitorId,
       visitCount: 0,
       firstSeen: row.timestamp,
       lastSeen: row.timestamp,
@@ -202,8 +208,9 @@ function aggregateByIp(rows) {
       paths: new Set(),
       referrers: new Set(),
       linkClicks: new Map(),
-      totalDurationSeconds: 0,
-      durationEventCount: 0,
+      totalActiveSeconds: 0,
+      activeEventCount: 0,
+      maxScrollPercent: 0,
       lastUserAgent: row.userAgent || ""
     };
 
@@ -237,12 +244,19 @@ function aggregateByIp(rows) {
     if (row.eventType === "link-click" && row.linkType) {
       existing.linkClicks.set(row.linkType, (existing.linkClicks.get(row.linkType) || 0) + 1);
     }
+    if (row.maxScrollPercent > existing.maxScrollPercent) {
+      existing.maxScrollPercent = row.maxScrollPercent;
+    }
+    if (row.eventType === "engagement" && row.activeSeconds > 0) {
+      existing.totalActiveSeconds += row.activeSeconds;
+      existing.activeEventCount += 1;
+    }
     if (row.eventType === "duration" && row.durationSeconds > 0) {
-      existing.totalDurationSeconds += row.durationSeconds;
-      existing.durationEventCount += 1;
+      existing.totalActiveSeconds += row.durationSeconds;
+      existing.activeEventCount += 1;
     }
 
-    visitors.set(ip, existing);
+    visitors.set(key, existing);
   }
 
   return Array.from(visitors.values())
@@ -388,6 +402,7 @@ function renderAdminHtml(visitors, eventCount) {
   const rows = visitors.map((visitor) => `
     <tr>
       <td><code>${escapeHtml(visitor.ip)}</code></td>
+      <td><code>${escapeHtml(formatVisitor(visitor))}</code></td>
       <td>${escapeHtml(formatLocation(visitor))}</td>
       <td>${escapeHtml(formatAsn(visitor))}</td>
       <td>${visitor.visitCount}</td>
@@ -421,11 +436,12 @@ function renderAdminHtml(visitors, eventCount) {
 <body>
   <main>
     <h1>Yanxia Wei Visit Log</h1>
-    <p>Loaded ${eventCount} recent event${eventCount === 1 ? "" : "s"} and grouped them by IP. Times are shown in Beijing time. IP geolocation is approximate.</p>
+    <p>Loaded ${eventCount} recent event${eventCount === 1 ? "" : "s"} and grouped them by IP plus anonymous visitor label. Times are shown in Beijing time. IP geolocation is approximate.</p>
     ${visitors.length ? `<table>
       <thead>
         <tr>
           <th>IP</th>
+          <th>Visitor</th>
           <th>Location</th>
           <th>Network</th>
           <th>Visits</th>
@@ -442,6 +458,13 @@ function renderAdminHtml(visitors, eventCount) {
   </main>
 </body>
 </html>`;
+}
+
+function formatVisitor(visitor) {
+  if (!visitor.visitorId || visitor.visitorId === "legacy") {
+    return "legacy";
+  }
+  return visitor.visitorId;
 }
 
 function formatLocation(visitor) {
@@ -471,8 +494,11 @@ function formatDevice(visitor) {
 
 function formatEngagement(visitor) {
   const parts = [];
-  if (visitor.durationEventCount > 0) {
-    parts.push(`time: ${formatDuration(visitor.totalDurationSeconds)}`);
+  if (visitor.activeEventCount > 0) {
+    parts.push(`active: ${formatDuration(visitor.totalActiveSeconds)}`);
+  }
+  if (visitor.maxScrollPercent > 0) {
+    parts.push(`scroll: ${visitor.maxScrollPercent}%`);
   }
   if (visitor.linkClicks.length > 0) {
     parts.push(`clicks: ${visitor.linkClicks.map((item) => `${item.type} ${item.count}`).join(", ")}`);

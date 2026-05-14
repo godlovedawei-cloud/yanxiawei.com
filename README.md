@@ -78,7 +78,7 @@ GitHub Pages deploys from `main` automatically after push.
 
 ## Private Visit Logging
 
-Silent visit logging is handled by the Cloudflare Worker in `worker/`. The homepage sends basic analytics events without banners, popups, cookies, or personal identification. Logs expire after 90 days and the dashboard shows Beijing time.
+Silent visit logging is handled by the Cloudflare Worker in `worker/`. The homepage sends basic analytics events without banners, popups, cookies, or personal identification. Logs expire after 90 days and the dashboard shows Beijing time. `Visitor` is an anonymous browser label, not a real device ID or identity. `Engagement` is approximate active page time, scroll depth, and tracked link clicks.
 
 Admin dashboard:
 
@@ -86,7 +86,7 @@ Admin dashboard:
 https://yanxiawei-visit-log.yanxiawei-visit-log.workers.dev/admin?token=<ADMIN_TOKEN>
 ```
 
-Keep `ADMIN_TOKEN` in Cloudflare secrets and local `.dev.vars`; never commit it. IP location, device, and engagement fields are approximate and cannot prove a specific individual visited the site.
+Keep `ADMIN_TOKEN` in Cloudflare secrets and local `.dev.vars`; never commit it. IP location, visitor, device, and engagement fields are approximate and cannot prove a specific individual visited the site.
 
 ## Content Guidelines
 

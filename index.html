@@ -1474,8 +1474,32 @@
                 return;
             }
 
-            const startedAt = Date.now();
-            let durationSent = false;
+            const VISITOR_STORAGE_KEY = "yanxiawei_visitor_id";
+            const HEARTBEAT_MS = 15000;
+            const ACTIVE_WINDOW_MS = 60000;
+            let lastActivityAt = Date.now();
+            let lastMeasuredAt = Date.now();
+            let pendingActiveMs = 0;
+            let maxScrollPercent = 0;
+            let lastSentScrollPercent = 0;
+
+            const getVisitorId = () => {
+                try {
+                    const existing = window.localStorage.getItem(VISITOR_STORAGE_KEY);
+                    if (existing) {
+                        return existing;
+                    }
+                    const bytes = new Uint8Array(8);
+                    window.crypto.getRandomValues(bytes);
+                    const generated = Array.from(bytes, (byte) => byte.toString(16).padStart(2, "0")).join("");
+                    window.localStorage.setItem(VISITOR_STORAGE_KEY, generated);
+                    return generated;
+                } catch (error) {
+                    return "";
+                }
+            };
+
+            const visitorId = getVisitorId();
 
             const classifyLink = (link) => {
                 const href = link.getAttribute("href") || "";
@@ -1503,13 +1527,35 @@
                 return "";
             };
 
+            const updateMaxScrollPercent = () => {
+                const documentElement = document.documentElement;
+                const body = document.body;
+                const scrollTop = window.scrollY || documentElement.scrollTop || body.scrollTop || 0;
+                const viewportHeight = window.innerHeight || documentElement.clientHeight || 0;
+                const scrollHeight = Math.max(
+                    documentElement.scrollHeight,
+                    body.scrollHeight,
+                    documentElement.clientHeight
+                );
+                if (scrollHeight <= 0) {
+                    return maxScrollPercent;
+                }
+                maxScrollPercent = Math.max(
+                    maxScrollPercent,
+                    Math.min(100, Math.round(((scrollTop + viewportHeight) / scrollHeight) * 100))
+                );
+                return maxScrollPercent;
+            };
+
             const basePayload = () => ({
+                visitorId,
                 path: `${window.location.pathname}${window.location.search}`,
                 referrer: document.referrer,
                 language: navigator.language,
                 screen: window.screen ? `${window.screen.width}x${window.screen.height}` : "",
                 timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || "",
                 colorScheme: window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light",
+                maxScrollPercent: updateMaxScrollPercent(),
                 siteTime: new Date().toISOString()
             });
 
@@ -1551,6 +1597,46 @@
                 sendWithRetryLimit();
             };
 
+            const markActivity = () => {
+                lastActivityAt = Date.now();
+                updateMaxScrollPercent();
+            };
+
+            const measureActiveTime = () => {
+                const now = Date.now();
+                const elapsedMs = Math.max(0, now - lastMeasuredAt);
+                const isVisible = document.visibilityState === "visible";
+                const isRecentlyActive = now - lastActivityAt <= ACTIVE_WINDOW_MS;
+                if (isVisible && isRecentlyActive) {
+                    pendingActiveMs += Math.min(elapsedMs, HEARTBEAT_MS);
+                }
+                lastMeasuredAt = now;
+            };
+
+            const sendEngagement = (force = false) => {
+                measureActiveTime();
+                const scrollPercent = updateMaxScrollPercent();
+                const activeSeconds = Math.round(pendingActiveMs / 1000);
+                const scrollChanged = scrollPercent > lastSentScrollPercent;
+
+                if (!force && activeSeconds <= 0 && !scrollChanged) {
+                    return;
+                }
+                if (activeSeconds <= 0 && !scrollChanged) {
+                    return;
+                }
+
+                sendPayload({
+                    ...basePayload(),
+                    eventType: "engagement",
+                    activeSeconds,
+                    maxScrollPercent: scrollPercent
+                }, false);
+
+                pendingActiveMs = 0;
+                lastSentScrollPercent = Math.max(lastSentScrollPercent, scrollPercent);
+            };
+
             sendPayload({
                 ...basePayload(),
                 eventType: "pageview"
@@ -1579,25 +1665,22 @@
                 }, false);
             }, { capture: true });
 
-            const sendDuration = () => {
-                if (durationSent) {
-                    return;
-                }
-                durationSent = true;
-                sendPayload({
-                    ...basePayload(),
-                    eventType: "duration",
-                    durationSeconds: Math.max(0, Math.round((Date.now() - startedAt) / 1000))
-                }, false);
-            };
+            ["keydown", "pointerdown", "pointermove", "scroll", "touchstart"].forEach((eventName) => {
+                window.addEventListener(eventName, markActivity, { passive: true });
+            });
+
+            window.setInterval(() => sendEngagement(false), HEARTBEAT_MS);
 
             document.addEventListener("visibilitychange", () => {
                 if (document.visibilityState === "hidden") {
-                    sendDuration();
+                    sendEngagement(true);
+                } else {
+                    lastMeasuredAt = Date.now();
+                    markActivity();
                 }
             });
 
-            window.addEventListener("pagehide", sendDuration);
+            window.addEventListener("pagehide", () => sendEngagement(true));
         })();
     </script>
     <script>
